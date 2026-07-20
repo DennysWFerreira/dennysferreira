@@ -25,6 +25,13 @@ height:460px;
 
 }
 
+.photo{
+
+width:620px;
+height:760px;
+
+}
+
 }
 
 
@@ -116,6 +123,13 @@ repeat(2,1fr);
 
 }
 
+.photo{
+
+width:420px;
+height:520px;
+
+}
+
 }
 
 
@@ -204,6 +218,13 @@ align-items:flex-start;
 .linha{
 
 width:100%;
+
+}
+
+.photo{
+
+width:280px;
+height:350px;
 
 }
 
