@@ -1,0 +1,261 @@
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+/* Blob da foto */
+
+@keyframes blob {
+
+    0% {
+
+        border-radius: 52% 48% 60% 40% / 38% 61% 39% 62%;
+        transform: translateY(0px) rotate(0deg);
+
+    }
+
+    25% {
+
+        border-radius: 46% 54% 42% 58% / 58% 38% 62% 42%;
+        transform: translateY(-8px) rotate(1deg);
+
+    }
+
+    50% {
+
+        border-radius: 58% 42% 48% 52% / 46% 60% 40% 54%;
+        transform: translateY(0px);
+
+    }
+
+    75% {
+
+        border-radius: 42% 58% 56% 44% / 38% 54% 46% 62%;
+        transform: translateY(8px) rotate(-1deg);
+
+    }
+
+    100% {
+
+        border-radius: 52% 48% 60% 40% / 38% 61% 39% 62%;
+        transform: translateY(0px);
+
+    }
+
+}
+
+
+/* Glow */
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:
+        0 0 20px rgba(0,212,255,.15);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 50px rgba(0,212,255,.55);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 20px rgba(0,212,255,.15);
+
+    }
+
+}
+
+
+/* Fade */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0);
+
+    }
+
+}
+
+
+/* Brilho passando */
+
+@keyframes shine{
+
+    0%{
+
+        left:-120%;
+
+    }
+
+    100%{
+
+        left:120%;
+
+    }
+
+}
+
+
+/* Flutuação */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* Fundo */
+
+@keyframes gradient{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+
+/* ========================================== */
+
+.hero-text{
+
+    animation:
+
+    fadeUp .9s ease;
+
+}
+
+.bio{
+
+    animation:
+
+    fadeUp 1.2s ease;
+
+}
+
+.blob{
+
+    animation:
+
+    glow 5s infinite;
+
+}
+
+.card{
+
+    animation:
+
+    fadeUp .8s ease;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:40%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.35),
+
+    transparent
+
+    );
+
+}
+
+.card:hover::before{
+
+    animation:
+
+    shine .8s;
+
+}
+
+.social a{
+
+    animation:
+
+    floating 5s infinite;
+
+}
+
+.social a:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+.social a:nth-child(3){
+
+    animation-delay:1s;
+
+}
