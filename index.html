@@ -1,469 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de projetos das turmas TI100 e TI101 de Dennys Ferreira.">
+  <title>Dennys Ferreira | Projetos</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Projetos | Dennys Ferreira</title>
-
-    <meta name="description"
-        content="Portfólio de Projetos dos cursos TI100 e TI101">
-
-    <meta name="author"
-        content="Dennys Ferreira">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- CSS -->
-
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <canvas id="network" aria-hidden="true"></canvas>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
-    <!-- Fundo tecnológico -->
-    <div id="particles"></div>
+  <header class="topbar" id="inicio">
+    <a href="#inicio" class="brand" aria-label="Ir para o início">
+      <span class="brand-symbol">D</span>
+      <span class="brand-text">
+        <strong>DENNYS</strong>
+        <small>FERREIRA</small>
+      </span>
+    </a>
 
-    <!-- Cursor Glow -->
-    <div class="cursor-glow"></div>
-
-    <!-- Botão Topo -->
-
-    <button id="topButton">
-
-        <i class="fa-solid fa-arrow-up"></i>
-
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
     </button>
 
-    <!-- NAVBAR -->
-
-    <nav>
-
-        <div class="logo">
-
-            <span>Dennys Ferreira</span>
-
-        </div>
-
-        <ul>
-
-            <li><a href="#bio">Biografia</a></li>
-
-            <li><a href="#ti100">TI100</a></li>
-
-            <li><a href="#ti101">TI101</a></li>
-
-        </ul>
-
+    <nav class="nav-menu" aria-label="Navegação principal">
+      <a class="active" href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#contato">Contato</a>
     </nav>
 
-    <!-- HERO -->
-
-    <header>
-
-        <div class="hero-container">
-
-            <!-- Texto -->
-
-            <section class="hero-text">
-
-                <h1>
-
-                    PROJETOS
-
-                </h1>
-
-            </section>
-
-            <!-- FOTO -->
-
-            <section
-                id="bio"
-                class="bio">
-
-                <div class="blob">
-
-                    <div class="bio-overlay">
-
-                        <div class="bio-text">
-
-                            <h2>Dennys Ferreira</h2>
-
-                            <h3>Docente de TI</h3>
-			    <h3>Full Stack &#127891;</h3>
-
-                            <div class="social">
-
-                                <a href="#">
-
-                                    <i class="fab fa-linkedin"></i>
-
-                                </a>
-
-                                <a href="#">
-
-                                    <i class="fab fa-github"></i>
-
-                                </a>
-
-                                <a href="#">
-
-                                    <i class="fa-brands fa-instagram"></i>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        </div>
-
-    </header>
-
-    <!-- MAIN -->
-
-    <main>
-
-        <!-- TI100 -->
-
-        <section
-            id="ti100"
-            class="categoria">
-
-            <div class="titulo">
-
-                <h2>TI100</h2>
-
-                <div class="linha"></div>
-
-            </div>
-
-            <div class="cards">
-
-                <!-- CARD -->
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto01.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 01</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto02.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 02</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto03.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 03</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto04.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 04</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto05.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 05</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto06.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 06</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </section>
-
-        <!-- TI101 -->
-
-        <section
-            id="ti101"
-            class="categoria">
-
-            <div class="titulo">
-
-                <h2>TI101</h2>
-
-                <div class="linha"></div>
-
-            </div>
-
-            <div class="cards">
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto01.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 01</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto02.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 02</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto03.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 03</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto04.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 04</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto05.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 05</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a href="https://google.com"
-                    target="_blank"
-                    class="card">
-
-                    <img src="img/projeto06.jpg"
-                        alt="Projeto">
-
-                    <div class="overlay">
-
-                        <h3>Grupo 06</h3>
-
-                        <span>
-
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        </span>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-
-            © 2026 • Desenvolvido por <strong>Dennys Ferreira</strong>
-
+    <a class="outline-button desktop-only" href="#projetos">
+      Ver projetos <i class="fa-solid fa-arrow-down"></i>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero section-shell" id="sobre">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">OLÁ, EU SOU</p>
+        <h1>
+          <span>DENNYS</span>
+          <strong>FERREIRA</strong>
+        </h1>
+        <p class="role">Professor de Tecnologia</p>
+        <span class="short-line"></span>
+        <p class="summary">
+          Desenvolvedor Full Stack, apaixonado por educação, inovação e tecnologia.
+          Especialista em transformar ideias em soluções digitais modernas e eficientes.
         </p>
 
-    </footer>
+        <div class="hero-actions">
+          <a class="primary-button" href="#projetos">
+            Ver projetos <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a class="secondary-button" href="#contato">
+            Entre em contato <i class="fa-regular fa-comment"></i>
+          </a>
+        </div>
 
-    <!-- JAVASCRIPT -->
+        <div class="social-links" aria-label="Redes sociais">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
 
-    <script src="js/particles.js"></script>
-    <script src="js/reveal.js"></script>
-    <script src="js/cursor.js"></script>
-    <script src="js/script.js"></script>
+      <div class="hero-visual reveal">
+        <div class="portrait-halo"></div>
 
+        <div class="portrait-frame">
+          <img src="img/Foto.jpg" alt="Dennys Ferreira em uma apresentação" loading="eager">
+        </div>
+
+        <article class="bio-card">
+          <h2>Dennys Ferreira</h2>
+          <h3>Professor de Tecnologia</h3>
+          <span class="bio-line"></span>
+          <p>
+            Desenvolvedor Full Stack, apaixonado por educação, inovação e tecnologia.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects section-shell" id="projetos">
+      <div class="section-heading reveal">
+        <p>MEUS</p>
+        <h2>PROJETOS</h2>
+      </div>
+
+      <div class="project-tabs reveal" role="tablist" aria-label="Turmas">
+        <button class="tab-button active" type="button" data-target="ti100">TI100</button>
+        <button class="tab-button" type="button" data-target="ti101">TI101</button>
+      </div>
+
+      <div class="project-panel active" id="ti100">
+        <div class="project-grid">
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-dashboard"><span>TI100</span></div>
+            <div class="project-info"><strong>Grupo 1</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-code"><span>WEB</span></div>
+            <div class="project-info"><strong>Grupo 2</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-globe"><span>DATA</span></div>
+            <div class="project-info"><strong>Grupo 3</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-grid"><span>APP</span></div>
+            <div class="project-info"><strong>Grupo 4</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-neon"><span>UX</span></div>
+            <div class="project-info"><strong>Grupo 5</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-terminal"><span>DEV</span></div>
+            <div class="project-info"><strong>Grupo 6</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-panel" id="ti101">
+        <div class="project-grid">
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-neon"><span>TI101</span></div>
+            <div class="project-info"><strong>Grupo 1</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-terminal"><span>PHP</span></div>
+            <div class="project-info"><strong>Grupo 2</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-dashboard"><span>SQL</span></div>
+            <div class="project-info"><strong>Grupo 3</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-globe"><span>API</span></div>
+            <div class="project-info"><strong>Grupo 4</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-code"><span>JS</span></div>
+            <div class="project-info"><strong>Grupo 5</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a class="project-card reveal" href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <div class="project-visual visual-grid"><span>UI</span></div>
+            <div class="project-info"><strong>Grupo 6</strong><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech section-shell" id="tecnologias">
+      <div class="section-heading reveal">
+        <p>CONHECIMENTOS</p>
+        <h2>TECNOLOGIAS</h2>
+      </div>
+
+      <div class="tech-grid">
+        <article class="tech-card reveal"><i class="fa-brands fa-html5"></i><span>HTML5</span></article>
+        <article class="tech-card reveal"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></article>
+        <article class="tech-card reveal"><i class="fa-brands fa-js"></i><span>JavaScript</span></article>
+        <article class="tech-card reveal"><i class="fa-brands fa-php"></i><span>PHP</span></article>
+        <article class="tech-card reveal"><i class="fa-solid fa-database"></i><span>MySQL</span></article>
+        <article class="tech-card reveal"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></article>
+      </div>
+    </section>
+
+    <section class="contact section-shell" id="contato">
+      <div class="contact-card reveal">
+        <div>
+          <p class="eyebrow">VAMOS CONVERSAR?</p>
+          <h2>Transforme ideias em projetos reais.</h2>
+          <p>Use esta área para inserir seu e-mail, WhatsApp ou formulário de contato.</p>
+        </div>
+        <a class="primary-button" href="mailto:dennys@example.com">
+          Enviar e-mail <i class="fa-solid fa-paper-plane"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 · Desenvolvido por <strong>Dennys Ferreira</strong></p>
+  </footer>
+
+  <button id="backToTop" type="button" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
 </body>
-
 </html>
