@@ -32,10 +32,10 @@ backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-window.addEventListener('mousemove', (event) => {
-  cursorGlow.style.left = `${event.clientX}px`;
-  cursorGlow.style.top = `${event.clientY}px`;
-});
+// window.addEventListener('mousemove', (event) => {
+//   cursorGlow.style.left = `${event.clientX}px`;
+//   cursorGlow.style.top = `${event.clientY}px`;
+// });
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
