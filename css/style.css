@@ -846,7 +846,7 @@ footer {
   .bio-card {
     right: 50%;
     transform: translateX(50%);
-    width: min(78%, 440px);
+    width: min(70%, 440px);
   }
 
   .contact-card {
