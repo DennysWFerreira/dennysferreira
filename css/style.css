@@ -116,13 +116,13 @@ img {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 34px;
-  min-height: 92px;
+  min-height: 150px;
   padding: 16px max(4vw, 32px);
   transition: 0.35s ease;
 }
 
 .topbar.scrolled {
-  min-height: 74px;
+  min-height: 100px;
   background: rgba(1, 7, 14, 0.78);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(18px);
@@ -130,13 +130,13 @@ img {
 
 .brand {
   display: flex;
-  align-items: center;
+  align-items: normal;
   gap: 14px;
 }
 
 .brand-symbol {
-  width: 46px;
-  height: 46px;
+  width: 100px;
+  height: 70px;
   display: grid;
   place-items: center;
   color: var(--cyan);
@@ -1052,7 +1052,7 @@ footer {
   }
 
   .brand-symbol {
-    width: 40px;
+    width: 55px;
     height: 40px;
   }
 
