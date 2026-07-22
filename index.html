@@ -36,11 +36,22 @@
             <a class="active" href="#sobre">Início</a>
             <a href="#projetos">Projetos</a>
             <a href="#tecnologias">Tecnologias</a>
+            <div class="dropdown">
+
+                <button class="dropbtn" type="button">
+                    Turmas
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+        
+                <div class="dropdown-content">
+                    <a href="#turmaTi101">TI101</a>
+                    <a href="#turmaTi100">TI100</a>
+                </div>
+        
+            </div>
         </nav>
 
-        <a class="outline-button desktop-only" href="#projetos">
-            Ver projetos <i class="fa-solid fa-arrow-down"></i>
-        </a>
+
     </header>
 
     <main>
@@ -99,7 +110,7 @@
             </div>
 
             <div class="project-tabs reveal" role="tablist" aria-label="Turmas">
-                <button class="tab-button" type="button" data-target="ti101">TI101</button>
+                <button class="tab-button" type="button" id="turmaTi101" data-target="ti101">TI101</button>
             </div>
 
             <div id="ti100">
@@ -144,7 +155,7 @@
             </div>
 
             <div class="project-tabs reveal" role="tablist" aria-label="Turmas">
-                <button class="tab-button" type="button" data-target="ti100">TI100</button>
+                <button class="tab-button" type="button" id="turmaTi100" data-target="ti100">TI100</button>
             </div>
             <div id="ti101">
                 <div class="project-grid">
