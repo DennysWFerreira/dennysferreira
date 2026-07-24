@@ -55,7 +55,7 @@ function calculate() {
   const breakMinutes = timeToMinutes(fields.breakTime.value);
   const shiftMinutes = timeToMinutes(fields.shift.value);
 
-  if ([entry, exit, breakMinutes, shiftMinutes].some(value => value === null)) {
+  if ([entry, exit, shiftMinutes].some(value => value === null)) {
     output.error.textContent = 'Preencha todos os campos com horários válidos.';
     return;
   }
@@ -68,10 +68,10 @@ function calculate() {
     output.error.textContent = 'O intervalo não pode ser maior que o período entre entrada e saída.';
     return;
   }
-  if (shiftMinutes === 0) {
-    output.error.textContent = 'A escala do dia deve ser maior que zero.';
-    return;
-  }
+  // if (shiftMinutes === 0) {
+  //   output.error.textContent = 'A escala do dia deve ser maior que zero.';
+  //   return;
+  // }
 
   const worked = elapsed - breakMinutes;
   const balance = worked - shiftMinutes;
@@ -91,8 +91,8 @@ function calculate() {
 
 function resetResults() {
   form.reset();
-  fields.breakTime.value = '--:--';
-  fields.shift.value = '--:--';
+  fields.breakTime.value = '00:00';
+  fields.shift.value = '00:00';
   output.total.textContent = '--:--';
   output.balance.textContent = '--:--';
   output.balanceLabel.textContent = 'Aguardando cálculo';
@@ -112,8 +112,8 @@ form.addEventListener('submit', event => {
 document.querySelector('#clearButton').addEventListener('click', resetResults);
 document.querySelector('#fillExample').addEventListener('click', () => {
   fields.entry.value = '13:30';
-  fields.exit.value = '19:45';
-  fields.breakTime.value = '00:15';
+  fields.exit.value = '22:39';
+  fields.breakTime.value = '01:00';
   fields.shift.value = '08:00';
   calculate();
 });

@@ -87,7 +87,11 @@ body:before {
   border: 1px solid rgba(32, 217, 255, .35);
   border-radius: 18px;
   background: linear-gradient(145deg, rgba(32, 217, 255, .17), rgba(77, 124, 255, .07));
-  box-shadow: inset 0 0 26px rgba(32, 217, 255, .08), 0 0 30px rgba(32, 217, 255, .08)
+  box-shadow: inset 0 0 26px rgba(32, 217, 255, .08), 0 0 30px rgba(32, 217, 255, .08);
+  background-image: url("../img/logo_DF_cor16d8ff.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .brand-mark svg {
@@ -562,6 +566,7 @@ footer {
     width: 26px
   }
 
+
   .hero p {
     font-size: .82rem
   }
@@ -620,3 +625,4 @@ input[type="time"]::-webkit-calendar-picker-indicator {
           invert(77%) sepia(82%) saturate(2700%)
           hue-rotate(152deg) brightness(101%) contrast(102%);
 }
+
