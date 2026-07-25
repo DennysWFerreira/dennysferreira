@@ -235,7 +235,8 @@ body:before {
 }
 
 .input-wrap {
-  position: relative
+  position: relative;
+  width: 100%;
 }
 
 .input-wrap svg {
@@ -264,12 +265,6 @@ body:before {
 .input-wrap input:focus {
   border-color: rgba(32, 217, 255, .65);
   box-shadow: 0 0 0 4px rgba(32, 217, 255, .08)
-}
-
-input[type=time]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-  opacity: .55;
-  cursor: pointer
 }
 
 .error-message {
@@ -550,6 +545,10 @@ footer {
     width: min(100% - 22px, 1180px);
     padding-top: 30px
   }
+  
+  .primary-button{
+      min-height: 50px;
+  }
 
   .hero {
     gap: 13px;
@@ -620,9 +619,33 @@ footer {
   box-shadow: 0 0 18px rgba(22, 216, 255, 0.5);
 }
 
-input[type="time"]::-webkit-calendar-picker-indicator {
+input[type=time]::-webkit-calendar-picker-indicator {
   filter: brightness(0) saturate(100%)
           invert(77%) sepia(82%) saturate(2700%)
           hue-rotate(152deg) brightness(101%) contrast(102%);
+  opacity: .55;
+  cursor: pointer
 }
 
+.input-wrap {
+  overflow: hidden;
+}
+
+input[type="time"] {
+  /*display: block;*/
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+footer {
+  padding: 34px 20px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(1, 6, 12, 0.58);
+  display: flex;
+  justify-content: center;
+}
