@@ -5,8 +5,8 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "/img/logo_DF_cor16d8ff-icone.png",
-      "sizes": "32x32",
+      "src": "/img/logo_icone1.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
