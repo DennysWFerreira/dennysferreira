@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DESC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    :root {
+      --black: #0a0a0a;
+      --white: #8b68c4;
+      --gray: #888;
+      --gray-dim: #333;
+      --accent: #d4cfc9;
+    }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+ 
+    /* Custom cursor */
+    .cursor {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1.5px solid rgba(144, 90, 231, 0.6);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    }
+    .cursor.hover {
+      width: 60px; height: 60px;
+      background: rgba(240,237,232,0.08);
+    }
+    .cursor-dot {
+      position: fixed;
+      width: 5px; height: 5px;
+      background: var(--white);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+ 
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 48px;
+      mix-blend-mode: difference;
+    }
+ 
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .logo:hover { opacity: 0.6; }
+ 
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: none;
+      transition: opacity 0.3s;
+    }
+    .menu-toggle:hover { opacity: 0.6; }
+ 
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 1.5px;
+      background: var(--white);
+      transition: transform 0.4s ease, opacity 0.3s;
+    }
+    .menu-open .hamburger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-open .hamburger span:nth-child(2) { opacity: 0; }
+    .menu-open .hamburger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+ 
+    /* FULLSCREEN MENU */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+    .nav-overlay.open { clip-path: inset(0 0 0% 0); }
+ 
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links li {
+      overflow: hidden;
+    }
+    .nav-links a {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      transform: translateY(100%);
+      transition: transform 0.6s cubic-bezier(0.77,0,0.18,1), color 0.3s;
+      position: relative;
+    }
+    .nav-overlay.open .nav-links a {
+      transform: translateY(0);
+    }
+    .nav-links li:nth-child(1) a { transition-delay: 0.1s; }
+    .nav-links li:nth-child(2) a { transition-delay: 0.18s; }
+    .nav-links li:nth-child(3) a { transition-delay: 0.26s; }
+    .nav-links li:nth-child(4) a { transition-delay: 0.34s; }
+ 
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 2px;
+      background: var(--white);
+      transition: width 0.4s ease;
+    }
+    .nav-links a:hover { color: var(--gray); }
+    .nav-links a:hover::after { width: 100%; }
+ 
+    .nav-footer {
+      margin-top: 60px;
+      font-size: 0.8rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.5s ease 0.5s;
+    }
+    .nav-overlay.open .nav-footer {
+      transform: translateY(0);
+      opacity: 1;
+    }
+ 
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 40px 80px;
+    }
+ 
+    /* Noise texture overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 1;
+    }
+ 
+    /* Radial glow */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw; height: 80vh;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+ 
+    .hero-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 1s ease 0.2s both;
+    }
+ 
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(6rem, 22vw, 22rem);
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 1s ease 0.4s both;
+      text-shadow: 0 0 120px rgba(255,255,255,0.04);
+    }
+ 
+    .hero-sub {
+      margin-top: 40px;
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 1s ease 0.6s both;
+    }
+ 
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      z-index: 2;
+      animation: fadeUp 1s ease 1s both;
+    }
+    .scroll-indicator span {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .scroll-line {
+      width: 1px; height: 50px;
+      background: linear-gradient(to bottom, var(--gray), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+ 
+    /* SECTION */
+    section {
+      padding: 100px 10vw;
+      border-top: 1px solid var(--gray-dim);
+      position: relative;
+    }
+ 
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 60px;
+    }
+ 
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      max-width: 700px;
+    }
+ 
+    /* CARDS GRID */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      margin-top: 80px;
+      border: 1px solid var(--gray-dim);
+    }
+ 
+    .card {
+      padding: 48px 40px;
+      border: 1px solid var(--gray-dim);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.4s ease;
+      cursor: none;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.03);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.77,0,0.18,1);
+    }
+    .card:hover::before { transform: scaleX(1); }
+ 
+    .card-num {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: var(--gray);
+      margin-bottom: 40px;
+    }
+    .card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .card-text {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--gray);
+    }
+    .card-arrow {
+      margin-top: 40px;
+      font-size: 1.5rem;
+      color: var(--gray);
+      transition: transform 0.3s ease, color 0.3s;
+    }
+    .card:hover .card-arrow {
+      transform: translate(6px, -6px);
+      color: var(--white);
+    }
+ 
+    /* MARQUEE */
+    .marquee-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--gray-dim);
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 80px;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--gray-dim);
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+    .marquee-dot {
+      color: var(--gray);
+      font-size: 0.8em;
+    }
+ 
+    /* FOOTER */
+    footer {
+      padding: 60px 10vw;
+      border-top: 1px solid var(--gray-dim);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.06em;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+    }
+ 
+
+    .card-logo {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--gray-dim);
+      padding-bottom: 28px;
+    }
+    .card-logo img {
+      max-height: 100px;
+      max-width: 180px;
+      object-fit: contain;
+      filter: grayscale(20%);
+      transition: filter 0.3s ease;
+    }
+    .card:hover .card-logo img {
+      filter: grayscale(0%);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+ 
+  <!-- NAV OVERLAY -->
+  <div class="nav-overlay" id="navOverlay">
+    <ul class="nav-links">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="cliente.html">Clientes</a></li>
+      <li><a href="#sobre">Sobre Nós</a></li>
+      <li><a href="#trabalhos">Trabalhos</a></li>
+    </ul>
+    <div class="nav-footer">São Paulo, SP — Brasil</div>
+  </div>
+ 
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="#" class="logo">DESC</a>
+    <button class="menu-toggle" id="menuToggle">
+      Menu
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+  </nav>
+ 
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <p class="hero-label">Criatividade &amp; Estratégia</p>
+    <h1 class="hero-title">DESC</h1>
+    <p class="hero-sub">Transformando negócios por meio da criatividade</p>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+ 
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <p class="section-label">01 — Portfolio</p>
+    <h2 class="section-title">PROJETOS QUE TRANSFORMAM MARCAS</h2>
+    <div class="cards">
+      <div class="card">
+        <p class="card-num">001</p>
+        <h3 class="card-title">Identidade Visual</h3>
+        <p class="card-text">Criação de sistemas visuais coerentes que comunicam a essência da marca.</p>
+        <div class="card-arrow">→</div>
+      </div>
+      <div class="card">
+        <p class="card-num">002</p>
+        <h3 class="card-title">Campanhas Digitais</h3>
+        <p class="card-text">Estratégias de conteúdo que conectam pessoas e geram resultado.</p>
+        <div class="card-arrow">→</div>
+      </div>
+      <div class="card">
+        <p class="card-num">003</p>
+        <h3 class="card-title">Motion Design</h3>
+        <p class="card-text">Animações e vídeos que traduzem ideias em experiências memoráveis.</p>
+        <div class="card-arrow">→</div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-item">Criatividade</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Estratégia</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Inovação</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Design</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Branding</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Criatividade</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Estratégia</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Inovação</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Design</span>
+      <span class="marquee-dot">·</span>
+      <span class="marquee-item">Branding</span>
+      <span class="marquee-dot">·</span>
+    </div>
+  </div>
+ 
+  <!-- SOBRE NÓS -->
+  <section id="sobre">
+    <p class="section-label">02 — Sobre Nós</p>
+    <h2 class="section-title">UMA EQUIPE MOVIDA POR GRANDES IDEIAS</h2>
+    <div style="margin-top:60px; display:grid; grid-template-columns:1fr 1fr; gap:80px; max-width:900px;">
+      <div>
+        <p style="font-size:0.85rem; line-height:2; color:var(--gray);">
+          Somos uma agência criativa especializada em transformar negócios através do poder das ideias. Unimos estratégia, design e tecnologia para criar soluções que geram impacto real.
+        </p>
+      </div>
+      <div>
+        <p style="font-size:0.85rem; line-height:2; color:var(--gray);">
+          Com mais de uma década de experiência, construímos relacionamentos duradouros com marcas que buscam se destacar em um mundo cada vez mais competitivo.
+        </p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- TRABALHOS -->
+  <section id="trabalhos">
+    <p class="section-label">03 — Trabalhos</p>
+    <h2 class="section-title">ÚLTIMOS PROJETOS</h2>
+    <div class="cards" style="margin-top:80px; grid-template-columns:1fr 1fr;">
+      <div class="card" style="padding:60px 48px; aspect-ratio:auto;">
+        <p class="card-num">Branding — 2024</p>
+        <div class="card-logo"><img src="img/aroma.png" alt="Aroma 811" /></div>
+        
+        <h3 class="card-title" style="font-size:2.5rem;">AROMA 811</h3>
+        <p class="card-text">Redesign completo de identidade visual para startup de tecnologia.</p>
+        <a href="https://www.dennysferreira.com.br/aroma811/" target="_blank" class="card-arrow" style="margin-top:60px; font-size:2rem; text-decoration:none; display:inline-block;">↗</a>
+      </div>
+      <div class="card" style="padding:60px 48px;">
+        <p class="card-num">Campanha — 2024</p>
+        <div class="card-logo">
+          <img src="img/jumbox.png" alt="jumbox">
+      </div>
+        <h3 class="card-title" style="font-size:2.5rem;">JUMBOX</h3>
+        <p class="card-text">Campanha digital de awareness para empresa de energia renovável.</p>
+        <a href="https://www.dennysferreira.com.br/jumbox/projeto/" target="_blank" class="card-arrow" style="margin-top:60px; font-size:2rem; text-decoration:none; display:inline-block;">↗</a>
+      </div>
+
+      <div class="card" style="padding:60px 48px;">
+        <p class="card-num">Motion — 2025</p>
+
+        <div class="card-logo">
+          <img src="img/oficina.png" alt="oficinahd">
+      </div>
+
+        <h3 class="card-title" style="font-size:2.5rem;">OFICINA-HD</h3>
+        <p class="card-text">Vídeo manifesto institucional para lançamento de nova linha de produtos.</p>
+        <a href="https://dennysferreira.com.br/oficinahd/" target="_blank" class="card-arrow" style="margin-top:60px; font-size:2rem; text-decoration:none; display:inline-block;">↗</a>
+      </div>
+      <div class="card" style="padding:60px 48px;">
+        <p class="card-num">Digital — 2026</p>
+                    <div class="card-logo">
+    <img src="img/artimola.png" alt="artimola">
+</div>
+
+        <h3 class="card-title" style="font-size:2.5rem;">ARTIMOLA</h3>
+        <p class="card-text">Estratégia de conteúdo e gestão de redes sociais para evento cultural.</p>
+        <a href="https://dennysferreira.com.br/artimola/projeto.html" target="_blank" class="card-arrow" style="margin-top:60px; font-size:2rem; text-decoration:none; display:inline-block;">↗</a>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">DESC</div>
+    <p class="footer-copy">© 2025 DESK — São Paulo, Brasil</p>
+  </footer>
+ 
+  <script>
+    // Cursor
+    const cursor = document.getElementById('cursor');
+    const dot = document.getElementById('cursorDot');
+    let mx = 0, my = 0, cx = 0, cy = 0;
+ 
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + 'px';
+      dot.style.top  = my + 'px';
+    });
+ 
+    function animCursor() {
+      cx += (mx - cx) * 0.12;
+      cy += (my - cy) * 0.12;
+      cursor.style.left = cx + 'px';
+      cursor.style.top  = cy + 'px';
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+ 
+    document.querySelectorAll('a, button, .card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+ 
+    // Menu toggle
+    const toggle   = document.getElementById('menuToggle');
+    const overlay  = document.getElementById('navOverlay');
+    const nav      = document.getElementById('mainNav');
+    let isOpen = false;
+ 
+    toggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+      overlay.classList.toggle('open', isOpen);
+      nav.classList.toggle('menu-open', isOpen);
+      toggle.childNodes[0].textContent = isOpen ? 'Fechar' : 'Menu';
+    });
+ 
+    // Close on nav link click
+    overlay.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        isOpen = false;
+        overlay.classList.remove('open');
+        nav.classList.remove('menu-open');
+        toggle.childNodes[0].textContent = 'Menu';
+      });
+    });
+  </script>
+</body>
+</html>

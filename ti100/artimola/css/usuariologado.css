@@ -1,0 +1,554 @@
+/* ===================================================== */
+/* RESET */
+/* ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f5f7fb;
+
+    color:#222;
+
+    overflow-x:hidden;
+}
+
+
+/* ===================================================== */
+/* CONTAINER PADRÃO */
+/* ===================================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+}
+
+
+/* ===================================================== */
+/* MENU PRINCIPAL */
+/* ===================================================== */
+
+.custom-navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    padding:20px 0;
+
+    background:rgba(44,22,85,.90);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+
+/* ===================================================== */
+/* ESTRUTURA MENU */
+/* ===================================================== */
+
+.nav-wrapper{
+
+    display:grid;
+
+    grid-template-columns:250px 1fr 250px;
+
+    align-items:center;
+}
+
+
+/* ===================================================== */
+/* LOGO */
+/* ===================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+}
+
+.logo img{
+
+    height:65px;
+
+    width:auto;
+
+    object-fit:contain;
+}
+
+
+/* ===================================================== */
+/* MENU CENTRAL */
+/* ===================================================== */
+
+.menu{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:50px;
+}
+
+.menu a{
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.menu a:hover{
+
+    color:#D9F43B;
+
+    transform:translateY(-2px);
+}
+
+
+/* ===================================================== */
+/* BOTÕES MENU */
+/* ===================================================== */
+
+.nav-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+}
+
+.btn-nav{
+
+    background:#D9F43B;
+
+    color:#2E0F4F;
+
+    text-decoration:none;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn-nav:hover{
+
+    background:#ffffff;
+
+    transform:translateY(-3px);
+}
+
+
+/* ===================================================== */
+/* DASHBOARD */
+/* ===================================================== */
+
+.dashboard{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding-top:130px;
+
+    padding-bottom:60px;
+
+    display:grid;
+
+    grid-template-columns:320px 1fr;
+
+    gap:30px;
+}
+
+
+/* ===================================================== */
+/* SIDEBAR */
+/* ===================================================== */
+
+.perfil-lateral{
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    height:max-content;
+
+    position:sticky;
+
+    top:120px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+}
+
+.perfil-lateral img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid #D9F43B;
+
+    margin-bottom:20px;
+}
+
+.perfil-lateral h2{
+
+    color:#2E0F4F;
+
+    margin-bottom:10px;
+}
+
+.perfil-lateral span{
+
+    color:#666;
+
+    display:block;
+
+    margin-bottom:20px;
+}
+
+
+/* ===================================================== */
+/* STATUS */
+/* ===================================================== */
+
+.status{
+
+    background:#D9F43B;
+
+    color:#2E0F4F;
+
+    padding:12px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+}
+
+
+/* ===================================================== */
+/* BOTÃO EDITAR */
+/* ===================================================== */
+
+.btn-editar{
+
+    display:block;
+
+    text-decoration:none;
+
+    background:#4510D0;
+
+    color:#fff;
+
+    padding:15px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn-editar:hover{
+
+    background:#FF2D8D;
+}
+
+
+/* ===================================================== */
+/* CONTEÚDO DIREITO */
+/* ===================================================== */
+
+.conteudo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+
+/* ===================================================== */
+/* BOXES */
+/* ===================================================== */
+
+.welcome-box,
+.info-box{
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.06);
+}
+
+.welcome-box h1{
+
+    color:#2E0F4F;
+
+    margin-bottom:15px;
+
+    font-size:2rem;
+}
+
+.welcome-box p{
+
+    line-height:1.8;
+}
+
+
+/* ===================================================== */
+/* CARDS */
+/* ===================================================== */
+
+.cards-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.06);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+}
+
+.card h3{
+
+    color:#4510D0;
+
+    margin-bottom:12px;
+
+    font-size:1rem;
+}
+
+.card p{
+
+    font-weight:600;
+}
+
+
+/* ===================================================== */
+/* BARRA DE PROGRESSO */
+/* ===================================================== */
+
+.barra{
+
+    width:100%;
+
+    height:18px;
+
+    background:#e5e7eb;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin:20px 0;
+}
+
+.barra-fill{
+
+    width:75%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4510D0,
+        #D9F43B
+    );
+}
+
+.info-box span{
+
+    font-weight:700;
+
+    color:#4510D0;
+}
+
+
+/* ===================================================== */
+/* GALERIA */
+/* ===================================================== */
+
+.galeria{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+    margin-top:20px;
+}
+
+.galeria img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    transition:.3s;
+}
+
+.galeria img:hover{
+
+    transform:scale(1.04);
+}
+
+
+/* ===================================================== */
+/* RESPONSIVO TABLET */
+/* ===================================================== */
+
+@media(max-width:1100px){
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+    }
+
+    .perfil-lateral{
+
+        position:relative;
+
+        top:auto;
+    }
+
+    .cards-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* ===================================================== */
+/* RESPONSIVO CELULAR */
+/* ===================================================== */
+
+@media(max-width:768px){
+
+    .menu{
+
+        display:none;
+    }
+
+    .nav-wrapper{
+
+        display:flex;
+
+        justify-content:space-between;
+    }
+
+    .logo img{
+
+        height:55px;
+    }
+
+    .cards-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .welcome-box h1{
+
+        font-size:1.6rem;
+    }
+
+    .perfil-lateral img{
+
+        width:150px;
+
+        height:150px;
+    }
+
+}
+
+
+/* ===================================================== */
+/* RESPONSIVO EXTRA */
+/* ===================================================== */
+
+@media(max-width:500px){
+
+    .dashboard{
+
+        width:95%;
+    }
+
+    .welcome-box,
+    .info-box,
+    .card,
+    .perfil-lateral{
+
+        padding:20px;
+    }
+
+}

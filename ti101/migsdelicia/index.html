@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Migs Delícias | Confeitaria Artesanal Premium</title>
+    <meta name="description" content="Migs Delícias - Bolos caseiros, salgados crocantes e doces finos. Feito com amor para adoçar seu dia!">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="css/arte.css">
+</head>
+<body>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5511991072583?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Migs%20Delícias" 
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <!-- <div class="top-bar-info">
+                    <i class="fas fa-truck"></i> -->
+                    <!-- <span>Entregamos em toda São Paulo</span> -->
+                <!-- </div> -->
+                <div class="top-bar-info">
+                    <i class="fas fa-clock"></i>
+                    <span>Seg a Sáb: 13h às 20h | Dom: 10h às 14h</span>
+                </div>
+                <div class="top-bar-social">
+                    <a href="https://www.instagram.com/migs_delicias/"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-cake-candles"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Migs Delícias</h1>
+                        <span>Confeitaria Artesanal</span>
+                    </div>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="#home" class="nav-link">Início</a></li>
+                        <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                        <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
+                        <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                        <li><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-sparkles"></i>
+                        <span>Confeitaria Premium</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Doce que encanta,<br>
+                        <span class="highlight">sabor que fica!</span>
+                    </h1>
+                    <p class="hero-description">
+                        Bolos caseiros fofinhos, salgados crocantes e doces refinados. 
+                        Tudo feito com ingredientes selecionados e muito amor.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#cardapio" class="btn btn-primary">
+                            <i class="fas fa-cake-candles"></i> Ver Cardápio
+                        </a>
+                        <a href="https://wa.me/5511991072583" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Anos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Clientes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Receitas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-main-image">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop" alt="Bolo especial Migs Delícias">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Diferenciais -->
+    <section id="produtos" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Nossas Especialidades</span>
+                <h2 class="section-title">Produtos Artesanais</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🍰</div>
+                    <h3>Bolos Caseiros</h3>
+                    <p>Fofinhos e irresistíveis</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Massas frescas</li>
+                        <li><i class="fas fa-check"></i> Coberturas premium</li>
+                        <li><i class="fas fa-check"></i> Sabores exclusivos</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🥟</div>
+                    <h3>Salgados Fritos</h3>
+                    <p>Crocantes e saborosos</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Coxinhas</li>
+                        <li><i class="fas fa-check"></i> Risoles</li>
+                        <li><i class="fas fa-check"></i> Kibe</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍬</div>
+                    <h3>Docinhos & Mini Tortas</h3>
+                    <p>Perfeitos para qualquer ocasião</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Brigadeiros</li>
+                        <li><i class="fas fa-check"></i> Minis e Tortas</li>
+                        <li><i class="fas fa-check"></i> Sobremesas finas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio Completo -->
+    <section id="cardapio" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Sabores que Encantam</span>
+                <h2 class="section-title">Nosso Cardápio</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="bolos">Bolos</button>
+                <button class="filter-btn" data-filter="salgados">Salgados</button>
+                <button class="filter-btn" data-filter="doces">Doces</button>
+                <button class="filter-btn" data-filter="tortas">Minis e Tortas</button>
+            </div>
+            
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Inspire-se</span>
+                <h2 class="section-title">Nossa Galeria</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <img src="imagen/anuncio.jpg" alt="Nossa confeitaria">
+                        <!-- <div class="about-image-badge">
+                            <i class="fas fa-heart"></i>
+                            <span>Feito com amor</span>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="about-tag">Nossa História</span>
+                    <h2>Feito com amor para adoçar seu dia!</h2>
+                    <div class="about-divider"></div>
+                    <p>Na <strong>Migs Delícias</strong>, cada receita é preparada com ingredientes selecionados e muito carinho, trazendo a verdadeira essência da confeitaria artesanal.</p>
+                    <p>Nossa missão é transformar momentos especiais em lembranças doces e inesquecíveis.</p>
+                    <div class="about-signature">
+                        <i class="fas fa-crown"></i>
+                        <span>Migs Delícias - Sabor que fica!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Fale Conosco</span>
+                <h2 class="section-title">Encomende Agora</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>(11) 99107-2583</p>
+                            <small>Atendimento rápido</small>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 99107-2583</p>
+                            <small>8h às 20h</small>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Retirada</h4>
+                            <p>R. Aires Bento de Oliveira, 110 - 115 - Jardim Elisa Maria - Zona Norte, SP </p><br>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.0397268628917!2d-46.68361332391736!3d-23.45903145784231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef9f0195d4ecf%3A0xbc1ddfb92f70c6c7!2sR.%20Aires%20Bento%20de%20Oliveira%2C%20110%20-%20115%20-%20Jardim%20Elisa%20Maria%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002873-570!5e0!3m2!1spt-BR!2sbr!4v1781542951190!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envie sua mensagem</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" rows="4" placeholder="Sua mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fab fa-whatsapp"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-cake-candles"></i>
+                        <h3>Migs Delícias</h3>
+                    </div>
+                    <p>Doce que encanta, sabor que fica! Confeitaria artesanal com amor em cada detalhe.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/migs_delicias/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5511991072583?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Migs%20Delícias"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#cardapio">Cardápio</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Horário</h4>
+                    <ul>
+                        <li><span>Segunda a Sexta:</span> 8h - 20h</li>
+                        <li><span>Sábado:</span> 13h - 20h</li>
+                        <li><span>Domingo:</span> 10h - 14h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Migs Delícias - Todos os direitos reservados.</p>
+                <p>Feito com <i class="fas fa-heart"></i> para adoçar seu dia!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3><i class="fas fa-shopping-bag"></i> Seu Carrinho</h3>
+            <button class="close-cart" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-sidebar-body" id="cartItemsList">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Seu carrinho está vazio</p>
+                <span>Adicione produtos deliciosos!</span>
+            </div>
+        </div>
+        <div class="cart-sidebar-footer" id="cartFooter">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cartTotalPrice">R$ 0,00</strong>
+            </div>
+            <button class="btn btn-primary btn-checkout" id="checkoutBtn">
+                <i class="fab fa-whatsapp"></i> Finalizar Pedido
+            </button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script src="java/final.js"></script>
+</body>
+</html>

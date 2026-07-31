@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DESK — Clientes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #8a5bd6;
+      --gray: #888;
+      --gray-dim: #333;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Custom cursor */
+    .cursor {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1.5px solid rgba(240,237,232,0.6);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    }
+    .cursor.hover {
+      width: 60px; height: 60px;
+      background: rgba(240,237,232,0.08);
+    }
+    .cursor-dot {
+      position: fixed;
+      width: 5px; height: 5px;
+      background: var(--white);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 48px;
+      mix-blend-mode: difference;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .logo:hover { opacity: 0.6; }
+
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: none;
+      transition: opacity 0.3s;
+    }
+    .menu-toggle:hover { opacity: 0.6; }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 1.5px;
+      background: var(--white);
+      transition: transform 0.4s ease, opacity 0.3s;
+    }
+    .menu-open .hamburger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-open .hamburger span:nth-child(2) { opacity: 0; }
+    .menu-open .hamburger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* FULLSCREEN MENU */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+    .nav-overlay.open { clip-path: inset(0 0 0% 0); }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links li { overflow: hidden; }
+    .nav-links a {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      transform: translateY(100%);
+      transition: transform 0.6s cubic-bezier(0.77,0,0.18,1), color 0.3s;
+      position: relative;
+    }
+    .nav-overlay.open .nav-links a { transform: translateY(0); }
+    .nav-links li:nth-child(1) a { transition-delay: 0.1s; }
+    .nav-links li:nth-child(2) a { transition-delay: 0.18s; }
+    .nav-links li:nth-child(3) a { transition-delay: 0.26s; }
+    .nav-links li:nth-child(4) a { transition-delay: 0.34s; }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 2px;
+      background: var(--white);
+      transition: width 0.4s ease;
+    }
+    .nav-links a:hover { color: var(--gray); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-footer {
+      margin-top: 60px;
+      font-size: 0.8rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.5s ease 0.5s;
+    }
+    .nav-overlay.open .nav-footer { transform: translateY(0); opacity: 1; }
+
+    /* HERO CLIENTES */
+    .hero-clientes {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 10vw 60px;
+      border-bottom: 1px solid var(--gray-dim);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-clientes::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 24px;
+      animation: fadeUp 1s ease 0.2s both;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 10vw, 10rem);
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      animation: fadeUp 1s ease 0.4s both;
+    }
+
+    /* GRID DE CLIENTES */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+
+    .client-cell {
+      border-right: 1px solid var(--gray-dim);
+      border-bottom: 1px solid var(--gray-dim);
+      padding: 60px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+      cursor: none;
+      transition: background 0.4s ease;
+    }
+    .client-cell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.03);
+      transform: scale(0.8);
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.4s ease;
+    }
+    .client-cell:hover::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .client-cell img {
+      max-width: 160px;
+      max-height: 90px;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(0.7);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+    .client-cell:hover img {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.06);
+    }
+
+    /* placeholder cell */
+    .client-cell.placeholder {
+      opacity: 0.2;
+    }
+    .client-cell.placeholder::after {
+      content: '+';
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--gray);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 60px 10vw;
+      border-top: 1px solid var(--gray-dim);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.06em;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      margin-bottom: 40px;
+      animation: fadeUp 1s ease 0.1s both;
+    }
+    .back-btn:hover { color: var(--white); }
+    .back-btn span { font-size: 1.1rem; transition: transform 0.3s ease; }
+    .back-btn:hover span { transform: translateX(-4px); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- NAV OVERLAY -->
+  <div class="nav-overlay" id="navOverlay">
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cliente.html">Clientes</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+      <li><a href="trabalhos.html">Trabalhos</a></li>
+    </ul>
+    <div class="nav-footer">São Paulo, SP — Brasil</div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="index.html" class="logo">DESK</a>
+    <button class="menu-toggle" id="menuToggle">
+      Menu
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero-clientes">
+    <a href="index.html" class="back-btn"><span>←</span> Voltar</a>
+    <p class="hero-label">02 — Clientes</p>
+    <h1 class="hero-title">AS MAIORES MARCAS<br>CONFIAM NA DESK</h1>
+  </div>
+
+  <!-- GRID -->
+  <div class="clients-grid">
+    <div class="client-cell">
+      <img src="images/aroma-811.png" alt="Aroma 811" />
+    </div>
+    <div class="client-cell">
+      <img src="images/jumbox.png" alt="Jumbox" />
+    </div>
+    <div class="client-cell">
+      <img src="images/oficina-hd.png" alt="Oficina HD" />
+    </div>
+    <div class="client-cell placeholder"></div>
+    <div class="client-cell placeholder"></div>
+    <div class="client-cell placeholder"></div>
+    <div class="client-cell placeholder"></div>
+    <div class="client-cell placeholder"></div>
+    <div class="client-cell placeholder"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">DESK</div>
+    <p class="footer-copy">© 2025 DESK — São Paulo, Brasil</p>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    const dot = document.getElementById('cursorDot');
+    let mx = 0, my = 0, cx = 0, cy = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + 'px';
+      dot.style.top  = my + 'px';
+    });
+
+    function animCursor() {
+      cx += (mx - cx) * 0.12;
+      cy += (my - cy) * 0.12;
+      cursor.style.left = cx + 'px';
+      cursor.style.top  = cy + 'px';
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+
+    document.querySelectorAll('a, button, .client-cell').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    const toggle  = document.getElementById('menuToggle');
+    const overlay = document.getElementById('navOverlay');
+    const nav     = document.getElementById('mainNav');
+    let isOpen = false;
+
+    toggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+      overlay.classList.toggle('open', isOpen);
+      nav.classList.toggle('menu-open', isOpen);
+      toggle.childNodes[0].textContent = isOpen ? 'Fechar' : 'Menu';
+    });
+
+    overlay.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        isOpen = false;
+        overlay.classList.remove('open');
+        nav.classList.remove('menu-open');
+        toggle.childNodes[0].textContent = 'Menu';
+      });
+    });
+  </script>
+</body>
+</html>

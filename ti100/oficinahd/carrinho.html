@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho - Oficina do HD</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/cart-page.css" />
+  <link rel="stylesheet" href="./css/nav-return.css" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <header class="topo">
+    <a class="logo-area" href="./index.php" aria-label="Ir para a página inicial" style="text-decoration:none; display:flex; align-items:center; gap:16px;">
+      <div class="logo">
+        <img src="./img/Gemini_Generated_Image_1nkg661nkg661nkg__3_-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logo-texto">
+        <h1>OFICINA</h1>
+        <span>DO</span>
+        <h2>HD</h2>
+      </div>
+    </a>
+
+    <div class="search-box">
+      <i class="fa-solid fa-bars"></i>
+      <input type="text" placeholder="Buscar" />
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <div class="icons">
+      <button class="icon-btn" onclick="location.href='./index.php'" aria-label="Voltar para a home">
+        <i class="fa-solid fa-house"></i>
+      </button>
+
+      <button class="icon-btn" onclick="location.reload()" aria-label="Carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="badge-carrinho-page">0</span>
+      </button>
+
+      <a href="./login.html" class="icon-btn" aria-label="Login">
+        <i class="fa-regular fa-circle-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <section class="cart-grid">
+      <div class="cart-left">
+      <div class="nav-return-wrap">
+          <a class="nav-return-btn" href="./index.php" aria-label="Voltar para a página inicial">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar para a página inicial
+          </a>
+        </div>
+
+        <div class="page-title">
+          <h2>SEU CARRINHO</h2>
+
+          <div class="page-sub">Revise itens, ajuste quantidades e finalize.</div>
+        </div>
+
+        <div class="cart-items-page" id="cart-items-page"></div>
+
+        <div class="cart-actions-left">
+          <button class="btn-clear" id="btn-limpar">Limpar carrinho</button>
+          <a class="btn-continue" href="./index.php">Continuar comprando</a>
+        </div>
+      </div>
+
+      <aside class="cart-right">
+        <div class="summary-card cart-page-summary">
+          <div class="checkout-header">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h2>RESUMO</h2>
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <b id="cart-subtotal-page">R$ 0,00</b>
+          </div>
+
+          <div class="summary-row">
+            <span>Frete</span>
+            <b id="cart-frete-page">R$ 0,00</b>
+          </div>
+
+          <div class="summary-row total">
+            <span>Total</span>
+            <b id="cart-total-page">R$ 0,00</b>
+          </div>
+
+          <div class="summary-cta">
+            <a class="btn-checkout-page" id="btn-checkout" href="./checkout.php">Finalizar compra</a>
+            <div class="cart-note-page" id="cart-note-page">* Frete calculado no checkout.</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="secure-row">
+            <div class="secure-badge">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Compra segura</span>
+            </div>
+            <div class="secure-badge">
+              <i class="fa-solid fa-truck-fast"></i>
+              <span>Envio rápido</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>QUEM SOMOS</h3>
+        <p>Somos a 1ª Loja brasileira de Informática a possuir um novo olhar para os produtos eletrônicos.</p>
+      </div>
+      <div class="footer-box">
+        <h3>CONTATO</h3>
+        <p>5511988586272</p>
+        <p>11988586272</p>
+        <p>sohdbrasil@gmail.com</p>
+        <p>Rua Cruzeiro, 959</p>
+      </div>
+      <div class="footer-box">
+        <h3>FORMAS DE PAGAMENTO</h3>
+        <div class="pagamentos">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-pix"></i>
+        </div>
+        <h3>MEIOS DE ENVIO</h3>
+        <div class="envio">
+          <img src="https://www.sedex.com.br/wp-content/uploads/2020/10/logo-sedex.png" alt="SEDEX" />
+        </div>
+      </div>
+      <div class="footer-box">
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="(11) 99999-9999" />
+        <button>Enviar</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright OFICINA DO HD - 2026.</p>
+    </div>
+  </footer>
+
+  <script src="./js/cart-page.js"></script>
+</body>
+</html>
+

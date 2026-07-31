@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="ARTEX STUDIO - Estamparia autoral com design único. Camisetas oversized, moletons e acessórios com estampas exclusivas.">
+    <meta name="keywords" content="camisetas, estamparia, anime, oversized, streetwear">
+    <meta name="author" content="ARTEX STUDIO">
+    <title>ARTEX STUDIO | Estamparia Autoral & Design</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <button id="themeToggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+    <div class="header">
+        <div class="container nav-bar">
+            <div class="logo" data-page="home">
+                <h1>⚡ ARTEX STUDIO ⚡</h1>
+                <p>ESTAMPARIA AUTORAL · SHONEN STYLE</p>
+            </div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+            <div class="nav-links" id="navLinks">
+                <span class="nav-link-page" data-page="home">INÍCIO</span>
+                <span class="nav-link-page" data-page="shop">LOJA</span>
+                <span class="nav-link-page" data-page="about">SOBRE</span>
+                <span class="nav-link-page" data-page="contact">CONTATO</span>
+                <span class="nav-link-page" data-page="wishlist">
+                    <i class="far fa-heart"></i> FAVORITOS
+                    <span id="wishlistCount" class="wishlist-count">0</span>
+                </span>
+                <span class="nav-link-page" id="userMenuBtn" style="cursor: pointer;">
+                    <i class="fas fa-user-circle"></i> MINHA CONTA
+                </span>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="app-root">
+        <!-- HOME -->
+        <div id="page-home" class="page-view active-page">
+            <section class="hero">
+                <div class="container hero-content">
+                    <h2>Arte que veste, <span>design que inspira</span></h2>
+                    <p>+14 modelos exclusivos | Estampas autorais</p>
+                    <div class="free-shipping"><i class="fas fa-truck"></i> FRETE GRÁTIS em compras acima de R$299</div>
+                </div>
+            </section>
+            <div class="container">
+                <h2 style="text-align:center; margin:40px 0 20px; font-size:1.5rem;">⭐ Produtos em Destaque ⭐</h2>
+                <div id="featuredProducts" class="featured-grid"></div>
+            </div>
+            <div class="container">
+                <div class="newsletter-section"
+                    style="background: linear-gradient(135deg, #ff3366, #ffcc33); border-radius: 30px; padding: 40px; text-align: center; margin-top: 40px;">
+                    <h3 style="color: white; font-size: 1.5rem;">📧 Receba novidades exclusivas!</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin: 10px 0;">Cadastre-se e ganhe 10% OFF na primeira
+                        compra</p>
+                    <form id="newsletterForm"
+                        style="display: flex; justify-content: center; gap: 10px; max-width: 500px; margin: 20px auto 0;">
+                        <input type="email" id="newsletterEmail" placeholder="Seu melhor e-mail"
+                            style="flex: 1; padding: 12px 20px; border: none; border-radius: 40px;">
+                        <button type="submit"
+                            style="background: #1a0a2e; color: white; border: none; padding: 12px 25px; border-radius: 40px; cursor: pointer; font-weight: bold;">CADASTRAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOJA -->
+        <div id="page-shop" class="page-view">
+            <div class="container">
+                <input type="text" id="searchInput" placeholder="🔍 Buscar produto...">
+                <div class="filter-section">
+                    <button class="filter-btn active" data-filter="todos">TODOS</button>
+                    <button class="filter-btn" data-filter="oversized">OVERSIZED</button>
+                    <button class="filter-btn" data-filter="camiseta">CAMISETAS</button>
+                    <button class="filter-btn" data-filter="moletom">MOLETONS</button>
+                </div>
+                <div id="productsContainer" class="products-grid"></div>
+            </div>
+        </div>
+
+        <!-- DETALHE PRODUTO -->
+        <div id="page-product-detail" class="page-view">
+            <div class="container" id="productDetailContainer"></div>
+        </div>
+
+        <!-- SOBRE -->
+        <div id="page-about" class="page-view">
+            <div class="about-wrapper">
+                <div class="about-hero-premium">
+                    <div class="container">
+                        <div class="about-hero-content">
+                            <div class="about-hero-badge">
+                                <i class="fas fa-star"></i> Desde 2020
+                            </div>
+                            <h1>Arte que <span class="gradient-text">veste histórias</span></h1>
+                            <p>Somos muito mais que uma marca de roupas. Somos um movimento que transforma arte em
+                                expressão, criando peças únicas que contam a sua história.</p>
+                            <div class="about-hero-stats">
+                                <div class="stat">
+                                    <span class="stat-number" data-count="15000">0</span>
+                                    <span class="stat-label">Clientes</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number" data-count="50">0</span>
+                                    <span class="stat-label">Artistas</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number" data-count="50000">0</span>
+                                    <span class="stat-label">Peças</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number" data-count="4.9">0</span>
+                                    <span class="stat-label">Avaliação</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-wave-bottom">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+                            <path fill="#f5f0e8" fill-opacity="1"
+                                d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="story-section" data-aos="fade-up">
+                        <div class="story-grid">
+                            <div class="story-content">
+                                <span class="section-badge">Nossa História</span>
+                                <h2>Uma trajetória feita com <span class="accent">arte e propósito</span></h2>
+                                <p>Fundada em 2020 pelos empreendedores <strong>Luciano Bernardes Filho e Paulo
+                                        Santana</strong>, a ARTEX STUDIO nasceu da paixão por estamparia autoral e
+                                    design funcional. O que começou como um pequeno ateliê na Vila Madalena, hoje é
+                                    referência nacional em moda com estampas exclusivas.</p>
+                                <p>Nossa missão é <strong>vestir histórias através de arte têxtil</strong>, conectando
+                                    criatividade, conforto e sustentabilidade. Cada peça é desenvolvida em parceria com
+                                    artistas independentes, garantindo que você use algo único e cheio de significado.
+                                </p>
+                                <div class="story-highlights">
+                                    <div class="highlight"><i class="fas fa-check-circle"></i> +15.000 clientes
+                                        satisfeitos</div>
+                                    <div class="highlight"><i class="fas fa-check-circle"></i> Produção sustentável sob
+                                        demanda</div>
+                                    <div class="highlight"><i class="fas fa-check-circle"></i> Parceria com +50 artistas
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="story-image">
+                                <div class="image-wrapper">
+                                    <i class="fas fa-paintbrush"></i>
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-section" data-aos="fade-up">
+                        <div class="section-header">
+                            <span class="section-badge">Linha do Tempo</span>
+                            <h2>Nossa <span class="accent">Jornada</span></h2>
+                            <p>Conheça os marcos que construíram a ARTEX STUDIO</p>
+                        </div>
+                        <div class="timeline-grid">
+                            <div class="timeline-card" data-year="2020">
+                                <div class="timeline-year">2020</div>
+                                <div class="timeline-icon"><i class="fas fa-store"></i></div>
+                                <h4>Fundação</h4>
+                                <p>Nascemos em um pequeno ateliê na Vila Madalena, com apenas 5 peças e muito sonho.</p>
+                            </div>
+                            <div class="timeline-card" data-year="2021">
+                                <div class="timeline-year">2021</div>
+                                <div class="timeline-icon"><i class="fas fa-chart-line"></i></div>
+                                <h4>Expansão Digital</h4>
+                                <p>Lançamos nossa loja online e alcançamos clientes em todo o Brasil.</p>
+                            </div>
+                            <div class="timeline-card" data-year="2022">
+                                <div class="timeline-year">2022</div>
+                                <div class="timeline-icon"><i class="fas fa-palette"></i></div>
+                                <h4>Primeira Coleção</h4>
+                                <p>Lançamento da primeira coleção nacional com +30 artistas parceiros.</p>
+                            </div>
+                            <div class="timeline-card" data-year="2023">
+                                <div class="timeline-year">2023</div>
+                                <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
+                                <h4>Reconhecimento</h4>
+                                <p>Premiados como Melhor Marca de Estamparia Autoral do Brasil.</p>
+                            </div>
+                            <div class="timeline-card" data-year="2024">
+                                <div class="timeline-year">2024</div>
+                                <div class="timeline-icon"><i class="fas fa-globe"></i></div>
+                                <h4>Expansão Global</h4>
+                                <p>Iniciamos entregas internacionais e parcerias com artistas do mundo todo.</p>
+                            </div>
+                            <div class="timeline-card" data-year="2025">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+                                <h4>+24 Produtos</h4>
+                                <p>Catálogo com mais de 24 produtos exclusivos e comunidade de +15k clientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="values-section" data-aos="fade-up">
+                        <div class="section-header">
+                            <span class="section-badge">Nossos Valores</span>
+                            <h2>O que nos <span class="accent">move</span></h2>
+                            <p>Pilares que sustentam nossa marca e nossas decisões</p>
+                        </div>
+                        <div class="values-grid">
+                            <div class="value-card-premium">
+                                <div class="value-icon"><i class="fas fa-heart"></i></div>
+                                <h3>Propósito</h3>
+                                <p>Valorizamos a arte nacional e a expressão individual através da moda, criando peças
+                                    que contam histórias únicas.</p>
+                            </div>
+                            <div class="value-card-premium">
+                                <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                                <h3>Sustentabilidade</h3>
+                                <p>Produção consciente, tecidos ecológicos e menor impacto ambiental. Cada peça é feita
+                                    sob demanda.</p>
+                            </div>
+                            <div class="value-card-premium">
+                                <div class="value-icon"><i class="fas fa-hand-sparkles"></i></div>
+                                <h3>Qualidade</h3>
+                                <p>Acabamento premium, modelagem pensada e durabilidade. Cada detalhe é cuidadosamente
+                                    planejado.</p>
+                            </div>
+                            <div class="value-card-premium">
+                                <div class="value-icon"><i class="fas fa-users"></i></div>
+                                <h3>Comunidade</h3>
+                                <p>Construímos uma comunidade de artistas e clientes que compartilham da mesma paixão
+                                    por arte autoral.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="founders-section" data-aos="fade-up">
+                        <div class="section-header">
+                            <span class="section-badge">Fundadores</span>
+                            <h2>Mentes <span class="accent">criativas</span></h2>
+                            <p>Os visionários por trás da ARTEX STUDIO</p>
+                        </div>
+                        <div class="founders-grid">
+                            <div class="founder-card">
+                                <div class="founder-avatar">
+                                    <i class="fas fa-user-tie"></i>
+                                    <div class="avatar-glow"></div>
+                                </div>
+                                <h3>Luciano Bernardes Filho</h3>
+                                <div class="founder-role">CEO & Diretor Criativo</div>
+                                <p>Especialista em moda e estamparia com mais de 10 anos de experiência. Formado em
+                                    Design de Moda pela FAAP, lidera a direção criativa da marca com paixão por arte e
+                                    inovação.</p>
+                                <div class="founder-social">
+                                    <a href="https://linkedin.com/in/luciano-bernardes" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://instagram.com/luciano.artex" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="founder-card">
+                                <div class="founder-avatar">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div class="avatar-glow"></div>
+                                </div>
+                                <h3>Paulo Santana</h3>
+                                <div class="founder-role">COO & Diretor de Operações</div>
+                                <p>Gestor experiente que lidera a expansão da marca e parcerias com artistas. MBA em
+                                    Gestão de Negócios pela FGV, responsável por levar a ARTEX para todo o Brasil.</p>
+                                <div class="founder-social">
+                                    <a href="https://linkedin.com/in/paulo-santana" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://instagram.com/paulo.artex" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="impact-section" data-aos="fade-up">
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <div class="impact-number">15k+</div>
+                                <div class="impact-label">Clientes satisfeitos</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-number">50+</div>
+                                <div class="impact-label">Artistas parceiros</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-number">50k+</div>
+                                <div class="impact-label">Peças vendidas</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-number">4.9</div>
+                                <div class="impact-label">Avaliação média</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-number">24+</div>
+                                <div class="impact-label">Produtos exclusivos</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-number">100%</div>
+                                <div class="impact-label">Sustentável</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mission-section" data-aos="fade-up">
+                        <div class="mission-card">
+                            <div class="mission-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <h3>Nossa Missão</h3>
+                            <p>"Vestir histórias através de arte têxtil, conectando criatividade, conforto e
+                                sustentabilidade, enquanto valorizamos a arte nacional e a expressão individual."</p>
+                            <div class="mission-signature">
+                                <span>Luciano & Paulo</span>
+                                <span class="mission-date">Fundadores, 2020</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-section" data-aos="fade-up">
+                        <div class="cta-content">
+                            <h3>Faça parte dessa história!</h3>
+                            <p>Junte-se a mais de 15 mil clientes que já se apaixonaram pela ARTEX STUDIO</p>
+                            <div class="cta-buttons">
+                                <button class="btn-primary" data-page="shop"><i class="fas fa-shopping-bag"></i>
+                                    Conhecer produtos</button>
+                                <button class="btn-secondary" data-page="contact"><i class="fas fa-comment"></i> Falar
+                                    com time</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTATO -->
+        <div id="page-contact" class="page-view">
+            <div class="contact-wrapper">
+                <div class="contact-hero-premium">
+                    <div class="container">
+                        <div class="contact-hero-content">
+                            <div class="contact-hero-badge">
+                                <i class="fas fa-headset"></i> Atendimento Premium
+                            </div>
+                            <h1>Vamos <span class="gradient-text">conversar?</span></h1>
+                            <p>Estamos prontos para transformar sua experiência em arte. Nossa equipe está disponível
+                                para atender você com todo carinho e excelência.</p>
+                            <div class="contact-hero-stats">
+                                <div class="stat">
+                                    <span class="stat-number">24h</span>
+                                    <span class="stat-label">Resposta média</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">4.9</span>
+                                    <span class="stat-label">Avaliação dos clientes</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">98%</span>
+                                    <span class="stat-label">Satisfação</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-wave">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+                            <path fill="#f5f0e8" fill-opacity="1"
+                                d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="contact-cards-premium">
+                        <div class="contact-card-premium" data-aos="fade-up">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                            <h3>Nosso Espaço</h3>
+                            <p>Rua da Estamparia, 123<br>Vila Madalena, São Paulo - SP<br>CEP: 05430-010</p>
+                            <a href="https://maps.google.com/?q=Vila+Madalena+Sao+Paulo" target="_blank" rel="noopener noreferrer" class="card-link">Ver no mapa →</a>
+                        </div>
+                        <div class="contact-card-premium" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                            </div>
+                            <h3>Canais Diretos</h3>
+                            <p><strong>WhatsApp:</strong> (11) 9 9999-9999</p>
+                            <p><strong>Telefone:</strong> (11) 3456-7890</p>
+                            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="card-link whatsapp-link">
+                                <i class="fab fa-whatsapp"></i> Falar no WhatsApp →
+                            </a>
+                        </div>
+                        <div class="contact-card-premium" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <h3>E-mail</h3>
+                            <p><strong>Atendimento:</strong> contato@artexstudio.com</p>
+                            <p><strong>Vendas:</strong> vendas@artexstudio.com</p>
+                            <button class="card-link email-copy-btn" onclick="copyEmail('contato@artexstudio.com')">
+                                <i class="fas fa-copy"></i> Copiar e-mail →
+                            </button>
+                        </div>
+                        <div class="contact-card-premium" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                            </div>
+                            <h3>Horário de Atendimento</h3>
+                            <p><strong>Segunda a Sexta:</strong> 9h - 18h</p>
+                            <p><strong>Sábado:</strong> 10h - 14h</p>
+                            <span class="badge-online"><i class="fas fa-circle"></i> Atendimento ao vivo</span>
+                        </div>
+                    </div>
+                    <div class="contact-dual-section">
+                        <div class="contact-form-premium" data-aos="fade-right">
+                            <div class="form-header-premium">
+                                <span class="form-badge">Envie uma mensagem</span>
+                                <h2>Fale com a gente</h2>
+                                <p>Respondemos em até <strong>24 horas úteis</strong>. Sua opinião é muito importante
+                                    para nós!</p>
+                            </div>
+                            <form id="contactForm" class="premium-form">
+                                <div class="form-row-modern">
+                                    <div class="input-group-premium">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" id="contactName" placeholder="Seu nome completo" required>
+                                        <span class="focus-border"></span>
+                                    </div>
+                                    <div class="input-group-premium">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" id="contactEmail" placeholder="Seu melhor e-mail" required>
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                                <div class="form-row-modern">
+                                    <div class="input-group-premium">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" id="contactPhone" placeholder="Seu telefone (opcional)">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                    <div class="input-group-premium">
+                                        <i class="fas fa-tag"></i>
+                                        <input type="text" id="contactSubject" placeholder="Assunto">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                                <div class="input-group-premium textarea-premium">
+                                    <i class="fas fa-comment"></i>
+                                    <textarea id="contactMessage" rows="5"
+                                        placeholder="Digite sua mensagem aqui..."></textarea>
+                                    <span class="focus-border"></span>
+                                </div>
+                                <div class="form-footer">
+                                    <button type="submit" class="btn-submit">
+                                        <i class="fas fa-paper-plane"></i> Enviar mensagem
+                                    </button>
+                                    <p class="form-security"><i class="fas fa-shield-alt"></i> Seus dados estão seguros
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="contact-map-premium" data-aos="fade-left">
+                            <div class="map-header">
+                                <i class="fas fa-store"></i>
+                                <span>Visite nossa loja física</span>
+                            </div>
+                            <div class="map-container-premium">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0979855290006!2d-46.69311298441673!3d-23.562511967625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57b19c7ec707%3A0x8f4b7b9f3c5e5a5a!2sVila%20Madalena%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1"
+                                    allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="map-info-premium">
+                                <div class="map-point">
+                                    <i class="fas fa-subway"></i>
+                                    <span>Metrô Vila Madalena (500m)</span>
+                                </div>
+                                <div class="map-point">
+                                    <i class="fas fa-parking"></i>
+                                    <span>Estacionamento conveniado</span>
+                                </div>
+                                <div class="map-point">
+                                    <i class="fas fa-wheelchair"></i>
+                                    <span>Acessibilidade total</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-section-premium" data-aos="fade-up">
+                        <div class="social-header-premium">
+                            <span class="social-badge">@artexstudio</span>
+                            <h2>Nossas Redes Sociais</h2>
+                            <p>Acompanhe conteúdos exclusivos, bastidores e promoções especiais</p>
+                        </div>
+                        <div class="social-grid-premium">
+                            <a href="https://instagram.com/artexstudio" target="_blank" rel="noopener noreferrer" class="social-card instagram">
+                                <div class="social-icon-bg"><i class="fab fa-instagram"></i></div>
+                                <div class="social-info">
+                                    <strong>Instagram</strong>
+                                    <span>@artexstudio</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://facebook.com/artexstudio" target="_blank" rel="noopener noreferrer" class="social-card facebook">
+                                <div class="social-icon-bg"><i class="fab fa-facebook-f"></i></div>
+                                <div class="social-info">
+                                    <strong>Facebook</strong>
+                                    <span>/artexstudio</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://tiktok.com/@artexstudio" target="_blank" rel="noopener noreferrer" class="social-card tiktok">
+                                <div class="social-icon-bg"><i class="fab fa-tiktok"></i></div>
+                                <div class="social-info">
+                                    <strong>TikTok</strong>
+                                    <span>@artexstudio</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://youtube.com/@artexstudio" target="_blank" rel="noopener noreferrer" class="social-card youtube">
+                                <div class="social-icon-bg"><i class="fab fa-youtube"></i></div>
+                                <div class="social-info">
+                                    <strong>YouTube</strong>
+                                    <span>ARTEX Studio</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://twitter.com/artexstudio" target="_blank" rel="noopener noreferrer" class="social-card twitter">
+                                <div class="social-icon-bg"><i class="fab fa-twitter"></i></div>
+                                <div class="social-info">
+                                    <strong>Twitter/X</strong>
+                                    <span>@artexstudio</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://pinterest.com/artexstudio" target="_blank" rel="noopener noreferrer" class="social-card pinterest">
+                                <div class="social-icon-bg"><i class="fab fa-pinterest"></i></div>
+                                <div class="social-info">
+                                    <strong>Pinterest</strong>
+                                    <span>artexstudio</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="faq-section-premium" data-aos="fade-up">
+                        <div class="faq-header-premium">
+                            <span class="faq-badge">Dúvidas frequentes</span>
+                            <h2>Perguntas Frequentes</h2>
+                            <p>Tudo o que você precisa saber antes de comprar</p>
+                        </div>
+                        <div class="faq-grid-premium">
+                            <div class="faq-item-premium">
+                                <div class="faq-question-premium">
+                                    <span>🎨 Qual o prazo de produção?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer-premium">
+                                    <p>O prazo de produção é de <strong>3 a 7 dias úteis</strong>, dependendo da
+                                        complexidade da estampa e da demanda atual. Assim que seu pedido for produzido,
+                                        você receberá o código de rastreamento por e-mail.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item-premium">
+                                <div class="faq-question-premium">
+                                    <span>🚚 Como funciona o frete?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer-premium">
+                                    <p>Entregamos para todo o Brasil via Correios (PAC ou Sedex). O prazo varia de
+                                        <strong>5 a 15 dias úteis</strong> após a postagem. Compras acima de
+                                        <strong>R$299</strong> têm frete grátis! Você também pode usar o cupom
+                                        <strong>FRETEGRATIS</strong> para frete grátis em qualquer compra.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item-premium">
+                                <div class="faq-question-premium">
+                                    <span>🔄 Posso trocar minha peça?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer-premium">
+                                    <p>Sim! Você tem até <strong>30 dias após o recebimento</strong> para solicitar
+                                        troca ou devolução. Basta entrar em contato com nosso atendimento e enviar o
+                                        produto na embalagem original. A primeira troca é gratuita!</p>
+                                </div>
+                            </div>
+                            <div class="faq-item-premium">
+                                <div class="faq-question-premium">
+                                    <span>💳 Quais formas de pagamento?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer-premium">
+                                    <p>Aceitamos <strong>Cartão de Crédito</strong> (em até 12x), <strong>PIX</strong>
+                                        (com desconto especial) e <strong>Boleto Bancário</strong>. Todas as transações
+                                        são seguras e criptografadas.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item-premium">
+                                <div class="faq-question-premium">
+                                    <span>⭐ Como faço para ser um artista parceiro?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer-premium">
+                                    <p>Adoramos novos talentos! Envie seu portfólio para
+                                        <strong>artistas@artexstudio.com</strong> com o assunto "Parceria Artística".
+                                        Nossa curadoria analisa e retorna em até 15 dias.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item-premium">
+                                <div class="faq-question-premium">
+                                    <span>📏 Tabela de medidas?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer-premium">
+                                    <p>Na página de cada produto você encontra a <strong>tabela de medidas
+                                            detalhada</strong>. Nosso suporte também pode ajudar com dúvidas sobre
+                                        modelagem - é só chamar no WhatsApp!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsletter-premium" data-aos="fade-up">
+                        <div class="newsletter-premium-content">
+                            <div class="newsletter-icon">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
+                            <div class="newsletter-text">
+                                <h3>Receba novidades exclusivas</h3>
+                                <p>Cadastre-se e ganhe <strong>10% OFF</strong> na sua primeira compra + conteúdos
+                                    exclusivos</p>
+                            </div>
+                            <form id="contactNewsletterForm" class="newsletter-premium-form">
+                                <div class="input-group-newsletter">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" placeholder="Seu melhor e-mail" required>
+                                    <button type="submit"><i class="fas fa-paper-plane"></i> Cadastrar</button>
+                                </div>
+                                <small><i class="fas fa-lock"></i> Nunca compartilhamos seus dados</small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGIN / CADASTRO -->
+        <div id="page-login" class="page-view">
+            <div class="container">
+                <div class="login-wrapper">
+                    <div class="login-container">
+                        <div class="login-header">
+                            <i class="fas fa-user-circle"></i>
+                            <h2>Minha Conta</h2>
+                            <p>Faça login ou crie uma conta para acompanhar seus pedidos</p>
+                        </div>
+                        
+                        <!-- Abas de Login e Cadastro -->
+                        <div class="login-tabs">
+                            <button class="login-tab active" data-tab="login">Entrar</button>
+                            <button class="login-tab" data-tab="register">Cadastrar</button>
+                        </div>
+                        
+                        <!-- Formulário de Login -->
+                        <div id="loginForm" class="login-form-content active">
+                            <form id="loginUserForm">
+                                <div class="input-group-login">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="loginEmail" placeholder="E-mail" required>
+                                </div>
+                                <div class="input-group-login">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="loginPassword" placeholder="Senha" required>
+                                    <span class="toggle-password" data-target="loginPassword">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                                <button type="submit" class="btn-primary login-submit">ENTRAR</button>
+                                <div class="login-links">
+                                    <a href="#" id="forgotPasswordLink">Esqueci minha senha</a>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Formulário de Cadastro -->
+                        <div id="registerForm" class="login-form-content">
+                            <form id="registerUserForm">
+                                <div class="input-group-login">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="regName" placeholder="Nome completo" required>
+                                </div>
+                                <div class="input-group-login">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="regEmail" placeholder="E-mail" required>
+                                </div>
+                                <div class="input-group-login">
+                                    <i class="fas fa-phone"></i>
+                                    <input type="tel" id="regPhone" placeholder="Telefone (opcional)">
+                                </div>
+                                <div class="input-group-login">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="regPassword" placeholder="Senha" required>
+                                    <span class="toggle-password" data-target="regPassword">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                                <div class="input-group-login">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="regConfirmPassword" placeholder="Confirmar senha" required>
+                                    <span class="toggle-password" data-target="regConfirmPassword">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                                <button type="submit" class="btn-primary login-submit">CRIAR CONTA</button>
+                                <p class="terms-text">Ao criar uma conta, você concorda com nossos <a href="#" data-page="terms">Termos de Uso</a> e <a href="#" data-page="privacy">Política de Privacidade</a>.</p>
+                            </form>
+                        </div>
+                        
+                        <!-- Recuperar Senha (inicialmente oculto) -->
+                        <div id="forgotPasswordForm" class="login-form-content" style="display:none;">
+                            <form id="forgotPasswordUserForm">
+                                <p style="text-align:center; margin-bottom:20px;">Digite seu e-mail para receber as instruções de recuperação de senha.</p>
+                                <div class="input-group-login">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="forgotEmail" placeholder="Seu e-mail" required>
+                                </div>
+                                <button type="submit" class="btn-primary login-submit">ENVIAR</button>
+                                <div class="login-links">
+                                    <a href="#" id="backToLoginLink">← Voltar para o login</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LISTA DE DESEJOS -->
+        <div id="page-wishlist" class="page-view">
+            <div class="container">
+                <h2 style="text-align:center; margin:40px 0; font-size:1.5rem;">❤️ Meus Favoritos</h2>
+                <div id="wishlistContainer" class="products-grid"></div>
+            </div>
+        </div>
+
+        <!-- MEUS PEDIDOS -->
+        <div id="page-orders" class="page-view">
+            <div class="container">
+                <h2 style="text-align:center; margin:40px 0; font-size:1.5rem;">📦 Meus Pedidos</h2>
+                <div id="ordersContainer"></div>
+            </div>
+        </div>
+
+        <!-- RASTREAMENTO DE PEDIDO -->
+        <div id="page-tracking" class="page-view">
+            <div class="container">
+                <div class="tracking-header">
+                    <h2><i class="fas fa-map-marked-alt"></i> Rastrear Pedido</h2>
+                    <p>Digite o código do seu pedido para acompanhar a entrega</p>
+                </div>
+                <div class="tracking-search-box">
+                    <div class="tracking-input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="trackingCode" placeholder="Ex: ARTEX202517345678901234" autocomplete="off">
+                        <button id="trackingBtn" class="btn-primary">RASTREAR</button>
+                    </div>
+                    <p class="tracking-hint"><i class="fas fa-info-circle"></i> O código de rastreamento foi enviado para seu e-mail após a confirmação do pedido</p>
+                </div>
+                <div id="trackingResult" class="tracking-result" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- POLÍTICA DE PRIVACIDADE -->
+        <div id="page-privacy" class="page-view">
+            <div class="container legal-page">
+                <div class="legal-header">
+                    <h1><i class="fas fa-shield-alt"></i> Política de Privacidade</h1>
+                    <p>Última atualização: Janeiro de 2025</p>
+                </div>
+                <div class="legal-content">
+                    <section>
+                        <h2>1. Introdução</h2>
+                        <p>A ARTEX STUDIO valoriza sua privacidade e está comprometida em proteger seus dados pessoais. Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos suas informações quando você utiliza nossa loja virtual.</p>
+                    </section>
+                    <section>
+                        <h2>2. Dados que Coletamos</h2>
+                        <p><strong>Dados de cadastro:</strong> Nome completo, CPF, e-mail, telefone, endereço de entrega e cobrança.</p>
+                        <p><strong>Dados de navegação:</strong> Endereço IP, tipo de dispositivo, páginas visitadas, produtos visualizados.</p>
+                        <p><strong>Dados de transação:</strong> Histórico de compras, formas de pagamento, valores gastos.</p>
+                    </section>
+                    <section>
+                        <h2>3. Seus Direitos (LGPD)</h2>
+                        <p>Você tem direito a: acessar, corrigir, excluir seus dados, revogar consentimento e solicitar portabilidade. Para exercer seus direitos, entre em contato pelo e-mail: <strong>privacidade@artexstudio.com</strong></p>
+                    </section>
+                    <div class="legal-footer">
+                        <p><i class="fas fa-check-circle"></i> ARTEX STUDIO - Sua privacidade é nossa prioridade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TERMOS E CONDIÇÕES -->
+        <div id="page-terms" class="page-view">
+            <div class="container legal-page">
+                <div class="legal-header">
+                    <h1><i class="fas fa-file-contract"></i> Termos e Condições de Uso</h1>
+                    <p>Última atualização: Janeiro de 2025</p>
+                </div>
+                <div class="legal-content">
+                    <section>
+                        <h2>1. Aceitação dos Termos</h2>
+                        <p>Ao acessar e utilizar a loja virtual ARTEX STUDIO, você declara ter lido, compreendido e aceitado integralmente estes Termos e Condições.</p>
+                    </section>
+                    <section>
+                        <h2>2. Trocas e Devoluções</h2>
+                        <p>Você tem até <strong>30 dias após o recebimento</strong> para solicitar troca ou devolução. Produto deve estar sem uso e na embalagem original. A primeira troca é gratuita.</p>
+                    </section>
+                    <div class="legal-footer">
+                        <p><i class="fas fa-gavel"></i> ARTEX STUDIO - Compromisso com transparência e qualidade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHECKOUT -->
+        <div id="page-checkout" class="page-view">
+            <div class="container">
+                <div class="checkout-grid">
+                    <div class="checkout-form">
+                        <div class="form-section">
+                            <h3>📦 Dados Pessoais</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>Nome completo *</label><input type="text" id="fullName"
+                                        placeholder="Digite seu nome completo"></div>
+                                <div class="form-group"><label>CPF *</label><input type="text" id="cpf"
+                                        placeholder="000.000.000-00"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>E-mail *</label><input type="email" id="email"
+                                        placeholder="seuemail@exemplo.com"></div>
+                                <div class="form-group"><label>Telefone *</label><input type="tel" id="phone"
+                                        placeholder="(11) 99999-9999"></div>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h3>🚚 Endereço de Entrega</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>CEP *</label>
+                                    <div class="cep-input-group">
+                                        <input type="text" id="cep" placeholder="00000-000">
+                                        <button type="button" id="calcShippingBtn" class="calc-shipping-btn"><i
+                                                class="fas fa-truck"></i> Calcular</button>
+                                    </div>
+                                    <div id="shippingResult"></div>
+                                </div>
+                                <div class="form-group"><label>Rua *</label><input type="text" id="street"
+                                        placeholder="Nome da rua"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Número *</label><input type="text" id="number"
+                                        placeholder="Número"></div>
+                                <div class="form-group"><label>Bairro *</label><input type="text" id="neighborhood"
+                                        placeholder="Bairro"></div>
+                            </div>
+                            <div class="form-group"><label>Cidade *</label><input type="text" id="city"
+                                    placeholder="Cidade - UF"></div>
+                        </div>
+                        <div class="form-section">
+                            <h3>💰 Forma de Pagamento</h3>
+                            <div class="payment-tabs">
+                                <div class="payment-tab active" data-payment="credit">💳 Cartão</div>
+                                <div class="payment-tab" data-payment="pix">📱 PIX</div>
+                                <div class="payment-tab" data-payment="boleto">📄 Boleto</div>
+                            </div>
+                            <div id="payment-credit" class="payment-content active">
+                                <div class="form-group"><label>Número do Cartão</label><input type="text"
+                                        id="cardNumber" placeholder="0000 0000 0000 0000"><span id="cardBrand"
+                                        class="card-brand"></span></div>
+                                <div class="form-group"><label>Nome no cartão</label><input type="text" id="cardName"
+                                        placeholder="Como está no cartão"></div>
+                                <div class="form-row">
+                                    <div class="form-group"><label>Validade</label><input type="text" id="cardExpiry"
+                                            placeholder="MM/AA"></div>
+                                    <div class="form-group"><label>CVV</label><input type="text" id="cardCvv"
+                                            placeholder="123"></div>
+                                </div>
+                                <div class="form-group"><label>Parcelamento</label><select id="installments"></select>
+                                </div>
+                            </div>
+                            <div id="payment-pix" class="payment-content">
+                                <div id="pixQRCode" class="pix-container"><i class="fas fa-spinner fa-pulse"></i>
+                                    Selecione o PIX</div>
+                            </div>
+                            <div id="payment-boleto" class="payment-content">
+                                <div id="boletoInfo" class="boleto-container"><i class="fas fa-spinner fa-pulse"></i>
+                                    Selecione o Boleto</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-summary">
+                        <h3>🛒 Resumo do Pedido</h3>
+                        <div id="cartItemsCheckout" class="cart-items-checkout"></div>
+                        <div class="coupon-area">
+                            <p><strong>🎟️ Cupom de desconto</strong></p>
+                            <p><small>Use: BEMVINDO10, ARTEX20, ARTEX5 ou FRETEGRATIS</small></p>
+                            <div class="coupon-input-group">
+                                <input type="text" id="couponCode" placeholder="Digite seu cupom">
+                                <button id="applyCouponBtn" class="btn-primary"
+                                    style="padding:8px 16px;">Aplicar</button>
+                            </div>
+                        </div>
+                        <div class="summary-row"><span>Subtotal:</span><span id="checkoutSubtotal">R$ 0,00</span></div>
+                        <div class="summary-row"><span>Frete:</span><span id="checkoutShipping">R$ 0,00</span></div>
+                        <div class="summary-row"><span>Desconto:</span><span id="checkoutDiscount">R$ 0,00</span></div>
+                        <div class="summary-row total"><span>TOTAL:</span><span id="checkoutTotal">R$ 0,00</span></div>
+                        <button class="btn-primary" id="finalizeOrderBtn" style="width:100%; margin-top:15px;"><i
+                                class="fas fa-check-circle"></i> FINALIZAR PEDIDO</button>
+                        <p style="text-align:center; margin-top:12px; font-size:0.65rem;"><i class="fas fa-lock"></i>
+                            Pagamento 100% seguro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>⚡ ARTEX STUDIO</h4>
+                    <p>Estamparia autoral desde 2020</p>
+                </div>
+                <div>
+                    <h4>Institucional</h4>
+                    <p><a href="#" data-page="about">Sobre</a></p>
+                    <p><a href="#" data-page="contact">Contato</a></p>
+                    <p><a href="#" data-page="privacy">Política de Privacidade</a></p>
+                    <p><a href="#" data-page="terms">Termos e Condições</a></p>
+                </div>
+                <div>
+                    <h4>Minha Conta</h4>
+                    <p><a href="#" id="footerOrdersLink" data-page="orders">Meus Pedidos</a></p>
+                    <p><a href="#" data-page="wishlist">Favoritos</a></p>
+                    <p><a href="#" data-page="tracking">Rastrear Pedido</a></p>
+                    <p><a href="#" id="footerLoginLink" data-page="login">Login / Cadastro</a></p>
+                </div>
+                <div>
+                    <h4>Atendimento</h4>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@artexstudio.com</p>
+                </div>
+            </div>
+            <hr>
+            <p style="font-size:0.7rem;">© 2025 ARTEX STUDIO — Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- User Menu Dropdown -->
+    <div id="userDropdown" class="user-dropdown" style="display:none;">
+        <div class="user-info" id="userInfoHeader"></div>
+        <div class="dropdown-divider"></div>
+        <a href="#" data-page="orders"><i class="fas fa-box"></i> Meus Pedidos</a>
+        <a href="#" data-page="wishlist"><i class="fas fa-heart"></i> Favoritos</a>
+        <a href="#" data-page="tracking"><i class="fas fa-map-marked-alt"></i> Rastrear Pedido</a>
+        <div class="dropdown-divider"></div>
+        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Sair</a>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+    <div class="cart-overlay" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> SACOLA</h3><button class="close-cart" id="closeCartBtn"><i
+                    class="fas fa-times"></i></button>
+        </div>
+        <div id="cartItemsList" class="cart-items">
+            <div class="empty-cart">🛍️ Seu carrinho está vazio</div>
+        </div>
+        <div class="cart-total">
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                <span><strong>TOTAL:</strong></span><span id="sidebarTotal">R$ 0,00</span>
+            </div><button class="btn-primary" id="sidebarCheckoutBtn" style="width:100%;">✓ FINALIZAR</button>
+        </div>
+    </div>
+
+    <div id="toastMsg" class="toast-msg"></div>
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle" style="font-size:2.5rem; color:#10B981;"></i>
+            <h3 style="margin:15px 0;">Pedido Finalizado!</h3>
+            <p id="modalMessage"></p>
+            <button onclick="closeModal()" class="btn-primary" style="margin-top:15px;">Fechar</button>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,611 @@
+/* ======================================================
+   RESET
+====================================================== */
+ 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+ 
+body{
+ 
+    background:
+    radial-gradient(circle at top left, rgba(255,120,210,.35), transparent 30%),
+    radial-gradient(circle at right, rgba(69,16,208,.15), transparent 30%),
+    linear-gradient(
+        90deg,
+        #ffc7e8 0%,
+        #ffe0f1 45%,
+        #fff7fb 100%
+    );
+ 
+    min-height:100vh;
+ 
+    overflow-x:hidden;
+ 
+    color:#2E0F4F;
+ 
+    padding-top:34x;
+}
+ 
+/* ======================================================
+   MENU PRINCIPAL
+====================================================== */
+ 
+.custom-navbar{
+    width:100%;
+    padding:28px 0;
+    position:relative;
+    z-index:100;
+}
+ 
+.container-custom{
+ 
+    width:95%;
+ 
+    max-width:1700px;
+ 
+    margin:auto;
+}
+ 
+.nav-wrapper{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:94px;
+}
+ 
+/* ======================================================
+   LOGO
+====================================================== */
+ 
+.logo{
+    display:flex;
+    align-items:center;
+    height:125px;
+}
+ 
+
+.logo img{
+    max-height:125px;
+    width:auto;
+}
+
+/* ======================================================
+   MENU CENTRAL
+====================================================== */
+ 
+.menu{
+    display:flex;
+    gap:36px;
+}
+ 
+.menu a{
+    text-decoration:none;
+    color:#2E0F4F;
+    font-size:20px;
+    font-weight:500;
+    position:relative;
+}
+ 
+ 
+.menu a.active::after{
+    content:'';
+    width:100%;
+    height:3px;
+    background:#d9f43b;
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    border-radius:50px;
+}
+/* ======================================================
+   BOTÃO LOGIN
+====================================================== */
+ 
+.btn-nav{
+ 
+    justify-self:end;
+ 
+    background:#D9F43B;
+ 
+    color:#2E0F4F;
+ 
+    text-decoration:none;
+ 
+    padding:14px 28px;
+ 
+    border-radius:50px;
+ 
+    font-weight:700;
+ 
+    transition:.3s;
+}
+
+.btn-login{
+    background:#4510D0;
+    color:#fff;
+    text-decoration:none;
+    padding:18px 34px;
+    border-radius:50px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+ 
+.btn-nav:hover{
+ 
+    transform:translateY(-3px);
+ 
+    background:#cbe633;
+}
+ 
+/* ======================================================
+   CONTAINER PRINCIPAL
+====================================================== */
+ 
+.escolha-container{
+ 
+    width:92%;
+ 
+    max-width:1400px;
+ 
+    margin:auto;
+ 
+    padding:40px 0 80px;
+}
+ 
+/* ======================================================
+   TOPO
+====================================================== */
+ 
+.titulo-area{
+ 
+    text-align:center;
+ 
+    margin-bottom:70px;
+}
+ 
+.badge{
+ 
+    background:#D9F43B;
+ 
+    color:#2E0F4F;
+ 
+    padding:12px 25px;
+ 
+    border-radius:40px;
+ 
+    display:inline-block;
+ 
+    font-weight:700;
+ 
+    margin-bottom:25px;
+}
+ 
+.titulo-area h1{
+ 
+    font-size:4.5rem;
+ 
+    font-weight:900;
+ 
+    line-height:1;
+ 
+    margin-bottom:25px;
+ 
+    color:#2E0F4F;
+}
+ 
+.titulo-area p{
+ 
+    max-width:800px;
+ 
+    margin:auto;
+ 
+    font-size:1.1rem;
+ 
+    line-height:1.9;
+ 
+    color:#5b4b72;
+}
+ 
+/* ======================================================
+   CARDS
+====================================================== */
+ 
+.cards-escolha{
+ 
+    display:grid;
+ 
+    grid-template-columns:repeat(2,1fr);
+ 
+    gap:35px;
+}
+ 
+/* ======================================================
+   CARD BASE
+====================================================== */
+ 
+.card-escolha{
+ 
+    background:rgba(255,255,255,.75);
+ 
+    backdrop-filter:blur(18px);
+ 
+    border:1px solid rgba(255,255,255,.5);
+ 
+    border-radius:35px;
+ 
+    padding:50px;
+ 
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+ 
+    transition:.35s;
+}
+ 
+.card-escolha:hover{
+ 
+    transform:translateY(-10px);
+ 
+    box-shadow:0 25px 50px rgba(235, 233, 233, 0.12);
+}
+ 
+/* ======================================================
+   CARD EMPRESA DESTAQUE
+====================================================== */
+ 
+.destaque{
+ 
+    background:
+    linear-gradient(
+        135deg,
+        #4510D0,
+        #FF2D8D
+    );
+ 
+    color:#fff;
+}
+ 
+.destaque p,
+.destaque li,
+.destaque h2{
+ 
+    color:#fff;
+}
+ 
+/* ======================================================
+   ÍCONE
+====================================================== */
+ 
+.icone{
+ 
+    font-size:5rem;
+ 
+    margin-bottom:25px;
+}
+ 
+/* ======================================================
+   TÍTULO CARD
+====================================================== */
+ 
+.card-escolha h2{
+ 
+    font-size:2.4rem;
+ 
+    margin-bottom:20px;
+}
+ 
+/* ======================================================
+   TEXTO
+====================================================== */
+ 
+.card-escolha p{
+ 
+    font-size:1rem;
+ 
+    line-height:1.9;
+ 
+    margin-bottom:25px;
+ 
+    color:#5b4b72;
+}
+ 
+/* ======================================================
+   LISTA
+====================================================== */
+ 
+.card-escolha ul{
+ 
+    list-style:none;
+ 
+    margin-bottom:35px;
+}
+ 
+.card-escolha ul li{
+ 
+    padding:10px 0;
+ 
+    font-weight:500;
+}
+ 
+.card-escolha ul li::before{
+ 
+    content:"✓ ";
+ 
+    color:#FF2D8D;
+ 
+    font-weight:700;
+}
+ 
+.destaque ul li::before{
+ 
+    color:#D9F43B;
+}
+ 
+/* ======================================================
+   BOTÕES DOS CARDS
+====================================================== */
+ 
+.btn-card{
+ 
+    display:inline-block;
+ 
+    text-decoration:none;
+ 
+    background:#4510D0;
+ 
+    color:#fff;
+ 
+    padding:18px 35px;
+ 
+    border-radius:50px;
+ 
+    font-weight:700;
+ 
+    transition:.3s;
+}
+ 
+.btn-card:hover{
+ 
+    transform:translateY(-4px);
+}
+ 
+.btn-card-dark{
+ 
+    background:#D9F43B;
+ 
+    color:#2E0F4F;
+}
+ 
+/* FOOTER */
+ 
+.kok-footer-artimola{
+    font-family:'Poppins',sans-serif;
+    color:#fff;
+}
+ 
+/* PRIMEIRA CAMADA */
+ 
+.kok-footer-top{
+    background:linear-gradient(
+        135deg,
+        #6A00FF,
+        #9B00FF,
+        #FF008A
+    );
+    padding:70px 0;
+}
+ 
+.kok-footer-top .kok-container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+ 
+    display:grid;
+    grid-template-columns:
+    2fr 1fr 1fr 1fr;
+ 
+    gap:50px;
+}
+ 
+.kok-footer-logo img{
+    max-width:220px;
+    margin-bottom:20px;
+}
+ 
+.kok-footer-col p{
+    line-height:1.8;
+    color:rgba(255,255,255,.85);
+    margin-bottom:25px;
+}
+ 
+.kok-footer-col h4{
+    margin-bottom:25px;
+    font-size:1.2rem;
+    font-weight:700;
+}
+ 
+.kok-footer-col ul{
+    list-style:none;
+}
+ 
+.kok-footer-col ul li{
+    margin-bottom:12px;
+}
+ 
+.kok-footer-col ul li a{
+    text-decoration:none;
+    color:rgba(255,255,255,.85);
+    transition:.3s;
+}
+ 
+.kok-footer-col ul li a:hover{
+    color:#fff;
+    padding-left:5px;
+}
+ 
+/* REDES */
+ 
+.kok-social-links{
+    display:flex;
+    gap:15px;
+}
+ 
+.kok-social-links a{
+    width:45px;
+    height:45px;
+ 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+ 
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+ 
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+ 
+.kok-social-links a:hover{
+    background:#fff;
+    color:#7d00ff;
+    transform:translateY(-4px);
+}
+ 
+/* SEGUNDA CAMADA */
+ 
+.kok-footer-bottom{
+    background:#490188;
+    padding:25px 0;
+}
+ 
+.kok-footer-bottom-content{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+ 
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+ 
+.kok-copyright{
+    color:rgba(255,255,255,.75);
+    font-size:.95rem;
+}
+ 
+.kok-footer-logos{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+ 
+.kok-footer-logos a{
+    display:flex;
+    align-items:center;
+}
+ 
+.kok-footer-logos img{
+    height:38px;
+    opacity:.8;
+    transition:.3s;
+}
+ 
+.kok-footer-logos img:hover{
+    opacity:1;
+    transform:scale(1.05);
+}
+
+
+/* ======================================================
+   RESPONSIVO
+====================================================== */
+ 
+@media(max-width:1100px){
+ 
+    .cards-escolha{
+ 
+        grid-template-columns:1fr;
+    }
+ 
+    .titulo-area h1{
+ 
+        font-size:3.2rem;
+    }
+}
+ 
+@media(max-width:900px){
+ 
+    .nav-wrapper{
+ 
+        grid-template-columns:1fr;
+ 
+        gap:20px;
+ 
+        text-align:center;
+    }
+ 
+    .logo,
+    .btn-nav{
+ 
+        justify-self:center;
+    }
+ 
+    .menu{
+ 
+        flex-wrap:wrap;
+    }
+}
+ 
+@media(max-width:768px){
+ 
+    .menu{
+ 
+        display:none;
+    }
+ 
+    .titulo-area h1{
+ 
+        font-size:2.5rem;
+    }
+ 
+    .card-escolha{
+ 
+        padding:35px;
+    }
+ 
+    .icone{
+ 
+        font-size:4rem;
+    }
+ 
+    .card-escolha h2{
+ 
+        font-size:2rem;
+    }
+}
+ 
+@media(max-width:500px){
+ 
+    .titulo-area h1{
+ 
+        font-size:2rem;
+    }
+ 
+    .titulo-area p{
+ 
+        font-size:.95rem;
+    }
+ 
+    .card-escolha{
+ 
+        padding:25px;
+    }
+}
+ 

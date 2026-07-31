@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podologia Ativa+ | Saúde e Cuidados com os Pés 40+</title>
+    <style>
+        :root {
+            --verde-principal: #2e7d5b;
+            --verde-claro: #e8f5e9;
+            --verde-medio: #4caf84;
+            --bege: #fdf8f4;
+            --marrom-suave: #6d5d4b;
+            --cinza-texto: #4a4a4a;
+            --branco: #ffffff;
+            --laranja-destaque: #e8844d;
+            --sombra-suave: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --sombra-media: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --borda-arredondada: 16px;
+            --transicao: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--cinza-texto);
+            background-color: var(--branco);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ========== HEADER / NAVBAR ========== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--verde-principal);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--verde-principal), var(--verde-medio));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cinza-texto);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transicao);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--verde-principal);
+            transition: var(--transicao);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--verde-principal);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background-color: var(--verde-principal);
+            color: white !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: var(--transicao);
+            box-shadow: 0 4px 14px rgba(46, 125, 91, 0.3);
+        }
+        .btn-nav:hover {
+            background-color: #236840;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 91, 0.4);
+        }
+        .btn-nav::after {
+            display: none !important;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 5%;
+            min-height: 85vh;
+            background: linear-gradient(160deg, #f9fdf9 0%, #eef8f0 30%, #fdf8f4 100%);
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1 1 480px;
+            max-width: 580px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--verde-claro);
+            color: var(--verde-principal);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+        .hero-content h1 span {
+            color: var(--verde-principal);
+            position: relative;
+        }
+        .hero-content h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: rgba(76, 175, 132, 0.25);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #5c5c5c;
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primario {
+            background-color: var(--verde-principal);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transicao);
+            box-shadow: 0 6px 22px rgba(46, 125, 91, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primario:hover {
+            background-color: #236840;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(46, 125, 91, 0.45);
+        }
+
+        .btn-secundario {
+            background-color: transparent;
+            color: var(--verde-principal);
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transicao);
+            border: 2px solid var(--verde-principal);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .btn-secundario:hover {
+            background-color: var(--verde-claro);
+            transform: translateY(-3px);
+        }
+
+        /* Container da imagem na hero */
+        .hero-image {
+            flex: 1 1 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-svg {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));
+            transition: transform 0.4s ease;
+        }
+
+        .hero-image-container:hover .hero-svg {
+            transform: scale(1.02);
+        }
+
+        /* ========== SEÇÃO DICAS RÁPIDAS (CARDS) ========== */
+        .secao-dicas {
+            padding: 5rem 5%;
+            background-color: var(--branco);
+            text-align: center;
+        }
+
+        .secao-dicas h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+        .secao-dicas .subtitulo {
+            color: #6b6b6b;
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card-dica {
+            background-color: var(--branco);
+            border-radius: var(--borda-arredondada);
+            padding: 2rem 1.6rem;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicao);
+            text-align: left;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-dica:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--sombra-media);
+            border-color: #d4ede0;
+        }
+        .card-dica .icone {
+            width: 52px;
+            height: 52px;
+            background-color: var(--verde-claro);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+        }
+        .card-dica h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .card-dica p {
+            font-size: 0.95rem;
+            color: #6b6b6b;
+            line-height: 1.6;
+        }
+        .card-dica .dica-numero {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: rgba(46, 125, 91, 0.08);
+            pointer-events: none;
+        }
+
+        /* ========== SEÇÃO HIGIENE DIÁRIA ========== */
+        .secao-higiene {
+            padding: 5rem 5%;
+            background-color: var(--bege);
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .higiene-content {
+            flex: 1 1 400px;
+        }
+        .higiene-content h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        .higiene-content h2 span {
+            color: var(--verde-principal);
+        }
+        .higiene-content p {
+            color: #5c5c5c;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 1rem;
+            color: #3a3a3a;
+            background-color: white;
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicao);
+        }
+        .checklist li:hover {
+            transform: translateX(6px);
+            box-shadow: var(--sombra-media);
+        }
+        .checklist .check-icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background-color: var(--verde-medio);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .higiene-imagem {
+            flex: 1 1 350px;
+            display: flex;
+            justify-content: center;
+        }
+        .higiene-imagem-placeholder {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(160deg, #f5e6d8, #e8d5c4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7rem;
+            box-shadow: var(--sombra-media);
+        }
+
+        /* ========== SEÇÃO PREVENÇÃO DE LESÕES ========== */
+        .secao-prevencao {
+            padding: 5rem 5%;
+            background-color: var(--branco);
+            text-align: center;
+        }
+        .secao-prevencao h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+        .secao-prevencao .subtitulo {
+            color: #6b6b6b;
+            margin-bottom: 3rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .lesoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card-lesao {
+            background: linear-gradient(180deg, #ffffff 0%, #f9fdf9 100%);
+            border-radius: var(--borda-arredondada);
+            padding: 2rem 1.6rem;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicao);
+            text-align: left;
+            border-top: 4px solid var(--verde-medio);
+        }
+        .card-lesao:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--sombra-media);
+        }
+        .card-lesao .icone-lesao {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .card-lesao h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.4rem;
+        }
+        .card-lesao p {
+            font-size: 0.95rem;
+            color: #6b6b6b;
+            line-height: 1.6;
+        }
+        .card-lesao .tag-prevencao {
+            display: inline-block;
+            background-color: #fff3e8;
+            color: var(--laranja-destaque);
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin-top: 0.8rem;
+        }
+
+        /* ========== SEÇÃO DEPOIMENTOS / CONFIANÇA ========== */
+        .secao-depoimentos {
+            padding: 5rem 5%;
+            background: linear-gradient(180deg, #eef8f0 0%, #ffffff 100%);
+            text-align: center;
+        }
+        .secao-depoimentos h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2.5rem;
+        }
+        .depoimentos-container {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .depoimento {
+            background-color: white;
+            border-radius: var(--borda-arredondada);
+            padding: 1.8rem;
+            box-shadow: var(--sombra-suave);
+            flex: 1 1 280px;
+            max-width: 320px;
+            text-align: left;
+            position: relative;
+        }
+        .depoimento .aspas {
+            font-size: 3rem;
+            color: var(--verde-medio);
+            opacity: 0.5;
+            line-height: 1;
+            margin-bottom: -0.5rem;
+        }
+        .depoimento p {
+            font-size: 0.95rem;
+            color: #5c5c5c;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .depoimento .autor {
+            font-weight: 700;
+            color: #1a1a1a;
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+        .depoimento .autor span {
+            font-weight: 400;
+            color: #999;
+            display: block;
+            font-size: 0.8rem;
+        }
+
+        /* ========== CTA FINAL ========== */
+        .cta-final {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--verde-principal), #1f5c3f);
+            text-align: center;
+            color: white;
+            border-radius: 0;
+        }
+        .cta-final h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .cta-final p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-final .btn-primario {
+            background-color: white;
+            color: var(--verde-principal);
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+        }
+        .cta-final .btn-primario:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 2.5rem 5%;
+            background-color: #1a1a1a;
+            color: #b0b0b0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: var(--transicao);
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .footer .footer-logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .footer-col strong {
+            color: white;
+            margin-bottom: 0.4rem;
+        }
+
+        /* ========== RESPONSIVIDADE ========== */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 5%;
+                min-height: auto;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-image-container {
+                max-width: 300px;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 0.8rem 5%;
+            }
+            .secao-higiene {
+                flex-direction: column;
+                text-align: center;
+            }
+            .checklist li {
+                text-align: left;
+            }
+            .footer {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .cards-grid,
+            .lesoes-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-primario,
+            .btn-secundario {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <div class="logo-icon">⚕️</div>
+            Podologia Ativa+
+        </a>
+        <ul class="nav-links">
+            <li><a href="#dicas">Dicas</a></li>
+            <li><a href="#higiene">Higiene</a></li>
+            <li><a href="#prevencao">Prevenção</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato" class="btn-nav">Agendar Consulta</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <span class="hero-badge">👣 Especialista em pés 40+</span>
+            <h1>Seus pés <span>merecem cuidado</span> a cada passo</h1>
+            <p>
+                Orientação profissional em podologia para quem tem mais de 40 anos e não abre mão de uma vida ativa.
+                Higiene diária, prevenção de lesões e saúde plantar para você continuar se movendo com confiança.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contato" class="btn-primario">📅 Agendar Avaliação</a>
+                <a href="#dicas" class="btn-secundario">📖 Ver Dicas</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-container">
+                <!-- Ilustração de um pé recebendo tratamento podológico -->
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hero-svg" aria-label="Pé recebendo tratamento podológico">
+                    <!-- Base do pé -->
+                    <path d="M65 145 C60 105, 75 65, 95 52 C115 39, 135 48, 148 68 C161 88, 158 118, 148 145 Z" 
+                          fill="#f5e6d8" stroke="#6d5d4b" stroke-width="4" stroke-linejoin="round"/>
+                    <!-- Dedos do pé -->
+                    <ellipse cx="142" cy="76" rx="9" ry="13" fill="#eddccf" stroke="#6d5d4b" stroke-width="3.5"/>
+                    <ellipse cx="156" cy="65" rx="8" ry="11" fill="#eddccf" stroke="#6d5d4b" stroke-width="3.5"/>
+                    <ellipse cx="148" cy="88" rx="7" ry="10" fill="#eddccf" stroke="#6d5d4b" stroke-width="3"/>
+                    <!-- Tratamento: mãos terapêuticas estilizadas -->
+                    <circle cx="95" cy="105" r="18" fill="none" stroke="#2e7d5b" stroke-width="3.5" stroke-dasharray="6,4" opacity="0.8"/>
+                    <circle cx="95" cy="105" r="8" fill="#2e7d5b" opacity="0.25"/>
+                    <!-- Linhas de energia/cuidado -->
+                    <path d="M70 125 L110 90" stroke="#2e7d5b" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+                    <path d="M80 135 L105 108" stroke="#2e7d5b" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+                    <!-- Pequenas estrelas de tratamento -->
+                    <text x="120" y="70" font-size="18" fill="#e8844d" opacity="0.9">✦</text>
+                    <text x="65" y="98" font-size="14" fill="#e8844d" opacity="0.8">✦</text>
+                    <text x="130" y="130" font-size="12" fill="#e8844d" opacity="0.7">✦</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DICAS RÁPIDAS ==================== -->
+    <section class="secao-dicas" id="dicas">
+        <h2>Cuidados essenciais para pés ativos</h2>
+        <p class="subtitulo">Pequenas atitudes diárias que fazem toda a diferença na saúde dos seus pés após os 40.</p>
+        <div class="cards-grid">
+            <div class="card-dica">
+                <span class="dica-numero">01</span>
+                <div class="icone">💧</div>
+                <h3>Hidratação diária</h3>
+                <p>A pele dos pés tende a ressecar com a idade. Use cremes específicos com ureia após o banho, evitando a região entre os dedos.</p>
+            </div>
+            <div class="card-dica">
+                <span class="dica-numero">02</span>
+                <div class="icone">🔍</div>
+                <h3>Inspeção visual</h3>
+                <p>Examine seus pés todos os dias em busca de calos, rachaduras, bolhas ou alterações nas unhas. A prevenção começa com a observação.</p>
+            </div>
+            <div class="card-dica">
+                <span class="dica-numero">03</span>
+                <div class="icone">🧦</div>
+                <h3>Meias adequadas</h3>
+                <p>Prefira meias de algodão ou tecidos técnicos que absorvem a umidade. Troque-as após o exercício para evitar fungos e bactérias.</p>
+            </div>
+            <div class="card-dica">
+                <span class="dica-numero">04</span>
+                <div class="icone">👟</div>
+                <h3>Calçado certo</h3>
+                <p>Use tênis com bom amortecimento e espaço para os dedos. Calçados apertados são a principal causa de unhas encravadas em atletas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HIGIENE DIÁRIA ==================== -->
+    <section class="secao-higiene" id="higiene">
+        <div class="higiene-content">
+            <h2>Rotina de <span>higiene diária</span> dos pés</h2>
+            <p>
+                Manter os pés limpos e saudáveis é o primeiro passo para evitar infecções, odores e complicações que podem
+                afastar você das suas atividades favoritas.
+            </p>
+            <ul class="checklist">
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Lave com água morna e sabonete neutro</strong> — evite água muito quente, que resseca a pele.</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Seque muito bem entre os dedos</strong> — a umidade residual é porta de entrada para micoses.</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Corte as unhas de forma reta</strong> — evite cantos arredondados para prevenir unhas encravadas.</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Hidrate na hora certa</strong> — aplique creme após o banho noturno, massageando suavemente.</span>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <span><strong>Alterne os calçados</strong> — deixe o tênis arejar por 24h antes de usá-lo novamente.</span>
+                </li>
+            </ul>
+        </div>
+        <div class="higiene-imagem">
+            <div class="higiene-imagem-placeholder" aria-label="Ilustração de cuidados com os pés">🦶✨</div>
+        </div>
+    </section>
+
+    <!-- ==================== PREVENÇÃO DE LESÕES ==================== -->
+    <section class="secao-prevencao" id="prevencao">
+        <h2>Previna lesões causadas por exercícios</h2>
+        <p class="subtitulo">Quem pratica atividades físicas após os 40 está mais suscetível a algumas lesões nos pés. Saiba como se proteger.</p>
+        <div class="lesoes-grid">
+            <div class="card-lesao">
+                <div class="icone-lesao">🩹</div>
+                <h3>Fascite Plantar</h3>
+                <p>Inflamação na sola do pé, comum em corredores. Alongue a panturrilha e a fáscia plantar antes e depois do treino.</p>
+                <span class="tag-prevencao">🛡️ Prevenção: alongamento diário</span>
+            </div>
+            <div class="card-lesao">
+                <div class="icone-lesao">💢</div>
+                <h3>Calos e Bolhas</h3>
+                <p>Atrito constante com o calçado causa lesões dolorosas. Use meias sem costura e calçados bem ajustados ao seu tipo de pisada.</p>
+                <span class="tag-prevencao">🛡️ Prevenção: meias técnicas + palmilhas</span>
+            </div>
+            <div class="card-lesao">
+                <div class="icone-lesao">🦴</div>
+                <h3>Unhas Encravadas</h3>
+                <p>Pressão repetida durante a corrida ou caminhada pode agravar unhas mal cortadas. Corte reto e evite sapatos de bico fino.</p>
+                <span class="tag-prevencao">🛡️ Prevenção: corte correto + calçado amplo</span>
+            </div>
+            <div class="card-lesao">
+                <div class="icone-lesao">🔴</div>
+                <h3>Micoses e Frieiras</h3>
+                <p>Ambientes úmidos como vestiários são focos de fungos. Seque bem os pés e use sandálias em áreas comuns.</p>
+                <span class="tag-prevencao">🛡️ Prevenção: secagem completa + talco antifúngico</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DEPOIMENTOS ==================== -->
+    <section class="secao-depoimentos" id="depoimentos">
+        <h2>Quem cuida dos pés, vai mais longe</h2>
+        <div class="depoimentos-container">
+            <div class="depoimento">
+                <div class="aspas">"</div>
+                <p>Depois que comecei a seguir as orientações de higiene diária, minhas dores nos pés após a corrida diminuíram muito. Aos 48 anos, estou correndo melhor do que nunca!</p>
+                <p class="autor">Carlos Mendes<span>Corredor amador, 48 anos</span></p>
+            </div>
+            <div class="depoimento">
+                <div class="aspas">"</div>
+                <p>Eu ignorava os cuidados com os pés até ter uma fascite plantar. Aprendi que prevenção é tudo. Hoje faço meus alongamentos diários e não sinto mais dor.</p>
+                <p class="autor">Ana Lúcia<span>Caminhante, 52 anos</span></p>
+            </div>
+            <div class="depoimento">
+                <div class="aspas">"</div>
+                <p>Aos 55 anos, voltei a jogar tênis. O podólogo me orientou sobre o calçado ideal e a rotina de cuidados. Zero lesões nos pés desde então!</p>
+                <p class="autor">Roberto Alves<span>Tenista, 55 anos</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="cta-final" id="contato">
+        <h2>Pronto para dar o próximo passo?</h2>
+        <p>
+            Agende uma consulta com nosso especialista em podologia e receba uma avaliação completa dos seus pés,
+            com orientações personalizadas para sua rotina de exercícios.
+        </p>
+        <a href="#" class="btn-primario">📞 Agendar Minha Consulta</a>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-col">
+            <span class="footer-logo">⚕️ Podologia Ativa+</span>
+            <span>Saúde e cuidados com os pés 40+</span>
+            <span>© 2026 Todos os direitos reservados.</span>
+        </div>
+        <div class="footer-col">
+            <strong>Links rápidos</strong>
+            <a href="#dicas">Dicas de cuidado</a>
+            <a href="#higiene">Higiene diária</a>
+            <a href="#prevencao">Prevenção de lesões</a>
+        </div>
+        <div class="footer-col">
+            <strong>Contato</strong>
+            <span>📧 contato@podologiaativa.com.br</span>
+            <span>📱 (11) 99999-0000</span>
+            <span>📍 São Paulo - SP</span>
+        </div>
+    </footer>
+
+</body>
+</html>

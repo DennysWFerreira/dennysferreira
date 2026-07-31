@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cadastro</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#efede3;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      height:100vh;
+    }
+
+    .cadastro-box{
+
+      width:100%;
+      max-width:420px;
+
+      background:#f7f5ef;
+
+      padding:45px;
+
+      border-radius:16px;
+
+      box-shadow:0 10px 30px rgba(0,0,0,.12);
+    }
+
+    .cadastro-box h1{
+      text-align:center;
+      margin-bottom:10px;
+      font-size:34px;
+    }
+
+    .cadastro-box p{
+      text-align:center;
+      color:#666;
+      margin-bottom:35px;
+    }
+
+    .input-group{
+      margin-bottom:22px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    .input-group input{
+
+      width:100%;
+
+      padding:16px;
+
+      border-radius:10px;
+
+      border:1px solid #d9d3c7;
+
+      font-size:15px;
+
+      outline:none;
+    }
+
+    .btn-cadastro{
+
+      width:100%;
+
+      padding:16px;
+
+      border:none;
+
+      border-radius:30px;
+
+      background:#111;
+
+      color:#fff;
+
+      font-size:16px;
+
+      font-weight:bold;
+
+      cursor:pointer;
+    }
+
+    .voltar{
+      display:block;
+      text-align:center;
+      margin-top:20px;
+      text-decoration:none;
+      color:#444;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="cadastro-box">
+
+    <h1>Cadastro</h1>
+
+    <p>
+      Faça seu cadastro para receber novidades.
+    </p>
+
+    <form action="salvar.php" method="POST">
+
+  <div class="input-group">
+    <label>Nome</label>
+
+    <input 
+      type="text"
+      name="nome"
+      placeholder="Digite seu nome"
+      required
+    >
+  </div>
+
+  <div class="input-group">
+    <label>Número</label>
+
+    <input 
+      type="tel"
+      name="numero"
+      placeholder="(11) 99999-9999"
+      required
+    >
+  </div>
+
+  <div class="input-group">
+    <label>Email</label>
+
+    <input 
+      type="email"
+      name="email"
+      placeholder="Digite seu email"
+      required
+    >
+  </div>
+
+  <button type="submit" class="btn-cadastro">
+    Cadastrar
+  </button>
+
+</form>
+
+    <a href="index.html" class="voltar">
+      ← Voltar para o site
+    </a>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Cartão - Oficina do HD</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/checkout.css">
+  <link rel="stylesheet" href="./css/nav-return.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo-area" href="./index.php" aria-label="Ir para a página inicial" style="text-decoration:none; display:flex; align-items:center; gap:16px;">
+      <div class="logo">
+        <img src="./img/Gemini_Generated_Image_1nkg661nkg661nkg__3_-removebg-preview.png" alt="Logo">
+      </div>
+      <div class="logo-texto">
+        <h1>OFICINA</h1>
+        <span>DO</span>
+        <h2>HD</h2>
+      </div>
+    </a>
+
+    <div class="search-box">
+      <i class="fa-solid fa-bars"></i>
+      <input type="text" placeholder="Hinted search text">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <div class="icons">
+      <button class="icon-btn" onclick="location.href='./index.php'" aria-label="Voltar para a home">
+        <i class="fa-solid fa-house"></i>
+      </button>
+      <button class="icon-btn" onclick="location.href='./carrinho.php'" aria-label="Carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge-carrinho" id="badge-carrinho">0</span>
+      </button>
+      <button class="icon-btn" onclick="location.href='./login.html'" aria-label="Login">
+        <i class="fa-regular fa-circle-user"></i>
+      </button>
+    </div>
+  </header>
+
+  <section class="secao" style="padding-top:60px;">
+    <div class="checkout-wrap">
+      <div class="checkout-left">
+        <div class="checkout-card">
+          <div class="nav-return-wrap">
+            <a class="nav-return-btn" href="./checkout.php" aria-label="Voltar para o checkout">
+              <i class="fa-solid fa-arrow-left"></i>
+              Voltar para o checkout
+            </a>
+          </div>
+
+          <div class="checkout-header">
+            <i class="fa-solid fa-credit-card"></i>
+            <h2>CADASTRAR CARTÃO</h2>
+          </div>
+
+          <p class="checkout-hint">Preencha os dados do cartão para concluir sua compra.</p>
+
+          <!-- Cartões salvos -->
+          <div class="saved-cards" aria-live="polite">
+            <div class="saved-cards-header">
+              <div class="saved-cards-title">
+                <i class="fa-regular fa-id-card"></i>
+                <h3>Cartões salvos</h3>
+              </div>
+            </div>
+
+            <div id="saved-cards-list" class="saved-cards-list"></div>
+
+            <div id="saved-cards-empty" class="saved-cards-empty" style="display:none;">
+              Nenhum cartão salvo ainda.
+            </div>
+          </div>
+
+          <form id="card-form" class="checkout-form" onsubmit="return false;">
+
+            <div class="field">
+              <label for="card-number">Número do cartão</label>
+              <input id="card-number" name="card-number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" required />
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="card-exp">MM/AA</label>
+                <input id="card-exp" name="card-exp" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" required />
+              </div>
+
+              <div class="field">
+                <label for="card-cvv">CVV</label>
+                <input id="card-cvv" name="card-cvv" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="000" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="card-name">Nome impresso</label>
+              <input id="card-name" name="card-name" type="text" autocomplete="cc-name" placeholder="Como está no cartão" required />
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="card-holder-cpf">CPF do titular</label>
+                <input id="card-holder-cpf" name="card-holder-cpf" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" required />
+              </div>
+
+              <div class="field">
+                <label for="card-holder-phone">Telefone</label>
+                <input id="card-holder-phone" name="card-holder-phone" type="text" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="billing-address">Endereço de cobrança</label>
+              <input id="billing-address" name="billing-address" type="text" autocomplete="address-line1" placeholder="Rua, nº, complemento" required />
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="billing-neighborhood">Bairro</label>
+                <input id="billing-neighborhood" name="billing-neighborhood" type="text" autocomplete="address-level2" placeholder="Bairro" required />
+              </div>
+
+              <div class="field">
+                <label for="billing-number-extra">Nº (complemento)</label>
+                <input id="billing-number-extra" name="billing-number-extra" type="text" autocomplete="off" placeholder="Ex.: Apto 12" />
+              </div>
+            </div>
+
+            <div class="checkout-actions">
+              <button class="btn-comprar" id="btn-salvar-cartao" type="submit">Salvar e concluir</button>
+              <a class="btn-secundario" href="./checkout.php">Cancelar</a>
+              <button class="btn-cancelar" type="button" id="btn-limpar-cartao">Limpar</button>
+            </div>
+
+              <p class="checkout-hint" style="margin-top:8px; color:#666;">* Seus dados são processados com segurança.</p>
+
+            <div class="checkout-msg" id="card-msg" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="checkout-right">
+        <div class="checkout-card summary-card">
+          <div class="checkout-header">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h2>RESUMO</h2>
+          </div>
+
+          <div id="checkout-itens" class="checkout-itens"></div>
+
+          <div style="padding:0 18px 12px 18px;">
+            <button class="btn-limpar" type="button" id="btn-limpar-produtos">Limpar produtos</button>
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <b id="checkout-subtotal">R$ 0,00</b>
+          </div>
+          <div class="summary-row">
+            <span>Frete</span>
+            <b id="checkout-frete">R$ 0,00</b>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <b id="checkout-total">R$ 0,00</b>
+          </div>
+
+          <div class="payment-logos">
+            <p><b>Formas de pagamento</b></p>
+            <div class="logos">
+              <i class="fa-brands fa-cc-visa"></i>
+              <i class="fa-brands fa-cc-mastercard"></i>
+              <i class="fa-brands fa-pix"></i>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>QUEM SOMOS</h3>
+        <p>Somos a 1ª Loja brasileira de Informática a possuir um novo olhar para os produtos eletrônicos.</p>
+      </div>
+      <div class="footer-box">
+        <h3>CONTATO</h3>
+        <p>5511988586272</p>
+        <p>11988586272</p>
+        <p>sohdbrasil@gmail.com</p>
+        <p>Rua Cruzeiro, 959</p>
+      </div>
+      <div class="footer-box">
+        <h3>FORMAS DE PAGAMENTO</h3>
+        <div class="pagamentos">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-pix"></i>
+        </div>
+      </div>
+      <div class="footer-box">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="(11) 99999-9999">
+        <button>Enviar</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright OFICINA DO HD - 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/checkout.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/card-page.js" defer></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuidados e Prevenções Podológicas</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5f7f8;
+      color:#333;
+      line-height:1.6;
+    }
+
+    /* HERO VIDEO */
+
+    .hero-video{
+      position:relative;
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+    }
+
+    .video-bg{
+      position:absolute;
+      top:50%;
+      left:50%;
+      min-width:100%;
+      min-height:100%;
+      transform:translate(-50%, -50%);
+      object-fit:cover;
+      z-index:-2;
+    }
+
+    .overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.45);
+      z-index:-1;
+    }
+
+    .hero-content{
+      max-width:850px;
+      padding:20px;
+    }
+
+    .hero-content h1{
+      font-size:4rem;
+      margin-bottom:20px;
+      text-shadow:0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .hero-content p{
+      font-size:1.3rem;
+      line-height:1.8;
+      text-shadow:0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:15px 30px;
+      background:#5fb3a8;
+      color:white;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#77c8bd;
+    }
+
+    section{
+      padding:80px 20px;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .titulo{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .titulo h2{
+      font-size:2.3rem;
+      color:#4b9d93;
+      margin-bottom:10px;
+    }
+
+    /* CARDS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      padding:30px;
+      border-radius:18px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#4b9d93;
+    }
+
+    /* SOBRE */
+
+    .sobre{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:45px;
+      align-items:center;
+      max-width:1200px;
+      margin:auto;
+      padding:80px 20px;
+    }
+
+    .sobre img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .sobre-texto h2{
+      color:#4b9d93;
+      margin-bottom:20px;
+      font-size:2rem;
+    }
+
+    /* BENEFÍCIOS */
+
+    .beneficios{
+      background:#eaf6f4;
+    }
+
+    .beneficios ul{
+      list-style:none;
+      max-width:850px;
+      margin:auto;
+    }
+
+    .beneficios li{
+      background:white;
+      margin-bottom:15px;
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* GALERIA */
+
+    .galeria{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .galeria img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    /* CONTATO */
+
+    .contato-box{
+      max-width:800px;
+      margin:auto;
+      background:#f9f9f9;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .contato-box h2{
+      color:#4b9d93;
+      margin-bottom:20px;
+      text-align:center;
+    }
+
+    .contato-info{
+      margin-top:25px;
+    }
+
+    .contato-info p{
+      margin-bottom:12px;
+      font-size:1.05rem;
+    }
+
+    footer{
+      background:#4b9d93;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+    }
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:2.5rem;
+      }
+
+      .hero-content p{
+        font-size:1rem;
+      }
+
+      .sobre{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO COM VÍDEO -->
+
+  <header class="hero-video">
+
+    <video autoplay muted loop playsinline class="video-bg">
+      <source 
+        src="midia/video.mp4"
+        type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <h1>Cuidado e Prevenções Podológicas</h1>
+
+      <p>
+        Saúde, conforto e prevenção para os seus pés.
+      </p>
+
+      <a href="#contato" class="btn">Agende sua Avaliação</a>
+
+
+      <p>  Atendimento especializado para pessoas acima de 40 anos
+        que praticam caminhada, academia, alongamento e atividades ao ar livre.</p>
+
+    </div>
+
+  </header>
+
+  <!-- SERVIÇOS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="titulo">
+        <h2>Nossos Serviços</h2>
+        <p>Tratamentos modernos para saúde, prevenção e qualidade de vida.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Tratamento de Calos</h3>
+          <p>Remoção cuidadosa e tratamento preventivo para aliviar dores.</p>
+        </div>
+
+        <div class="card">
+          <h3>Unhas Encravadas</h3>
+          <p>Procedimentos seguros para corrigir e prevenir inflamações.</p>
+        </div>
+
+        <div class="card">
+          <h3>Podologia Esportiva</h3>
+          <p>Cuidados para quem pratica caminhada, academia e exercícios físicos.</p>
+        </div>
+
+        <div class="card">
+          <h3>Cuidados Diabéticos</h3>
+          <p>Atenção especializada para pés diabéticos com foco em prevenção.</p>
+        </div>
+
+        <div class="card">
+          <h3>Alongamento e Mobilidade</h3>
+          <p>Orientações para melhorar equilíbrio, conforto e postura.</p>
+        </div>
+
+        <div class="card">
+          <h3>Avaliação Preventiva 40+</h3>
+          <p>Identificação precoce de alterações podológicas comuns.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOBRE -->
+
+  <section class="sobre">
+
+    <img 
+      src="imagens/sharedimage.jpg" 
+      alt="Podologia">
+
+    <div class="sobre-texto">
+
+      <h2>O que é a Podologia?</h2>
+
+      <p>
+        A podologia é a área especializada no cuidado, prevenção e tratamento da saúde dos pés.
+        Com o passar dos anos, os pés sofrem mais impacto, desgaste e alterações naturais.
+      </p>
+
+      <br>
+
+      <p>
+        Nosso atendimento é voltado para pessoas 40+ que desejam manter conforto,
+        mobilidade, equilíbrio e qualidade de vida.
+      </p>
+
+      <br>
+
+      <p>
+        Trabalhamos na prevenção de lesões causadas por exercícios físicos,
+        identificação de alterações podológicas e cuidados preventivos.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- BENEFÍCIOS -->
+
+  <section class="beneficios">
+
+    <div class="container">
+
+      <div class="titulo">
+        <h2>Benefícios da Podologia</h2>
+      </div>
+
+      <ul>
+
+        <li>✔ Mais conforto para caminhar e praticar exercícios</li>
+
+        <li>✔ Prevenção de dores, rachaduras e calos</li>
+
+        <li>✔ Melhor equilíbrio e estabilidade corporal</li>
+
+        <li>✔ Prevenção de lesões causadas por impacto</li>
+
+        <li>✔ Atendimento humanizado para público 40+</li>
+
+        <li>✔ Mais qualidade de vida e bem-estar</li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <section style="background:#ffffff;">
+
+    <div class="container">
+  
+      <div class="titulo">
+        <h2>Resultados e Confiança</h2>
+  
+        <p>
+          Mais conforto, prevenção e qualidade de vida para nossos pacientes 40+.
+        </p>
+      </div>
+  
+      <!-- ESTATÍSTICAS -->
+  
+      <div class="cards">
+  
+        <div class="card" style="text-align:center;">
+          <h3 style="font-size:3rem;">+2.500</h3>
+          <p>Atendimentos realizados</p>
+        </div>
+  
+        <div class="card" style="text-align:center;">
+          <h3 style="font-size:3rem;">98%</h3>
+          <p>Clientes satisfeitos</p>
+        </div>
+  
+        <div class="card" style="text-align:center;">
+          <h3 style="font-size:3rem;">+1.800</h3>
+          <p>Problemas podológicos resolvidos</p>
+        </div>
+  
+        <div class="card" style="text-align:center;">
+          <h3 style="font-size:3rem;">15+</h3>
+          <p>Anos promovendo saúde e bem-estar</p>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </section>
+
+  <section class="beneficios">
+
+    <div class="container">
+  
+      <div class="titulo">
+        <h2>Avaliações de Clientes</h2>
+  
+        <p>
+          Veja o que nossos pacientes dizem sobre os resultados e o atendimento.
+        </p>
+      </div>
+  
+      <div class="cards">
+  
+        <div class="card">
+  
+          <h3>⭐⭐⭐⭐⭐</h3>
+  
+          <p>
+            “Depois dos 50 comecei a sentir muitas dores nos pés durante as caminhadas.
+            O tratamento melhorou totalmente meu conforto e segurança.”
+          </p>
+  
+          <br>
+  
+          <strong>Maria Aparecida - 58 anos</strong>
+  
+        </div>
+  
+        <div class="card">
+  
+          <h3>⭐⭐⭐⭐⭐</h3>
+  
+          <p>
+            “Excelente atendimento. Resolveram minhas unhas encravadas e hoje consigo
+            fazer academia sem desconforto.”
+          </p>
+  
+          <br>
+  
+          <strong>Roberto Lima - 47 anos</strong>
+  
+        </div>
+  
+        <div class="card">
+  
+          <h3>⭐⭐⭐⭐⭐</h3>
+  
+          <p>
+            “Profissionais muito cuidadosos e ambiente acolhedor.
+            Me ajudaram muito com dores causadas por exercícios.”
+          </p>
+  
+          <br>
+  
+          <strong>Patrícia Souza - 62 anos</strong>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </section>
+  
+  
+  <!-- PROBLEMAS RESOLVIDOS -->
+  
+  <section>
+  
+    <div class="container">
+  
+      <div class="titulo">
+
+        <h2>Problemas Tratados</h2>
+  
+        <p>
+          Tratamentos preventivos e corretivos para melhorar sua qualidade de vida.
+        </p>
+      </div>
+  
+      <div class="cards">
+  
+        <div class="card">
+          <img src="imagens/calos.jpg" alt="Calo no pé" style="width:100%; height:180px; object-fit:cover; border-radius:12px 12px 0 0;">
+
+          <h3>✔ Calos e Calosidades</h3>
+          <p>
+            Redução de dores e desconfortos causados por atrito e pressão excessiva.
+          </p>
+        </div>
+  
+        <div class="card">
+          <img src="imagens/unhaencravada.jpg" alt="Unha encravada" style="width:100%; height:180px; object-fit:cover; border-radius:12px 12px 0 0;">
+
+          <h3>✔ Unhas Encravadas</h3>
+          <p>
+            Tratamentos seguros para aliviar inflamações e prevenir recorrências.
+          </p>
+        </div>
+  
+        <div class="card">
+          <img src="imagens/rachadura.jpg" alt="Pé rachado" style="width:100%; height:180px; object-fit:cover; border-radius:12px 12px 0 0;">
+
+          <h3>✔ Rachaduras e Ressecamento</h3>
+          <p>
+            Cuidados para hidratação profunda e recuperação da pele dos pés.
+          </p>
+        </div>
+  
+        <div class="card">
+          <img src="imagens/dor.jpg" alt="Dor nos pés" style="width:100%; height:180px; object-fit:cover; border-radius:12px 12px 0 0;">
+
+          <h3>✔ Dores nos Pés</h3>
+          <p>
+            Prevenção de dores causadas por caminhadas, academia e exercícios físicos.
+          </p>
+        </div>
+  
+        <div class="card">
+          <img src="imagens/micose.jpg" alt="Micose de unha" style="width:100%; height:180px; object-fit:cover; border-radius:12px 12px 0 0;">
+
+          <h3>✔ Fungos e Micoses</h3>
+          <p>
+            Identificação e orientação para tratamento e prevenção.
+          </p>
+        </div>
+  
+        <div class="card">
+          <img src="imagens/desgaste.jpg" alt="Sobrecarga" style="width:100%; height:180px; object-fit:cover; border-radius:12px 12px 0 0;">
+          
+          <h3>✔ Desgaste e Sobrecarga</h3>
+          <p>
+            Avaliação preventiva para reduzir impactos nas articulações e pés.
+          </p>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </section>
+  
+
+  <!-- DICAS -->
+  <!-- O título "Dicas para Saúde dos Pés" agora usa a mesma cor azul-esverdeada do "Avaliações de Clientes" (#4b9d93) -->
+  <section>
+
+    <div class="container">
+
+      <div class="titulo">
+        <h2 style="color: #4b9d93;">Dicas para Saúde dos Pés</h2>
+        <!-- O parágrafo opcional abaixo foi removido para manter a coerência visual exata com a seção de Avaliações,
+             que também não possui subtítulo. Se quiser adicionar um subtítulo futuramente, usará a mesma cor. -->
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Dicas de Meias</h3>
+          <p>
+            Prefira meias esportivas ou de algodão para reduzir atrito e absorver suor.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Escolha do Tênis</h3>
+          <p>
+            Utilize calçados confortáveis e com amortecimento adequado.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Alongamento</h3>
+          <p>
+            Alongar pés e panturrilhas ajuda a prevenir dores e tensões musculares.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Hidratação</h3>
+          <p>
+            Manter os pés hidratados evita rachaduras e ressecamento.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALERIA -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="titulo">
+        <h2>Saúde e Bem-Estar</h2>
+      </div>
+
+      <div class="galeria">
+
+        <img 
+          src="imagens/yoga.jpg"
+          alt="Yoga">
+
+        <img 
+          src="imagens/academia.jpg"
+          alt="Academia">
+
+        <img 
+          src="imagens/alongamento.jpg"
+          alt="Alongamento">
+
+        <img 
+          src="imagens/meditacao.jpg"
+          alt="Meditação">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTATO -->
+
+  <section id="contato">
+
+    <div class="container">
+
+      <div class="contato-box">
+
+        <h2>Fale Conosco</h2>
+
+        <p style="text-align:center;">
+          Agende sua avaliação e cuide da saúde dos seus pés com conforto e segurança.
+        </p>
+
+        <div class="contato-info">
+
+          <p><strong>📍 Endereço:</strong> Rua Exemplo, 123 - São Paulo/SP</p>
+
+          <p><strong>📞 Telefone:</strong> (11) 99999-9999</p>
+
+          <p><strong>💬 WhatsApp:</strong> (11) 99999-9999</p>
+
+          <p><strong>📧 E-mail:</strong> contato@podologia.com.br</p>
+
+          <p><strong>🕒 Atendimento:</strong> Segunda a Sexta - 08h às 18h</p>
+
+        </div>
+
+        <div style="text-align:center;">
+          <a href="#" class="btn">Entrar em Contato</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+    <p>
+      © 2026 Cuidados e Prevenções Podológicas | Saúde e qualidade de vida para seus pés.
+    </p>
+  </footer>
+
+</body>
+</html>

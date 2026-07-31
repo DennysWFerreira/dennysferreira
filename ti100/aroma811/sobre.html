@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre</title>
+ 
+ 
+ 
+  <style>
+ 
+ 
+ 
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+ 
+ 
+ 
+    body{
+      background: #f6f1eb;
+      color: #3d2b1f;
+    }
+ 
+ 
+ 
+    /* HERO */
+ 
+ 
+ 
+    header{
+      width: 100%;
+      height: 70vh;
+ 
+ 
+ 
+      background:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url('https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=1400&auto=format&fit=crop') center/cover;
+ 
+ 
+ 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+ 
+ 
+ 
+      color: white;
+      padding: 20px;
+    }
+ 
+ 
+ 
+    header h1{
+      font-size: 4rem;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+ 
+ 
+ 
+    header p{
+      font-size: 1.2rem;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+ 
+ 
+ 
+    /* SOBRE */
+ 
+ 
+ 
+    .sobre{
+      max-width: 1200px;
+      margin: 90px auto;
+      padding: 0 30px;
+ 
+ 
+ 
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+ 
+ 
+ 
+    .sobre img{
+      width: 500px;
+      max-width: 100%;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+ 
+ 
+ 
+    .texto{
+      flex: 1;
+    }
+ 
+ 
+ 
+    .texto h2{
+      font-size: 2.7rem;
+      margin-bottom: 25px;
+      color: #5c3b2e;
+    }
+ 
+ 
+ 
+    .texto p{
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+      color: #5a4638;
+    }
+ 
+ 
+ 
+    /* CARDS */
+ 
+ 
+ 
+    .cards{
+      padding: 50px 20px 100px;
+ 
+ 
+ 
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+ 
+ 
+ 
+    .card{
+      width: 300px;
+      background: #fffaf5;
+      padding: 35px;
+ 
+ 
+ 
+      border-radius: 20px;
+ 
+ 
+ 
+      text-align: center;
+ 
+ 
+ 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+ 
+ 
+ 
+      transition: 0.4s;
+    }
+ 
+ 
+ 
+    .card:hover{
+      transform: translateY(-10px);
+    }
+ 
+ 
+ 
+    .card h3{
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #7a523c;
+    }
+ 
+ 
+ 
+    .card p{
+      line-height: 1.8;
+      color: #6b5647;
+    }
+ 
+ 
+ 
+    /* FOOTER */
+ 
+ 
+ 
+    footer{
+      background: #3d2b1f;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+ 
+ 
+ 
+    footer p{
+      letter-spacing: 1px;
+    }
+ 
+ 
+ 
+    /* RESPONSIVO */
+ 
+ 
+ 
+    @media(max-width: 900px){
+ 
+ 
+ 
+      header h1{
+        font-size: 2.8rem;
+      }
+ 
+ 
+ 
+      .sobre{
+        flex-direction: column;
+      }
+ 
+ 
+ 
+      .texto{
+        text-align: center;
+      }
+ 
+ 
+ 
+    }
+ 
+ 
+ 
+  </style>
+</head>
+<body>
+ 
+ 
+ 
+  <!-- HERO -->
+ 
+ 
+ 
+  <header>
+ 
+ 
+ 
+    <div>
+<h1>Nossa História</h1>
+ 
+ 
+ 
+      <p>
+        Velas artesanais criadas com amor, memórias e aconchego.
+        Feitas por um casal que transformou a própria casa em um pequeno
+        ateliê de aromas e sentimentos.
+</p>
+</div>
+ 
+ 
+ 
+  </header>
+ 
+ 
+ 
+  <!-- SOBRE -->
+ 
+ 
+ 
+  <section class="sobre">
+ 
+ 
+    <div class="texto">
+ 
+ 
+ 
+      <h2>Sobre a Aroma</h2>
+ 
+ 
+ 
+      <p>
+        A Aroma 811 nasceu dentro de casa, literalmente. Tudo começou quando
+        um casal apaixonado por fragrâncias, decoração e momentos acolhedores
+        decidiu criar velas artesanais para transformar ambientes em experiências.
+</p>
+ 
+ 
+ 
+      <p>
+        Entre testes, pesquisas e noites produzindo à mão, a sala da casa virou
+        um pequeno laboratório criativo. Cada vela era fabricada artesanalmente,
+        com muito cuidado, utilizando cera de qualidade e fragrâncias marcantes.
+</p>
+ 
+ 
+ 
+      <p>
+        O que começou como uma paixão entre duas pessoas se transformou em uma
+        marca cheia de significado, levando conforto, elegância e memórias afetivas
+        para diversos lares.
+</p>
+ 
+ 
+ 
+    </div>
+ 
+ 
+ 
+  </section>
+ 
+ 
+ 
+  <!-- CARDS -->
+ 
+ 
+ 
+  <section class="cards">
+ 
+ 
+ 
+    <div class="card">
+<h3>Produção Artesanal</h3>
+ 
+ 
+ 
+      <p>
+        Cada vela é produzida manualmente, garantindo atenção aos detalhes
+        e exclusividade em cada peça.
+</p>
+</div>
+ 
+ 
+ 
+    <div class="card">
+<h3>Feito com Amor</h3>
+ 
+ 
+ 
+      <p>
+        A marca nasceu da união de um casal que encontrou nas velas uma forma
+        de expressar carinho e criatividade.
+</p>
+</div>
+ 
+ 
+ 
+    <div class="card">
+<h3>Aromas Memoráveis</h3>
+ 
+ 
+ 
+      <p>
+        Fragrâncias desenvolvidas para despertar sensações de conforto,
+        paz e aconchego.
+</p>
+</div>
+ 
+ 
+ 
+  </section>
+ 
+ 
+ 
+  <!-- FOOTER -->
+ 
+ 
+ 
+  <footer>
+<p>© 2026 Aroma 811 - Velas Artesanais</p>
+</footer>
+ 
+ 
+ 
+</body>
+</html>
+ 

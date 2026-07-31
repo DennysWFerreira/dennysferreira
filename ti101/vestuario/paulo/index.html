@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AKATSUKI WEAR — Armaduras Lendárias</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo" id="homeLogo">AKATSUKI<span>WEAR</span></div>
+                <ul class="nav-links">
+                    <li><a class="nav-item" data-page="atelier">ATELIÊ</a></li>
+                    <li><a class="nav-item" data-page="archive">ARQUIVO</a></li>
+                    <li><a class="nav-item" data-page="editorial">EDITORIAL</a></li>
+                    <li><a class="nav-item" data-page="concept">CONCEITO</a></li>
+                </ul>
+                <div class="header-icons">
+                    <i class="fas fa-search" id="searchIcon"></i>
+                    <i class="far fa-user" id="profileIcon"></i>
+                    <i class="far fa-heart" id="favoritesIcon"></i>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-bag-shopping"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <div class="timer-display" id="timerDisplay">
+                        <i class="fas fa-clock"></i>
+                        <span id="timerText">00:00:00</span>
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero" id="heroSection">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h6>Quando três cosmos se unem, até as estrelas tremem.</h6>
+                        <h1>EXCLAMAÇÃO<br>DE ATHENA</h1>
+                        <p>Algodão Giza egípcio, modelagem escultural e uma paleta que respira. Camisetas que não gritam, mas ecoam.</p>
+                        <button class="btn-primary" id="exploreBtn">EXPLORAR A COLEÇÃO</button>
+                    </div>
+                    <div class="hero-image"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="productsSection">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Icônicos</h2>
+                    <p>Edição limitada • Algodão orgânico certificado</p>
+                </div>
+                <div class="products-grid" id="productsGrid"></div>
+            </div>
+        </div>
+
+        <div class="atelier-bg" id="atelierBgSection">
+            <div class="container">
+                <div class="atelier-grid">
+                    <div class="atelier-content">
+                        <h3>Firmes na fé<br>inabaláveis na batalha</h3>
+                        <p>O Escudo da Fé representa a força daqueles que permanecem de pé diante das adversidades. Não é apenas um símbolo de proteção, mas de coragem, honra e convicção. Forjado para os que enfrentam seus desafios sem recuar, carregando a fé como sua maior armadura.</p>
+                        <div class="stat-list">
+                            <div class="stat-item">
+                                <h4>380h</h4><span>PESQUISA</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>14</h4><span>CONTROLES</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>100%</h4><span>GIZA</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary atelier-btn">VISITAR O ATELIÊ</button>
+                    </div>
+                    <div class="atelier-image" style="background-image: url('img/escudodafe2.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="counters-section">
+            <div class="container">
+                <div class="counters-grid">
+                    <div class="counter-card">
+                        <div class="counter-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="counter-number" id="userCounter">0</div>
+                        <div class="counter-label">USUÁRIOS ÚNICOS</div>
+                        <div class="counter-sub">visitantes registrados</div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="counter-number" id="salesCounter">0</div>
+                        <div class="counter-label">VENDAS REALIZADAS</div>
+                        <div class="counter-sub">pedidos concluídos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container editorial-section-wrapper" id="editorialHomeSection">
+            <div class="section-header">
+                <h2>UNIVERSO QUE VESTIMOS</h2>
+                <p>Coleções inspiradas nos animes que marcaram gerações.</p>
+            </div>
+            <div class="editorial-grid-home" id="editorialHomeGrid"></div>
+        </div>
+
+        <div class="newsletter" id="newsletterSection">
+            <h4>Vista sua Lenda</h4>
+            <p>Inscreva-se para receber lançamentos exclusivos</p>
+            <div class="newsletter-form">
+                <input type="email" id="newsEmail" placeholder="seu@email.com">
+                <button id="newsBtn">INSCREVER-SE</button>
+            </div>
+        </div>
+
+        <div id="pageContainer"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="font-size:1.7rem; cursor:pointer;" id="footerLogo">AKATSUKI<span> WEAR</span></div>
+                    <p>A morte é a igualdade concedida a todos.</p>
+                    <div class="social-icons">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-x-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>EXPLORAR</h4>
+                    <ul>
+                        <li><a class="footer-nav" data-page="atelier">Ateliê</a></li>
+                        <li><a class="footer-nav" data-page="archive">Arquivo</a></li>
+                        <li><a class="footer-nav" data-page="editorial">Editorial</a></li>
+                        <li><a class="footer-nav" data-page="concept">Conceito</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SERVIÇOS</h4>
+                    <ul>
+                        <li><a>Envio & Devoluções</a></li>
+                        <li><a>Cuidados</a></li>
+                        <li><a>Certificados</a></li>
+                        <li><a>FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONEXÃO</h4>
+                    <ul>
+                        <li><a>Ateliê Privado</a></li>
+                        <li><a>Imprensa</a></li>
+                        <li><a>Sustentabilidade</a></li>
+                        <li><a>Acessibilidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">© AKATSUKI WEAR — MMXXV · TODOS OS DIREITOS RESERVADOS</div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="modal-overlay" id="modalOverlay"></div>
+    
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" id="closeCartBtn">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">Vazio.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">R$ 0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">FINALIZAR</button>
+        </div>
+    </div>
+
+    <div class="profile-modal" id="profileModal">
+        <div class="profile-header">
+            <h3>Minha Conta</h3>
+            <button class="close-cart" id="closeProfileBtn">✕</button>
+        </div>
+        <div class="profile-content">
+            <div id="welcomeMsg">Bem-vindo(a)!</div>
+            <div class="profile-field">
+                <label>Nome</label>
+                <input type="text" id="profileName">
+            </div>
+            <div class="profile-field">
+                <label>E-mail</label>
+                <input type="email" id="profileEmail">
+            </div>
+            <button class="save-profile-btn" id="saveProfileBtn">SALVAR</button>
+            <button class="profile-logout" id="logoutBtn">SAIR</button>
+        </div>
+    </div>
+
+    <div class="favorites-modal" id="favoritesModal">
+        <div class="favorites-header">
+            <h3>Favoritos</h3>
+            <button class="close-cart" id="closeFavBtn">✕</button>
+        </div>
+        <div class="favorites-items" id="favoritesItems"></div>
+    </div>
+
+    <div class="search-modal" id="searchModal">
+        <button class="close-search" id="closeSearchBtn">✕</button>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar produtos...">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h2>FINALIZAR PEDIDO</h2>
+                <button class="close-checkout" id="closeCheckoutBtn">✕</button>
+            </div>
+            
+            <div class="checkout-content">
+                <div class="checkout-form">
+                    <div class="form-section">
+                        <h3>DADOS PESSOAIS</h3>
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label>Nome completo</label>
+                                <input type="text" id="checkoutNome" placeholder="Digite seu nome completo">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>CPF</label>
+                                <input type="text" id="checkoutCpf" placeholder="000.000.000-00" maxlength="14">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="text" id="checkoutTelefone" placeholder="(00) 00000-0000" maxlength="15">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label>E-mail</label>
+                                <input type="email" id="checkoutEmail" placeholder="seu@email.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>ENDEREÇO DE ENTREGA</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>CEP</label>
+                                <input type="text" id="checkoutCep" placeholder="00000-000" maxlength="9">
+                            </div>
+                            <div class="form-group flex-2">
+                                <label>Endereço</label>
+                                <input type="text" id="checkoutEndereco" placeholder="Rua, Av, etc">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Número</label>
+                                <input type="text" id="checkoutNumero" placeholder="Nº">
+                            </div>
+                            <div class="form-group flex-2">
+                                <label>Complemento</label>
+                                <input type="text" id="checkoutComplemento" placeholder="Apto, Bloco, etc">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Bairro</label>
+                                <input type="text" id="checkoutBairro" placeholder="Bairro">
+                            </div>
+                            <div class="form-group">
+                                <label>Cidade</label>
+                                <input type="text" id="checkoutCidade" placeholder="Cidade">
+                            </div>
+                            <div class="form-group">
+                                <label>UF</label>
+                                <input type="text" id="checkoutUf" placeholder="UF" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>MÉTODO DE PAGAMENTO</h3>
+                        <div class="payment-methods">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cartao" checked>
+                                <span class="payment-icon"><i class="fas fa-credit-card"></i> Cartão de Crédito</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="pix">
+                                <span class="payment-icon"><i class="fas fa-qrcode"></i> PIX</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="boleto">
+                                <span class="payment-icon"><i class="fas fa-barcode"></i> Boleto Bancário</span>
+                            </label>
+                        </div>
+                        
+                        <div id="cartaoFields" class="payment-fields">
+                            <div class="form-row">
+                                <div class="form-group full">
+                                    <label>Número do Cartão</label>
+                                    <input type="text" id="cartaoNumero" placeholder="0000 0000 0000 0000" maxlength="19">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Validade</label>
+                                    <input type="text" id="cartaoValidade" placeholder="MM/AA" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="text" id="cartaoCvv" placeholder="123" maxlength="4">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nome no Cartão</label>
+                                    <input type="text" id="cartaoNome" placeholder="Como está no cartão">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="pixFields" class="payment-fields" style="display: none;">
+                            <div class="pix-info">
+                                <i class="fas fa-qrcode"></i>
+                                <p>Escaneie o QR Code abaixo ou copie o código PIX</p>
+                                <div class="pix-code">00020126360014BR.GOV.BCB.PIX0114empresa@email.com5204000053039865405150.005802BR5913AKATSUKI WEAR6008SAO PAULO62070503***6304B3A2</div>
+                                <button class="copy-pix-btn" id="copyPixBtn">📋 COPIAR CÓDIGO PIX</button>
+                            </div>
+                        </div>
+                        
+                        <div id="boletoFields" class="payment-fields" style="display: none;">
+                            <div class="boleto-info">
+                                <i class="fas fa-barcode"></i>
+                                <p>O boleto será gerado após a confirmação do pedido</p>
+                                <div class="boleto-line">00190.00009 01234.567890 12345.678901 2 12345678901234</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-summary">
+                    <h3>RESUMO DO PEDIDO</h3>
+                    <div class="summary-items" id="summaryItems"></div>
+                    <div class="summary-totals">
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">R$ 0,00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Frete</span>
+                            <span id="summaryFrete">R$ 15,00</span>
+                        </div>
+                        <div class="summary-line total">
+                            <span>TOTAL</span>
+                            <span id="summaryTotal">R$ 0,00</span>
+                        </div>
+                    </div>
+                    <button class="confirm-order-btn" id="confirmOrderBtn">CONFIRMAR PEDIDO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="checkout-overlay" id="checkoutOverlay"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

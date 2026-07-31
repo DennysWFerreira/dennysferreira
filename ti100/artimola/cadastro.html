@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head>
+ 
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Cadastro Agência Artística</title>
+ 
+    <!-- CSS -->
+ 
+    <link rel="stylesheet" href="css/cadastro.css">
+ 
+    <!-- FONT -->
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+ 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ 
+</head>
+ 
+<body>
+ 
+    <!-- NAVBAR -->
+ 
+    <header class="custom-navbar">
+
+    <div class="container-custom nav-wrapper">
+
+        <a href="#" class="logo">
+            <img src="imagens/logo.png" alt="Logo Artímola">
+        </a>
+
+        <nav class="menu">
+
+            <a href="projeto.html">Início</a>
+
+            <a href="sobre.html">Sobre</a>
+
+            <a href="beneficios.html">Benefícios</a>
+
+            <a href="artistas.html">Destaques</a>
+
+            <a href="evento.html">Eventos</a>
+
+            <a href="contato.html">Contato</a>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <a href="cadastroempresaartista.html" class="btn-nav">
+
+                Quero Participar
+
+                <span>↗</span>
+
+            </a>
+
+            <a href="login.html" class="btn-login">
+
+                Login
+
+                <span>↗</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+ 
+    <!-- CONTAINER -->
+ 
+    <main class="container">
+ 
+        <!-- TOPO -->
+ 
+        <section class="topo">
+ 
+            <h1>
+                Cadastro Agência de Modelos & Artes Cênicas
+            </h1>
+ 
+            <p>
+                Complete seu cadastro artístico para análise da agência.
+            </p>
+ 
+        </section>
+ 
+        <!--
+        ========================================
+        FORMULÁRIO CONECTADO AO PHP
+        action="salvar.php"
+        method="POST"
+        enctype necessário para upload de arquivos
+        ========================================
+        -->
+ 
+        <form class="formulario"
+            action="salvar.php"
+            method="POST"
+            enctype="multipart/form-data">
+ 
+            <!-- DADOS -->
+ 
+            <section class="bloco">
+ 
+                <h2>Dados Pessoais</h2>
+ 
+                <div class="grid">
+ 
+                    <!--
+                    ========================================
+                    NAME="nome"
+                    IMPORTANTE PARA O BANCO
+                    ========================================
+                    -->
+ 
+                    <div class="campo">
+                        <label>Nome</label>
+ 
+                        <input
+                            type="text"
+                            name="nome"
+                            placeholder="Digite seu nome">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Sobrenome</label>
+ 
+                        <input
+                            type="text"
+                            name="sobrenome"
+                            placeholder="Digite seu sobrenome">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Nome Artístico</label>
+ 
+                        <input
+                            type="text"
+                            name="nome_artistico"
+                            placeholder="Seu nome artístico">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>CPF</label>
+ 
+                        <input
+                            type="text"
+                            name="cpf"
+                            placeholder="000.000.000-00">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Data de Nascimento</label>
+ 
+                        <input
+                            type="date"
+                            name="nascimento">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Telefone</label>
+ 
+                        <input
+                            type="tel"
+                            name="telefone"
+                            placeholder="(00) 00000-0000">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>E-mail</label>
+ 
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Digite seu e-mail">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Instagram</label>
+ 
+                        <input
+                            type="text"
+                            name="instagram"
+                            placeholder="@usuario">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Senha</label>
+ 
+                        <input
+                            type="text"
+                            name="senha"
+                            placeholder="Senha">
+                    </div>
+ 
+                </div>
+ 
+            </section>
+ 
+            <!-- ENDEREÇO -->
+ 
+            <section class="bloco">
+ 
+                <h2>Endereço</h2>
+ 
+                <div class="grid">
+ 
+                    <div class="campo">
+                        <label>CEP</label>
+ 
+                        <input
+                            type="text"
+                            name="cep"
+                            placeholder="00000-000">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Cidade</label>
+ 
+                        <input
+                            type="text"
+                            name="cidade"
+                            placeholder="Sua cidade">
+                    </div>
+ 
+                    <div class="campo">
+ 
+                        <label>Estado</label>
+ 
+                        <select name="estado">
+ 
+                            <option>Selecione</option>
+                            <option>SP</option>
+                            <option>RJ</option>
+                            <option>MG</option>
+ 
+                        </select>
+ 
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Bairro</label>
+ 
+                        <input
+                            type="text"
+                            name="bairro"
+                            placeholder="Seu bairro">
+                    </div>
+ 
+                </div>
+ 
+            </section>
+ 
+            <!-- PERFIL -->
+ 
+            <section class="bloco">
+ 
+                <h2>Perfil Artístico</h2>
+ 
+                <div class="grid">
+ 
+                    <div class="campo">
+ 
+                        <label>Área de Atuação</label>
+ 
+                        <select name="area_atuacao">
+ 
+                            <option>Selecione</option>
+                            <option>Modelo</option>
+                            <option>Ator / Atriz</option>
+                            <option>Dançarino</option>
+                            <option>Cantor(a)</option>
+ 
+                        </select>
+ 
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Altura</label>
+ 
+                        <input
+                            type="text"
+                            name="altura"
+                            placeholder="Ex: 1.75">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Peso</label>
+ 
+                        <input
+                            type="text"
+                            name="peso"
+                            placeholder="Ex: 70kg">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Manequim</label>
+ 
+                        <input
+                            type="text"
+                            name="manequim"
+                            placeholder="Ex: 38">
+                    </div>
+ 
+                </div>
+ 
+            </section>
+ 
+            <!-- BIO -->
+ 
+            <section class="bloco">
+ 
+                <h2>Biografia</h2>
+ 
+                <div class="campo">
+ 
+                    <label>
+                        Conte sobre você
+                    </label>
+ 
+                    <textarea
+                        rows="8"
+                        name="biografia"
+                        placeholder="Experiências, trabalhos, objetivos, trajetória artística..."></textarea>
+ 
+                </div>
+ 
+            </section>
+ 
+            <!-- FOTO -->
+ 
+            <section class="bloco">
+ 
+                <h2>Foto de Perfil</h2>
+ 
+                <div class="upload-box">
+ 
+                    <!--
+                    ========================================
+                    FOTO PRINCIPAL
+                    ========================================
+                    -->
+ 
+                    <input
+                        type="file"
+                        name="foto_perfil"
+                        accept="image/*">
+ 
+                </div>
+ 
+            </section>
+ 
+            <!-- PORTFÓLIO -->
+ 
+            <section class="bloco">
+ 
+                <h2>Portfólio</h2>
+ 
+                <p>
+                    Envie até 5 fotos profissionais.
+                </p>
+ 
+                <div class="grid">
+ 
+                    <div class="campo">
+                        <label>Foto 1</label>
+ 
+                        <input
+                            type="file"
+                            name="foto1"
+                            accept="image/*">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Foto 2</label>
+ 
+                        <input
+                            type="file"
+                            name="foto2"
+                            accept="image/*">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Foto 3</label>
+ 
+                        <input
+                            type="file"
+                            name="foto3"
+                            accept="image/*">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Foto 4</label>
+ 
+                        <input
+                            type="file"
+                            name="foto4"
+                            accept="image/*">
+                    </div>
+ 
+                    <div class="campo">
+                        <label>Foto 5</label>
+ 
+                        <input
+                            type="file"
+                            name="foto5"
+                            accept="image/*">
+                    </div>
+ 
+                </div>
+ 
+            </section>
+ 
+           
+            <!-- TERMOS -->
+ 
+            <section class="bloco">
+ 
+                <div class="checkbox">
+ 
+                    <input
+                        type="checkbox"
+                        name="confirmacao">
+ 
+                    <label>
+                        Confirmo que as informações fornecidas são verdadeiras.
+                    </label>
+ 
+                </div>
+ 
+            </section>
+ 
+            <!-- BOTÃO -->
+ 
+            <section class="botao-area">
+ 
+                <button type="submit">
+ 
+                    Finalizar Cadastro
+ 
+                </button>
+ 
+            </section>
+ 
+        </form>
+ 
+    </main>
+
+    <!-- FOOTER -->
+ 
+ 
+<footer class="kok-footer-artimola">
+ 
+    <!-- CAMADA 1 -->
+    <div class="kok-footer-top">
+        <div class="kok-container">
+ 
+            <!-- LOGO E DESCRIÇÃO -->
+            <div class="kok-footer-col">
+                <a href="index.html" class="kok-footer-logo">
+                    <img src="imagens/logo2.png" alt="Artímola">
+                </a>
+ 
+                <p>
+                    Plataforma cultural inclusiva que conecta artistas,
+                    coletivos e oportunidades culturais em todo o Brasil.
+                </p>
+ 
+                <!-- REDES SOCIAIS -->
+                <div class="kok-social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+ 
+            <!-- INSTITUCIONAL -->
+            <div class="kok-footer-col">
+                <h4>Institucional</h4>
+ 
+                <ul>
+                    <li><a href="#">Sobre o Artímola</a></li>
+                    <li><a href="#">Nossa Missão</a></li>
+                    <li><a href="#">Equipe</a></li>
+                    <li><a href="#">Parceiros</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+ 
+            <!-- ARTISTAS -->
+            <div class="kok-footer-col">
+                <h4>Artistas</h4>
+ 
+                <ul>
+                    <li><a href="#">Cadastrar Perfil</a></li>
+                    <li><a href="#">Oportunidades</a></li>
+                    <li><a href="#">Editais</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                </ul>
+            </div>
+ 
+            <!-- SUPORTE -->
+            <div class="kok-footer-col">
+                <h4>Suporte</h4>
+ 
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">LGPD</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                </ul>
+            </div>
+ 
+        </div>
+    </div>
+ 
+    <!-- CAMADA 2 -->
+    <div class="kok-footer-bottom">
+        <div class="kok-container kok-footer-bottom-content">
+ 
+            <div class="kok-copyright">
+                © 2026 Artímola - Todos os direitos reservados.
+            </div>
+ 
+            <div class="kok-footer-logos">
+ 
+                <a href="https://www.cultsp.pro.br/" target="_blank">
+                    <img src="imagens/logocultsp.png" alt="CultSP">
+                </a>
+ 
+                <a href="https://www.saopaulo.sp.gov.br/" target="_blank">
+                    <img src="imagens/logogovsp.png" alt="Governo de São Paulo">
+                </a>
+ 
+                <a href="#" target="_blank">
+                    <img src="imagens/logofabrica.jpg" alt="Fábricas de Cultura">
+                </a>
+ 
+                <a href="https://www.itau.com.br/" target="_blank">
+                    <img src="imagens/logoitau.png" alt="Itaú">
+                </a>
+ 
+                <a href="https://www.sescsp.org.br/" target="_blank">
+                    <img src="imagens/logosesc.jpg" alt="SESC">
+                </a>
+ 
+                <a href="https://petrobras.com.br/" target="_blank">
+                    <img src="imagens/logopetrobras.png" alt="Petrobras">
+                </a>
+ 
+                <a href="https://gulbenkian.pt/" target="_blank">
+                    <img src="imagens/logofundacao.png" alt="Fundação Calouste Gulbenkian">
+                </a>
+ 
+            </div>
+ 
+        </div>
+    </div>
+ 
+</footer>
+ 
+</body>
+ 
+</html>
+
+ 
+ 

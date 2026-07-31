@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/fuel.png">
+    <!-- Google Fonts: Plus Jakarta Sans + Clash Display -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Clash+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header id="hdr">
+        <div class="container">
+            <div class="navbar">
+                <a href="#top" class="logo-link">
+                    <div class="logo">[SIC]</div>
+                </a>
+                <button class="mobile-toggle" id="mobileMenuBtn"><i class="fas fa-bolt"></i></button>
+                <div class="nav-links" id="navLinksMobile">
+                    <a href="#hdr">Início</a>
+                    <a href="#solutions">Recursos</a>
+                    <a href="#testimonials">Feedbacks</a>
+                    <a href="#cta">Começar</a>
+                    <a href="#prices">Serviços</a>
+                    <a href="#" class="btn-outline-light" style="padding: 6px 20px;">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-left">
+                    <div class="hero-badge"><i class="fas fa-microchip"></i> The Future of Fuel System</div>
+                    <h1>A variável constante de eficiência para o<span style="color:#00F0FF;"> futuro</span> da
+                        mobilidade.</h1>
+                    <p>Processamento de dados invisíveis com IA preditiva. Visualize dados, antecipe resultados e evite
+                        gastos.</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Iniciar análise</a>
+                        <a href="#" class="btn btn-outline-light"><i class="fas fa-play"></i> Ver demo neural</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <video controls controlsList="nodownload noplaybackrate" disablePictureInPicture loop
+                        src="midia/video_sic.mp4" type="video/mp4">
+                        <source src="midia/video_sic.mp4" type="video/mp4">
+                </div>
+            </div>
+        </section>
+
+        <!-- Métricas rápidas -->
+        <div class="metrics">
+            <div class="container metrics-grid">
+                <div class="metric-card">
+                    <h3>500+</h3>
+                    <p>Empresas ativas</p>
+                </div>
+                <div class="metric-card">
+                    <h3>2.3B</h3>
+                    <p>Eventos processados</p>
+                </div>
+                <div class="metric-card">
+                    <h3>24/7</h3>
+                    <p>Suporte inteligente</p>
+                </div>
+                <div class="metric-card">
+                    <h3>99.9%</h3>
+                    <p>Uptime garantido</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards de soluções -->
+        <section id="solutions" class="solutions">
+            <div class="container">
+                <div class="section-title">Arquitetura pensada para performance</div>
+                <div class="section-sub">Ferramentas que se adaptam ao seu fluxo de trabalho com inteligência de ponta.
+                </div>
+                <div class="cards-grid">
+                    <div class="sol-card">
+                        <div class="sol-icon"><i class="fas fa-brain"></i></div>
+                        <h3>IA Híbrida (Edge & Cloud)</h3>
+                        <p>Machine learning avançado para identificar padrões e prever resultados com alta acurácia.</p>
+                    </div>
+                    <div class="sol-card">
+                        <div class="sol-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Manutenção Preditiva</h3>
+                        <p>Alertas inteligentes que evitam quebras e reduzem o tempo de parada.</p>
+                    </div>
+                    <div class="sol-card">
+                        <div class="sol-icon"><i class="fas fa-earth"></i></div>
+                        <h3>Geointeligência</h3>
+                        <p>Roteirização otimizada focada em menor consumo e menor emissão de CO₂.</p>
+                    </div>
+                    <!-- piggy-bank, hand-holding-dollar, arrow-trend-up, coins-->
+                    <div class="sol-card">
+                        <div class="sol-icon"><i class="fas fa-coins"></i></div>
+                        <h3>Decisões Assertivas</h3>
+                        <p>Transformação de dados brutos em economia real no bolso.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-title">Nossos <span>Serviços</span></div>
+                <div class="section-sub">Soluções personalizadas para impulsionar seus resultados</div>
+
+                <div class="services-grid">
+                    <!-- Card 1 - Estratégia ESG -->
+                    <div class="service-card">
+                        <div class="card-icon cyan"><i class="fas fa-chart-line"></i></div>
+                        <h3>Inteligência de Consumo</h3>
+                        <div class="service-desc">Diagnóstico completo dos gastos com abastecimento, monitoramento de médias de consumo por veículo e plano de redução de custos operacionais focado na máxima eficiência do combustível.</div>
+                        <div class="service-feature">
+                            <span class="feature-tag">Histórico Completo</span>
+                            <span class="feature-tag green">Economia garantida</span>
+                        </div>
+                        <button class="btn-service">Saber mais <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Card 2 - Infra Low-Carbon -->
+                    <div class="service-card">
+                        <div class="card-icon emerald"><i class="fas fa-cloud-arrow-up"></i></div>
+                        <h3>Previsão de Viagens</h3>
+                        <div class="service-desc">Planejamento e estimativa avançada de custos logísticos, cálculo inteligente de combustível para rotas específicas e otimização de recursos da viagem por meio de inteligência preditiva.</div>
+                        <div class="service-feature">
+                            <span class="feature-tag">Rotas Inteligentes</span>
+                            <span class="feature-tag green">IA Preditiva</span>
+                        </div>
+                        <button class="btn-service">Explorar <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Card 3 - Eficiência Energética -->
+                    <div class="service-card">
+                        <div class="card-icon amber"><i class="fas fa-charging-station"></i></div>
+                        <h3>Eficiência de Condução</h3>
+                        <div class="service-desc">Monitoramento do perfil de condução do motorista, análise de desperdício em marcha lenta, acelerações bruscas e automação de alertas para melhoria do desempenho rodoviário.</div>
+                        <div class="service-feature">
+                            <span class="feature-tag">Até 44% economia</span>
+                            <span class="feature-tag green">Certificação Ouro</span>
+                        </div>
+                        <button class="btn-service">Simular economia <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Card 4 - Consultoria em Dados -->
+                    <div class="service-card">
+                        <div class="card-icon purple"><i class="fas fa-brain"></i></div>
+                        <h3>Análise de Frota (B2B)</h3>
+                        <div class="service-desc">Análise aprofundada de dados automotivos e financeiros para empresas, dashboards corporativos interativos e inteligência de dados aplicada à gestão de múltiplos veículos.</div>
+                        <div class="service-feature">
+                            <span class="feature-tag">Dash customizado</span>
+                            <span class="feature-tag green">+170% de ROI</span>
+                        </div>
+                        <button class="btn-service">Agendar <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Card 5 - Compensação de Carbono -->
+                    <div class="service-card">
+                        <div class="card-icon cyan"><i class="fas fa-leaf"></i></div>
+                        <h3>Gestão de Manutenção</h3>
+                        <div class="service-desc">Cálculo do ciclo de desgaste de peças, previsão para trocas de óleo, pneus e revisões mecânicas programadas, evitando quebras inesperadas e paradas não planejadas.</div>
+                        <div class="service-feature">
+                            <span class="feature-tag">Alertas Preditivos</span>
+                            <span class="feature-tag green">Frota Segura</span>
+                        </div>
+                        <button class="btn-service">Consultar <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Card 6 - Relatórios Automáticos -->
+                    <div class="service-card">
+                        <div class="card-icon emerald"><i class="fas fa-chart-simple"></i></div>
+                        <h3>Relatórios Automatizadoss</h3>
+                        <div class="service-desc">Geração simplificada de relatórios de desempenho e custos mensais (PDF/CSV) com auditoria facilitada de despesas para prestação de contas de motoristas e frotistas.</div>
+                        <div class="service-feature">
+                            <span class="feature-tag">Automatizado</span>
+                            <span class="feature-tag green">Conformidade legal</span>
+                        </div>
+                        <button class="btn-service">Demonstração <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Planos e Preços -->
+        <section class="pricing-section" id="prices">
+            <div class="container">
+                <div class="section-title">Planos para <span>cada perfil de motorista</span></div>
+                <div class="section-sub">Do controle individual à gestão profissional de frotas — encontre o plano ideal
+                    para você</div>
+
+                <div class="pricing-grid">
+                    <!-- Plano Gratuito -->
+                    <div class="pricing-card">
+                        <div class="plan-name">Gratuito</div>
+                        <div class="price">R$ 0 <span>/mês</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Para jovens e estudantes (18-24 anos)</li>
+                            <li><i class="fas fa-check-circle"></i> Controle básico de gastos</li>
+                            <li><i class="fas fa-check-circle"></i> Monitoramento de abastecimento</li>
+                            <li><i class="fas fa-check-circle"></i> Histórico dos últimos 30 dias</li>
+                            <li><i class="fas fa-check-circle"></i> Anúncios no aplicativo</li>
+                        </ul>
+                        <button class="btn-plan">Começar grátis</button>
+                    </div>
+
+                    <!-- Plano Individual (Foco principal) -->
+                    <div class="pricing-card popular">
+                        <div class="plan-name" style="color: var(--neon-cyan);">Individual</div>
+                        <div class="price">R$ 19,90 <span>/mês</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Análise detalhada de consumo</li>
+                            <li><i class="fas fa-check-circle"></i> Rotas otimizadas para economia</li>
+                            <li><i class="fas fa-check-circle"></i> Alertas de manutenção preditiva</li>
+                            <li><i class="fas fa-check-circle"></i> Comparativo entre postos</li>
+                            <li><i class="fas fa-check-circle"></i> Dashboard com metas de economia</li>
+                            <li><i class="fas fa-check-circle"></i> Suporte por e-mail e chat</li>
+                        </ul>
+                        <button class="btn-plan emerald-btn">Plano mais escolhido</button>
+                    </div>
+
+                    <!-- Plano Básico (antigo Sênior) -->
+                    <div class="pricing-card">
+                        <div class="plan-name">Básico</div>
+                        <div class="price">R$ 14,90 <span>/mês</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Interface simples e intuitiva</li>
+                            <li><i class="fas fa-check-circle"></i> Alertas de manutenção preventiva</li>
+                            <li><i class="fas fa-check-circle"></i> Economia para prolongar vida útil</li>
+                            <li><i class="fas fa-check-circle"></i> Suporte por telefone</li>
+                            <li><i class="fas fa-check-circle"></i> Versão com fontes ampliadas</li>
+                        </ul>
+                        <button class="btn-plan">Assinar agora</button>
+                    </div>
+
+                    <!-- Frota Essencial -->
+                    <div class="pricing-card">
+                        <div class="plan-name">Frota Essencial</div>
+                        <div class="price">R$ 89,90 <span>/mês</span></div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Para até 10 veículos</li>
+                            <li><i class="fas fa-check-circle"></i> Gestão de abastecimento</li>
+                            <li><i class="fas fa-check-circle"></i> Relatórios unificados</li>
+                            <li><i class="fas fa-check-circle"></i> Perfil de motorista</li>
+                            <li><i class="fas fa-check-circle"></i> Suporte comercial</li>
+                        </ul>
+                        <button class="btn-plan">Começar</button>
+                    </div>
+
+                    <!-- Frota Profissional -->
+                    <div class="pricing-card popular">
+                        <div class="plan-name" style="color: var(--neon-cyan);">Frota Profissional</div>
+                        <div class="price">Sob consulta</div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check-circle"></i> Para frotas acima de 10 veículos</li>
+                            <li><i class="fas fa-check-circle"></i> Gestão preditiva de manutenção</li>
+                            <li><i class="fas fa-check-circle"></i> API para integração com ERP</li>
+                            <li><i class="fas fa-check-circle"></i> Redução de custos operacionais</li>
+                            <li><i class="fas fa-check-circle"></i> Consultoria dedicada</li>
+                            <li><i class="fas fa-check-circle"></i> Treinamento para equipe</li>
+                        </ul>
+                        <button class="btn-plan emerald-btn">Falar com consultor</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Diferenciais -->
+        <section class="differentiators">
+            <div class="container">
+                <div class="section-title">Por que escolher <span style="color: var(--neon-cyan);">nossos
+                        serviços</span></div>
+                <div class="section-sub">Autoridade, inovação e resultados mensuráveis para sua empresa</div>
+
+                <div class="diff-grid">
+                    <div class="diff-item">
+                        <div class="diff-icon cyan">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Eficiência</h4>
+                        <p>Manutenção preditiva via
+                            OBD-II, transformando
+                            dados em prevenção</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <div class="diff-icon emerald">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h4>Economia</h4>
+                        <p>Redução real de custos
+                            através de análise preditiva
+                            de rotas e preços</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <div class="diff-icon purple">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h4>Gamificação</h4>
+                        <p>Recompensa e fidelidade
+                            para incentivar a condução
+                            inteligente</p>
+                    </div>
+
+                    <div class="diff-item">
+                        <div class="diff-icon amber">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h4>Sustentabilidade</h4>
+                        <p>Foco em ODS e metas da
+                            Agenda 2030 (Redução de
+                            emissões)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos -->
+        <section id="testimonials" class="testimonials-neon">
+            <div class="container">
+                <div class="section-title" style="color:white;">O que a vanguarda está dizendo</div>
+                <div class="section-sub">Casos de sucesso com a plataforma [SIC]</div>
+                <div class="testi-slider">
+                    <div class="testi-item">
+                        <div class="testi-text">"Esses 20,00 reais pagos mensalmente, serão insignificantes pela grande
+                            utilidade do aplicativo, ou seja, o que iremos economizar é muito superior do que os 20
+                            reais."</div>
+                        <div class="testi-user">
+                            <div class="user-avatar"><i class="fas fa-user"></i></div>
+                            <div>Resultado de Pesquisa</div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="testi-text">"Um aplicativo muito utíl para ter um controle de gastos e assim
+                            conseguir fazer uma boa economia em relação ao combustível que hoje está cada vez mais cara
+                            e de péssima qualidade."</div>
+                        <div class="testi-user">
+                            <div class="user-avatar"><i class="fas fa-user"></i></div>
+                            <div>Resultado de Pesquisa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section id="cta" class="cta-final">
+            <div class="container">
+                <div class="cta-glow">
+                    <h2>Pronto para transformar dados em decisões?</h2>
+                    <p>Convidamos você a transformar o gasto invisível em investimento sustentável.</p>
+                    <a href="#" class="btn btn-primary"
+                        style="background: linear-gradient(95deg, #B026FF, #00F0FF); box-shadow:0 0 14px #b026ff;"><i
+                            class="fas fa-crown"></i> Ativar Demo Premium</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-flex">
+                <div class="logo" style="font-size:1.6rem;">[SIC]</div>
+                <div class="social-links">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-github"></i>
+                    <i class="fab fa-discord"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Termos</a>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Status</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <i class="fas fa-bolt"></i> O Seu Parceiro Inteligente para Economia de Combustível.
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comment-dots"></i>
+            <i class="fas fa-times" style="display: none;"></i>
+        </button>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <span><img src="midia/core_icon.png" alt="icone_core">Assistente SIC <span
+                        class="chat-status">online</span></span>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-bubble">
+                        Olá! Eu sou o assistente do SIC. Escolha uma das perguntas abaixo para me fazer:
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-questions" id="chatQuestions">
+                <button class="question-btn" data-question="1">O que é o SIC?</button>
+                <button class="question-btn" data-question="2">Quanto custa o serviço?</button>
+                <button class="question-btn" data-question="3">Como funciona a economia de combustível?</button>
+                <button class="question-btn" data-question="4">O SIC tem suporte 24/7?</button>
+                <button class="question-btn" data-question="5">Como começar a usar?</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const toggleBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('navLinksMobile');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    nav.classList.toggle('show');
+                });
+            }
+            // fechar ao clicar nos links
+            document.querySelectorAll('#navLinksMobile a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('show');
+                });
+            });
+            // smooth scroll interno
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const hash = this.getAttribute('href');
+                    if (hash === "#" || hash === "") return;
+                    const target = document.querySelector(hash);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+
+
+        // RESPOSTAS PRÉ-DEFINIDAS
+        const respostas = {
+            1: "O SIC (Sistema Inteligente de Cálculo) é uma plataforma que utiliza IA para analisar dados de consumo de combustível, prever gastos e sugerir rotas mais eficientes, gerando economia real para frotas e veículos particulares.",
+
+            2: "O SIC possui planos a partir de R$ 19,90/mês para usuários individuais. Para empresas e frotas, temos planos personalizados. Consulte nossa equipe comercial para um diagnóstico gratuito!",
+
+            3: "O SIC analisa padrões de consumo, condições de trânsito, qualidade do combustível e comportamento do motorista. Com esses dados, recomenda rotas otimizadas, manutenção preventiva e hábitos que reduzem o consumo em até 25%.",
+
+            4: "Sim! O SIC oferece suporte 24 horas por dia, 7 dias por semana, através do chat, e-mail e telefone. Nossa equipe está sempre disponível para ajudar você.",
+
+            5: "Para começar, basta clicar no botão 'Iniciar análise' na página inicial. Você será redirecionado para o cadastro e poderá começar a usar o SIC gratuitamente por 14 dias!"
+        };
+
+        // Elementos do chat
+        const chatToggle = document.getElementById('chatToggle');
+        const chatContainer = document.getElementById('chatContainer');
+        const chatMessages = document.getElementById('chatMessages');
+        const questionBtns = document.querySelectorAll('.question-btn');
+
+        // Abrir/fechar chat
+        chatToggle.addEventListener('click', () => {
+            chatContainer.classList.toggle('open');
+
+            const iconMessage = chatToggle.querySelector('.fa-comment-dots');
+            const iconClose = chatToggle.querySelector('.fa-times');
+
+            if (chatContainer.classList.contains('open')) {
+                iconMessage.style.display = 'none';
+                iconClose.style.display = 'block';
+            } else {
+                iconMessage.style.display = 'block';
+                iconClose.style.display = 'none';
+            }
+        });
+
+        // Função para adicionar mensagem do usuário
+        function addUserMessage(pergunta) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message user';
+            messageDiv.innerHTML = `<div class="message-bubble">${pergunta}</div>`;
+            chatMessages.appendChild(messageDiv);
+
+            // Rolar para o final
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Função para adicionar mensagem do bot
+        function addBotMessage(resposta) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message bot';
+            messageDiv.innerHTML = `<div class="message-bubble">${resposta}</div>`;
+            chatMessages.appendChild(messageDiv);
+
+            // Rolar para o final
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Função para mostrar "digitando..."
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `<div class="message-bubble"><i class="fas fa-ellipsis-h"></i> digitando...</div>`;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTyping() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        // Processar pergunta selecionada
+        function processQuestion(questionId, perguntaTexto) {
+            // Adiciona mensagem do usuário
+            addUserMessage(perguntaTexto);
+
+            // Mostra indicador de digitação
+            showTyping();
+
+            // Simula um pequeno delay (como se a IA estivesse pensando)
+            setTimeout(() => {
+                removeTyping();
+                const resposta = respostas[questionId] || "Desculpe, não entendi. Por favor, escolha uma das opções disponíveis.";
+                addBotMessage(resposta);
+            }, 800);
+        }
+
+        // Configurar botões de pergunta
+        questionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const questionId = btn.getAttribute('data-question');
+                const perguntaTexto = btn.innerText;
+                processQuestion(questionId, perguntaTexto);
+            });
+        });
+    </script>
+</body>
+
+</html>

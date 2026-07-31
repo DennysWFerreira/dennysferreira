@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Oficina do HD</title>
+
+  <link rel="stylesheet" href="./css/login.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="login-container">
+
+    <div class="login-left">
+
+      <div class="overlay"></div>
+
+      <div class="left-content">
+
+        <img src="./img/Gemini_Generated_Image_1nkg661nkg661nkg__3_-removebg-preview.png" alt="Logo">
+
+        <h1>OFICINA DO HD</h1>
+
+        <p>
+          Entre na sua conta para acessar pedidos,
+          acompanhar compras e aproveitar nossas ofertas.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="login-right">
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="login">
+          Entrar
+        </button>
+
+        <button class="tab-btn" data-tab="register">
+          Criar Conta
+        </button>
+      </div>
+
+      <!-- LOGIN -->
+
+      <div class="form-area active" id="login">
+
+        <h2>Bem-vindo de volta</h2>
+
+        <form id="formLogin" action="php/login.php" method="POST">
+
+          <div class="input-group">
+            <i class="fa-solid fa-envelope"></i>
+
+            <input type="email" name="email" placeholder="Seu email" required>
+          </div>
+
+          <div class="input-group">
+            <i class="fa-solid fa-lock"></i>
+
+            <input type="password" name="senha" placeholder="Sua senha" required>
+          </div>
+
+          <button type="submit" class="login-btn">
+            Entrar
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- CADASTRO -->
+
+      <div class="form-area" id="register">
+
+        <h2>Criar nova conta</h2>
+
+        <form id="formCadastro" action="php/cadastrar.php" method="POST">
+
+          <div class="input-group">
+            <i class="fa-solid fa-user"></i>
+
+            <input type="text" name="nome" placeholder="Seu nome" required>
+          </div>
+
+          <div class="input-group">
+            <i class="fa-solid fa-envelope"></i>
+
+            <input type="email" name="email" placeholder="Seu email" required>
+          </div>
+
+          <div class="input-group">
+            <i class="fa-solid fa-lock"></i>
+
+            <input type="password" name="senha" placeholder="Crie uma senha" required>
+          </div>
+
+          <button type="submit" class="login-btn">
+            Criar Conta
+          </button>
+
+        </form>
+
+      </div>
+
+      <a href="index.php" class="voltar">
+        ← Voltar para a loja
+      </a>
+
+    </div>
+
+  </div>
+
+  <script src="./js/login.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const next = params.get('next') || '';
+
+      // Mostra aviso contextual se veio do carrinho
+      if (next === 'checkout') {
+        const hint = document.createElement('div');
+        hint.style.cssText = [
+          'background:#eff6ff',
+          'border:1px solid #bfdbfe',
+          'border-radius:14px',
+          'padding:14px 16px',
+          'margin-bottom:18px',
+          'font-size:14px',
+          'font-weight:700',
+          'color:#1e40af',
+          'display:flex',
+          'align-items:center',
+          'gap:10px'
+        ].join(';');
+        hint.innerHTML = '<i class="fa-solid fa-cart-shopping"></i> Faça login ou crie sua conta para finalizar a compra.';
+
+        // Inserir no topo de cada form-area
+        document.querySelectorAll('.form-area').forEach(el => {
+          el.insertBefore(hint.cloneNode(true), el.firstChild);
+        });
+      }
+
+      // Injetar campo hidden "next" nos dois formulários
+      if (next) {
+        document.querySelectorAll('form').forEach(form => {
+          let hidden = form.querySelector('input[name="next"]');
+          if (!hidden) {
+            hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.name = 'next';
+            form.appendChild(hidden);
+          }
+          hidden.value = next;
+        });
+      }
+
+      // Ativar aba "Criar Conta" se ?tab=register
+      const tab = params.get('tab') || '';
+      if (tab === 'register') {
+        document.querySelectorAll('.tab-btn, .form-area').forEach(el => el.classList.remove('active'));
+        document.querySelector('.tab-btn[data-tab="register"]')?.classList.add('active');
+        document.getElementById('register')?.classList.add('active');
+      }
+    })();
+  </script>
+
+</body>
+</html>
+

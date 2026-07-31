@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title>Aroma 811</title>
+ 
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+ 
+  <style>
+ 
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+ 
+    body{
+      background:#efede3;
+      color:#111;
+    }
+ 
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+ 
+    /* HEADER */
+    header{
+      background:#efede3;
+      padding:22px 0;
+      position:sticky;
+      top:0;
+      z-index:999;
+      border-bottom:1px solid #ddd6c8;
+    }
+ 
+    .header-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+ 
+    .logo{
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+ 
+    /* MENU */
+    .menu-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+ 
+    .icon-btn,
+    .menu-toggle,
+    .login-btn{
+      background:none;
+      border:none;
+      text-decoration:none;
+      font-size:28px;
+      cursor:pointer;
+      color:#111;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:.3s;
+    }
+ 
+    .icon-btn:hover,
+    .menu-toggle:hover,
+    .login-btn:hover{
+      transform:scale(1.1);
+      opacity:.7;
+    }
+ 
+    /* DROPDOWN */
+    .dropdown-menu{
+      position:absolute;
+      top:60px;
+      right:0;
+      width:230px;
+      background:#f7f5ef;
+      border-radius:12px;
+      box-shadow:0 8px 25px rgba(0,0,0,.15);
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(-10px);
+      transition:.3s;
+      z-index:999;
+    }
+ 
+    .dropdown-menu.active{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+ 
+    .dropdown-menu a{
+      padding:18px 22px;
+      text-decoration:none;
+      color:#111;
+      font-weight:600;
+      border-bottom:1px solid #e5e0d4;
+      transition:.3s;
+    }
+ 
+    .dropdown-menu a:last-child{
+      border-bottom:none;
+    }
+ 
+    .dropdown-menu a:hover{
+      background:#e7e1d3;
+      padding-left:28px;
+    }
+ 
+    /* HERO */
+    .hero{
+      min-height:70vh;
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("imagens/fundo\ das\ velas.png");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      padding:40px;
+    }
+ 
+    .hero h1{
+      font-size:72px;
+      font-family:'Playfair Display', serif;
+      margin-bottom:25px;
+    }
+ 
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.9;
+      font-size:18px;
+    }
+ 
+    /* CATÁLOGO */
+    .catalogo{
+      padding:100px 0;
+    }
+ 
+    .catalogo-header{
+      text-align:center;
+      margin-bottom:60px;
+    }
+ 
+    .catalogo-header h5{
+      color:#8d7b60;
+      letter-spacing:4px;
+      margin-bottom:15px;
+    }
+ 
+    .catalogo-header h2{
+      font-size:52px;
+      font-family:'Playfair Display', serif;
+      margin-bottom:20px;
+    }
+ 
+    .catalogo-header p{
+      max-width:700px;
+      margin:auto;
+      color:#555;
+      line-height:1.8;
+    }
+ 
+    .catalogo-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:40px;
+      perspective:1200px;
+    }
+ 
+    /* CARD PREMIUM */
+    .produto-card{
+      background:#f8f6ef;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 8px 25px rgba(0,0,0,.08);
+      transition:.5s cubic-bezier(0.23, 1, 0.320, 1);
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+ 
+    .produto-card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 20px 45px rgba(0,0,0,.12);
+    }
+ 
+    .produto-img{
+      position:relative;
+      overflow:hidden;
+      height:420px;
+      background:linear-gradient(135deg, #d4c5b0 0%, #e8dcc8 50%, #d9cbb8 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+ 
+    .produto-img img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      padding:30px 20px;
+      transition:.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+ 
+    .produto-card:hover img{
+      transform:scale(1.08);
+    }
+ 
+    .produto-img::after{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:linear-gradient(
+        180deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,.1) 100%
+      );
+      opacity:0;
+      transition:.5s;
+      pointer-events:none;
+    }
+ 
+    .produto-card:hover .produto-img::after{
+      opacity:1;
+    }
+ 
+    .tag{
+      position:absolute;
+      top:18px;
+      left:18px;
+      background:rgba(17,17,17,.85);
+      color:#fff;
+      padding:10px 18px;
+      border-radius:50px;
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-weight:600;
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.2);
+      z-index:10;
+    }
+ 
+    .produto-info{
+      padding:32px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+ 
+    .produto-info h3{
+      font-size:28px;
+      font-family:'Playfair Display', serif;
+      margin-bottom:12px;
+      color:#111;
+      transition:.3s;
+    }
+ 
+    .produto-card:hover .produto-info h3{
+      color:#8d7b60;
+    }
+ 
+    .produto-info p{
+      color:#666;
+      line-height:1.7;
+      font-size:14px;
+      font-weight:300;
+      flex-grow:1;
+    }
+ 
+    .produto-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:20px;
+      padding-top:20px;
+      border-top:1px solid #e8dcc8;
+      gap:12px;
+    }
+ 
+    .preco{
+      font-size:24px;
+      font-weight:700;
+      color:#111;
+      font-family:'Playfair Display', serif;
+    }
+ 
+    .produto-bottom button{
+      border:none;
+      background:linear-gradient(135deg, #111 0%, #333 100%);
+      color:#fff;
+      padding:13px 26px;
+      border-radius:50px;
+      cursor:pointer;
+      transition:.3s cubic-bezier(0.23, 1, 0.320, 1);
+      font-weight:600;
+      letter-spacing:1px;
+      position:relative;
+      overflow:hidden;
+      font-size:12px;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+ 
+    .produto-bottom button::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(135deg, #8d7b60 0%, #a89b7c 100%);
+      transition:.5s cubic-bezier(0.23, 1, 0.320, 1);
+      z-index:-1;
+    }
+ 
+    .produto-bottom button:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 25px rgba(17,17,17,.25);
+    }
+ 
+    .produto-bottom button:hover::before{
+      left:0;
+    }
+ 
+    /* FOOTER */
+    footer{
+      background:#111;
+      color:#fff;
+      text-align:center;
+      padding:40px 20px;
+    }
+ 
+    footer p{
+      letter-spacing:1px;
+      color:#ccc;
+    }
+
+    /* ===== CARRINHO DE COMPRAS ===== */
+    #contador{
+      background:#f63030;
+      color:#fff;
+      border-radius:50%;
+      padding:2px 8px;
+      font-size:12px;
+      margin-left:5px;
+    }
+
+    .carrinho-sidebar{
+      position:fixed;
+      top:0;
+      right:-400px;
+      width:380px;
+      height:100%;
+      background:#fff;
+      box-shadow:-5px 0 20px rgba(0,0,0,.15);
+      transition:.4s;
+      z-index:9999;
+      padding:20px;
+      overflow-y:auto;
+    }
+
+    .carrinho-sidebar.active{
+      right:0;
+    }
+
+    .carrinho-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+
+    .carrinho-header h2{
+      color:#111;
+      font-size:28px;
+      font-weight:700;
+      margin:0;
+    }
+
+    .fechar-carrinho{
+      border:none;
+      background:none;
+      font-size:25px;
+      cursor:pointer;
+    }
+
+    .item-carrinho{
+      border-bottom:1px solid #e8dcc8;
+      padding:16px 0;
+    }
+
+    .item-carrinho h4{
+      color:#111;
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+
+    .item-carrinho p{
+      color:#555;
+    }
+
+    .controles-qtd{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .btn-qtd{
+      width:30px;
+      height:30px;
+      border:none;
+      border-radius:50%;
+      cursor:pointer;
+      background:#8d7b60;
+      color:white;
+      font-weight:bold;
+    }
+
+    .btn-remover{
+      width:100%;
+      margin-top:10px;
+      background:#c0392b;
+      color:white;
+      border:none;
+      padding:10px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    .total-carrinho{
+      color:#111;
+      margin-top:20px;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .btn-finalizar{
+      width:100%;
+      margin-top:20px;
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      background:#8d7b60;
+      color:white;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    /* RESPONSIVO */
+    @media(max-width:900px){
+      .hero h1{
+        font-size:48px;
+      }
+      .catalogo-header h2{
+        font-size:40px;
+      }
+      .produto-img{
+        height:350px;
+      }
+    }
+ 
+    @media(max-width:600px){
+      .produto-img{
+        height:300px;
+      }
+      .produto-info{
+        padding:24px;
+      }
+      .carrinho-sidebar{
+        width:100%;
+        right:-100%;
+      }
+    }
+ 
+  </style>
+ 
+</head>
+ 
+<body>
+ 
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+  
+      <a href="index.html">
+        <img class="logo" src="imagens/logo.png" alt="Logo">
+      </a>
+  
+      <div class="menu-wrapper">
+  
+        <button class="icon-btn" onclick="abrirCarrinho()">
+          🛒 <span id="contador">0</span>
+        </button>
+
+        <a href="cadastro.html" class="login-btn">
+          👤
+        </a>
+  
+        <button class="menu-toggle" onclick="toggleMenu()">
+          ☰
+        </button>
+  
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="index.html#produtos">Produtos</a>
+          <a href="index5.html">Fragrâncias</a>
+          <a href="index.html#fragrancias">Kits Presentes</a>
+          <a href="https://wa.me/5511989647513">Parcerias</a>
+        </div>
+  
+      </div>
+  
+    </div>
+  </header>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Perfume para sua Pele</h1>
+      <p>
+        Cada banho é uma experiência de cuidado absoluto. Nossos sabonetes líquidos premium envolvem sua pele em fragrâncias sofisticadas e ingredientes nobres, transformando o ritual diário em um momento de luxo e bem-estar. Descubra a verdadeira arte da higiene refinada."
+      </p>
+    </div>
+  </section>
+ 
+  <!-- CATÁLOGO -->
+  <section class="catalogo">
+    <div class="container">
+ 
+      <div class="catalogo-header">
+        <h5>COLEÇÃO EXCLUSIVA</h5>
+        <h2>Nossos Produtos</h2>
+        <p>
+          Produtos artesanais criados com elegância,
+          sofisticação e fragrâncias marcantes.
+        </p>
+      </div>
+ 
+      <div class="catalogo-grid">
+ 
+        <!-- PRODUTO 1 -->
+        <div class="produto-card">
+          <div class="produto-img">
+            <img src="imagens/home splay 1.jpg" alt="Ocean Breeze">
+            <span class="tag">Fresco</span>
+          </div>
+          <div class="produto-info">
+            <div>
+              <h3>Aroma Cristal</h3>
+              <p>
+Sabonete líquido premium que envolve a pele com fragrâncias suaves e sofisticadas</p>
+            </div>
+            <div class="produto-bottom">
+              <span class="preco">R$ 79,90</span>
+              <button onclick="adicionarProduto('Aroma Cristal', 79.90)">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- PRODUTO 2 -->
+        <div class="produto-card">
+          <div class="produto-img">
+            <img src="imagens/home splay 2.png" alt="Cozy Evening">
+            <span class="tag">Aconchegante</span>
+          </div>
+          <div class="produto-info">
+            <div>
+              <h3>Aroma Dourado</h3>
+              <p>Sabonete artesanal que limpa e perfuma a pele com aromas florais e aveludados</p>
+            </div>
+            <div class="produto-bottom">
+              <span class="preco">R$ 89,90</span>
+              <button onclick="adicionarProduto('Aroma Dourado', 89.90)">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- PRODUTO 3 -->
+        <div class="produto-card">
+          <div class="produto-img">
+            <img src="imagens/home splay 3.png" alt="Royal Oud">
+            <span class="tag">Premium</span>
+          </div>
+          <div class="produto-info">
+            <div>
+              <h3>Luxo Absoluto</h3>
+              <p>Fórmula delicada que cuida e perfuma a pele deixando sensação de luxo e leveza
+Escolha a que preferir!</p>
+            </div>
+            <div class="produto-bottom">
+              <span class="preco">R$ 94,90</span>
+              <button onclick="adicionarProduto('Luxo Absoluto', 94.90)">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Aroma 811 • Difusores Artesanais</p>
+  </footer>
+
+  <!-- CARRINHO SIDEBAR -->
+  <div class="carrinho-sidebar" id="carrinhoSidebar">
+
+    <div class="carrinho-header">
+      <h2>Carrinho</h2>
+      <button class="fechar-carrinho" onclick="fecharCarrinho()">✕</button>
+    </div>
+
+    <div id="listaCarrinho"></div>
+
+    <div class="total-carrinho">
+      Total: R$ <span id="totalCarrinho">0,00</span>
+    </div>
+
+    <button class="btn-finalizar" onclick="finalizarPedido()">
+      Finalizar no WhatsApp
+    </button>
+
+  </div>
+ 
+  <script>
+
+    /* ===== MENU ===== */
+    function toggleMenu(){
+      const menu = document.getElementById("dropdownMenu");
+      menu.classList.toggle("active");
+    }
+
+    window.addEventListener("click", function(e){
+      const menu = document.getElementById("dropdownMenu");
+      const button = document.querySelector(".menu-toggle");
+      if(!menu.contains(e.target) && !button.contains(e.target)){
+        menu.classList.remove("active");
+      }
+    });
+
+    /* ===== CARRINHO ===== */
+    let carrinho = [];
+
+    function abrirCarrinho(){
+      document.getElementById("carrinhoSidebar").classList.add("active");
+    }
+
+    function fecharCarrinho(){
+      document.getElementById("carrinhoSidebar").classList.remove("active");
+    }
+
+    function adicionarProduto(nome, preco){
+      const produto = carrinho.find(item => item.nome === nome);
+      if(produto){
+        produto.quantidade++;
+      } else {
+        carrinho.push({ nome, preco, quantidade: 1 });
+      }
+      atualizarCarrinho();
+      abrirCarrinho();
+    }
+
+    function aumentarQuantidade(nome){
+      const produto = carrinho.find(item => item.nome === nome);
+      if(produto){ produto.quantidade++; }
+      atualizarCarrinho();
+    }
+
+    function diminuirQuantidade(nome){
+      const produto = carrinho.find(item => item.nome === nome);
+      if(produto){
+        produto.quantidade--;
+        if(produto.quantidade <= 0){
+          removerProduto(nome);
+          return;
+        }
+      }
+      atualizarCarrinho();
+    }
+
+    function removerProduto(nome){
+      carrinho = carrinho.filter(item => item.nome !== nome);
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho(){
+      const lista = document.getElementById("listaCarrinho");
+      lista.innerHTML = "";
+
+      let total = 0;
+      let quantidadeTotal = 0;
+
+      carrinho.forEach(produto => {
+        total += produto.preco * produto.quantidade;
+        quantidadeTotal += produto.quantidade;
+
+        lista.innerHTML += `
+          <div class="item-carrinho">
+            <h4>${produto.nome}</h4>
+            <p>R$ ${(produto.preco * produto.quantidade).toFixed(2)}</p>
+            <div class="controles-qtd">
+              <button class="btn-qtd" onclick="diminuirQuantidade('${produto.nome}')">-</button>
+              <span>${produto.quantidade}</span>
+              <button class="btn-qtd" onclick="aumentarQuantidade('${produto.nome}')">+</button>
+            </div>
+            <button class="btn-remover" onclick="removerProduto('${produto.nome}')">
+              🗑️ Excluir Produto
+            </button>
+          </div>
+        `;
+      });
+
+      document.getElementById("totalCarrinho").innerText = total.toFixed(2);
+      document.getElementById("contador").innerText = quantidadeTotal;
+    }
+
+    function finalizarPedido(){
+      if(carrinho.length === 0){
+        alert("Carrinho vazio!");
+        return;
+      }
+
+      let mensagem = "Olá! Gostaria de fazer o seguinte pedido:%0A%0A";
+      let total = 0;
+
+      carrinho.forEach(produto => {
+        mensagem += `• ${produto.nome} - Qtd: ${produto.quantidade}%0A`;
+        total += produto.preco * produto.quantidade;
+      });
+
+      mensagem += `%0A💰 Total: R$ ${total.toFixed(2)}`;
+
+      const telefone = "5511989647513";
+      window.open(`https://wa.me/${telefone}?text=${mensagem}`, "_blank");
+    }
+
+  </script>
+ 
+</body>
+</html>

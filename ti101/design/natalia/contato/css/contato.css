@@ -1,0 +1,148 @@
+:root {
+    --verde-claro: #d9ebd4;
+    --verde-suave: #c2e0b0;
+    --bege-claro: #f9f3e6;
+    --bege-escuro: #e8dccc;
+    --verde-destaque: #7d9f6e;
+    --texto: #3a4a3a;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bege-claro);
+    color: var(--texto);
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(232, 220, 204, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+}
+
+.navbar-brand i {
+    color: var(--verde-destaque);
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--verde-destaque);
+    transform: translateY(-2px);
+}
+
+
+/* HERO */
+
+.hero-contato {
+    min-height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg,
+            var(--verde-claro),
+            var(--bege-claro));
+}
+
+.hero-contato h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.hero-contato p {
+    font-size: 1.2rem;
+}
+
+/* CONTEÚDO */
+
+.contato-page {
+    padding: 80px 0;
+}
+
+.info-card,.form-card {
+    height: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.contato-item {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contato-item i {
+    width: 45px;
+    height: 45px;
+    background: var(--verde-claro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--verde-destaque);
+}
+
+.form-control,
+.form-select {
+    border-radius: 15px;
+    padding: 14px;
+}
+
+.btn-custom {
+    background: var(--verde-destaque);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-custom:hover {
+    background: #5d7a50;
+}
+
+/* MAPA */
+
+.mapa {
+    height: 450px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--bege-escuro);
+    padding: 30px;
+}
+
+@media(max-width:768px) {
+
+    .hero-contato h1 {
+        font-size: 2.5rem;
+    }
+
+    .info-card,
+    .form-card {
+        padding: 25px;
+    }
+
+}

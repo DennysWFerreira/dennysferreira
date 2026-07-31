@@ -1,0 +1,34 @@
+/* Botão fixo de retorno (páginas: carrinho/checkout/login) */
+
+.nav-return-wrap{
+  position:sticky;
+  top:22px;
+  z-index:10;
+  margin:0 0 18px 0;
+}
+
+.nav-return-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  height:44px;
+  padding:0 16px;
+  border-radius:14px;
+  background:rgba(255,255,255,.9);
+  border:1px solid rgba(0,76,130,0.18);
+  color:#004c82;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+  transition:.2s;
+}
+
+.nav-return-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 14px 30px rgba(0,76,130,.12);
+}
+
+.nav-return-btn i{
+  font-size:18px;
+}
+

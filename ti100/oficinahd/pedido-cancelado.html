@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedido Cancelado - Oficina do HD</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/checkout.css" />
+  <link rel="stylesheet" href="./css/nav-return.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo-area" href="./index.php" aria-label="Ir para a página inicial" style="text-decoration:none; display:flex; align-items:center; gap:16px;">
+      <div class="logo">
+        <img src="./img/Gemini_Generated_Image_1nkg661nkg661nkg__3_-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logo-texto">
+        <h1>OFICINA</h1>
+        <span>DO</span>
+        <h2>HD</h2>
+      </div>
+    </a>
+
+    <div class="icons">
+      <button class="icon-btn" onclick="location.href='./index.php'" aria-label="Voltar para a home">
+        <i class="fa-solid fa-house"></i>
+      </button>
+      <button class="icon-btn" onclick="location.href='./carrinho.php'" aria-label="Carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge-carrinho" id="badge-carrinho">0</span>
+      </button>
+      <button class="icon-btn" onclick="location.href='./login.html'" aria-label="Login">
+        <i class="fa-regular fa-circle-user"></i>
+      </button>
+    </div>
+  </header>
+
+  <section class="secao" style="padding-top:60px;">
+    <div class="checkout-wrap" style="margin:0 auto; max-width:1100px;">
+
+      <div class="checkout-left">
+        <div class="checkout-card" style="padding:50px;">
+          <div class="checkout-header" style="margin-bottom:30px; background:#0b4aa2; color:#fff; padding:16px 18px; border-radius:16px;">
+            <i class="fa-solid fa-circle-xmark" style="color:#fff;"></i>
+            <h2 style="color:#fff; margin:0;">PEDIDO CANCELADO</h2>
+          </div>
+
+          <div style="background:#f3f4f6; border:1px solid #e5e7eb; border-radius:16px; padding:18px; text-align:center; margin-left:auto; margin-right:0; max-width:520px;">
+            <div style="font-weight:900; color:#111; font-size:16px; margin-bottom:8px;">Tudo certo — seu pagamento não foi concluído.</div>
+            <p class="checkout-hint" id="cancelado-hint" style="margin:0 0 14px 0;">Redirecionando para o carrinho automaticamente...</p>
+
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:14px 14px; background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:14px;">
+              <div style="text-align:center;">
+                <div style="font-weight:900; color:#111; font-size:14px;">Tempo restante</div>
+                <div style="font-size:34px; font-weight:1000; color:#dc2626; line-height:1;" id="countdown">3s</div>
+              </div>
+              <div style="text-align:center; color:#666; font-weight:700;">para revisar seu carrinho</div>
+            </div>
+          </div>
+
+          <div class="checkout-msg" id="checkout-msg" aria-live="polite" style="margin-top:14px; color:#666;"></div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>QUEM SOMOS</h3>
+        <p>Somos a 1ª Loja brasileira de Informática a possuir um novo olhar para os produtos eletrônicos.</p>
+      </div>
+      <div class="footer-box">
+        <h3>CONTATO</h3>
+        <p>5511988586272</p>
+        <p>11988586272</p>
+        <p>sohdbrasil@gmail.com</p>
+        <p>Rua Cruzeiro, 959</p>
+      </div>
+      <div class="footer-box">
+        <h3>FORMAS DE PAGAMENTO</h3>
+        <div class="pagamentos">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-pix"></i>
+        </div>
+      </div>
+      <div class="footer-box">
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="(11) 99999-9999" />
+        <button>Enviar</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright OFICINA DO HD - 2026.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const countdownEl = document.getElementById('countdown');
+      let segundos = 3;
+
+      const tick = () => {
+        if (countdownEl) countdownEl.textContent = `${segundos}s`;
+        if (segundos <= 0) {
+          location.href = './carrinho.php';
+          return;
+        }
+        segundos -= 1;
+      };
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+</body>
+</html>
+

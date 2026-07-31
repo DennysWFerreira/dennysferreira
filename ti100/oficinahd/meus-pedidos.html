@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Pedidos - Oficina do HD</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/checkout.css" />
+  <link rel="stylesheet" href="./css/nav-return.css" />
+  <link rel="stylesheet" href="./css/order-tracking.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo-area" href="./index.php" aria-label="Ir para a página inicial" style="text-decoration:none; display:flex; align-items:center; gap:16px;">
+      <div class="logo">
+        <img src="./img/Gemini_Generated_Image_1nkg661nkg661nkg__3_-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logo-texto">
+        <h1>OFICINA</h1>
+        <span>DO</span>
+        <h2>HD</h2>
+      </div>
+    </a>
+
+    <div class="icons">
+      <button class="icon-btn" onclick="location.href='./carrinho.html'" aria-label="Carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge-carrinho" id="badge-carrinho">0</span>
+      </button>
+
+      <button class="icon-btn" onclick="location.href='./meus-pedidos.html'" aria-label="Meus pedidos">
+        <i class="fa-solid fa-receipt"></i>
+      </button>
+
+      <a class="icon-btn" id="btn-user-header" href="./login.html" aria-label="Login" title="Login">
+        <i class="fa-regular fa-circle-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <section class="secao" style="padding-top:60px;">
+    <div class="checkout-wrap" style="margin:0 auto; max-width:1100px;">
+      <div class="checkout-left" style="width:100%">
+        <div class="checkout-card" style="padding:34px;">
+          <div class="checkout-header" style="margin-bottom:22px; background:#0b4aa2; color:#fff; padding:16px 18px; border-radius:16px;">
+            <i class="fa-solid fa-receipt" style="color:#fff;"></i>
+            <h2 style="color:#fff; margin:0 0 0 12px; display:inline-block;">SEUS PEDIDOS</h2>
+          </div>
+
+          <p class="checkout-hint" style="margin-top:12px; color:#666;">Seus pedidos realizados na Oficina do HD.</p>
+
+          <div id="empty-state" style="display:none; margin-top:18px; padding:18px; border:1px dashed #cbd5e1; border-radius:14px; background:#f8fafc;">
+            <div style="font-weight:900; margin-bottom:6px;">Nenhum pedido encontrado</div>
+            <div style="color:#555;">Finalize uma compra para ver seus pedidos aqui.</div>
+          </div>
+
+          <div id="orders-list" style="margin-top:18px; display:flex; flex-direction:column; gap:14px;">
+            <!-- cards gerados por JS -->
+          </div>
+
+          <div id="order-details" style="margin-top:18px; display:none; padding:16px; border:1px solid #e5e7eb; border-radius:16px; background:#fff;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+              <div>
+                <div id="order-details-title" style="font-weight:1000; font-size:16px; margin-bottom:6px;">Detalhes do pedido</div>
+                <div id="order-details-meta" style="color:#666; font-weight:700; font-size:13px;">—</div>
+              </div>
+              <button id="order-details-close" type="button" class="btn-secundario" style="border:1px solid #d1d5db; background:#fff; padding:8px 12px; border-radius:12px; cursor:pointer;">
+                Fechar
+              </button>
+            </div>
+
+            <div style="margin-top:14px; display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+              <span id="order-details-status" style="background:#f3f4f6; padding:6px 10px; border-radius:999px; font-weight:900; font-size:12px; color:#111;">—</span>
+              <span id="order-details-payment" style="background:#eff6ff; padding:6px 10px; border-radius:999px; font-weight:900; font-size:12px; color:#0b4aa2;">—</span>
+              <span id="order-details-total" style="background:#fefce8; padding:6px 10px; border-radius:999px; font-weight:900; font-size:12px; color:#854d0e;">—</span>
+            </div>
+
+            <div style="margin-top:12px;">
+              <div style="color:#666; font-weight:900; font-size:13px; margin-bottom:8px;">Etapas do pedido</div>
+              <div id="order-details-etapas" style="display:flex; gap:10px; flex-wrap:wrap;">
+                <!-- barras -->
+              </div>
+            </div>
+
+            <div style="margin-top:14px; border-top:1px solid #f1f5f9; padding-top:12px;">
+              <div style="color:#666; font-weight:800; font-size:13px; margin-bottom:10px;">Itens</div>
+              <div id="order-details-items" style="display:flex; flex-direction:column; gap:10px;">
+                <!-- itens -->
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button type="button" class="btn-secundario" id="btn-limpar-pedidos" style="border:1px solid #d1d5db; background:#fff; padding:10px 14px; border-radius:12px; cursor:pointer;">
+              Limpar pedidos deste navegador
+            </button>
+            <a class="btn-comprar" href="./index.php" style="text-decoration:none; text-align:center; padding:10px 14px; border-radius:12px;">
+              Continuar comprando
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>QUEM SOMOS</h3>
+        <p>Somos a 1ª Loja brasileira de Informática a possuir um novo olhar para os produtos eletrônicos.</p>
+      </div>
+      <div class="footer-box">
+        <h3>CONTATO</h3>
+        <p>5511988586272</p>
+        <p>11988586272</p>
+        <p>sohdbrasil@gmail.com</p>
+        <p>Rua Cruzeiro, 959</p>
+      </div>
+      <div class="footer-box">
+        <h3>FORMAS DE PAGAMENTO</h3>
+        <div class="pagamentos">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-pix"></i>
+        </div>
+      </div>
+      <div class="footer-box">
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="(11) 99999-9999" />
+        <button>Enviar</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright OFICINA DO HD - 2026.</p>
+    </div>
+  </footer>
+
+  <script src="./js/meus-pedidos.js"></script>
+  <script>
+    // badge carrinho (usa o mesmo localStorage do carrinho)
+    (function(){
+      try{
+        const STORAGE_KEY = 'oficina_hd_carrinho_v1';
+        const STORAGE_KEY_FALLBACK = 'oficina_hd_cart_v1';
+        const badge = document.getElementById('badge-carrinho');
+        if(!badge) return;
+        const raw = localStorage.getItem(STORAGE_KEY);
+        const rawFallback = localStorage.getItem(STORAGE_KEY_FALLBACK);
+        let cart = [];
+        if(raw){
+          const data = JSON.parse(raw);
+          cart = Array.isArray(data) ? data : Object.entries(data||{}).map(([id,v])=>({id,...v}));
+        }else if(rawFallback){
+          const data = JSON.parse(rawFallback);
+          cart = Array.isArray(data) ? data : Object.entries(data||{}).map(([id,v])=>({id,...v}));
+        }
+        const count = cart.reduce((acc,i)=>acc + Number(i.qty ?? i.qtd ?? 0), 0);
+        badge.textContent = String(count);
+      }catch{ /* ignore */ }
+    })();
+  </script>
+</body>
+</html>
+

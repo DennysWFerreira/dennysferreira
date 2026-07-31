@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedido Aprovado - Oficina do HD</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/checkout.css" />
+  <link rel="stylesheet" href="./css/nav-return.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo-area" href="./index.php" aria-label="Ir para a página inicial" style="text-decoration:none; display:flex; align-items:center; gap:16px;">
+      <div class="logo">
+        <img src="./img/Gemini_Generated_Image_1nkg661nkg661nkg__3_-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logo-texto">
+        <h1>OFICINA</h1>
+        <span>DO</span>
+        <h2>HD</h2>
+      </div>
+    </a>
+
+    <div class="icons">
+
+      <button class="icon-btn" onclick="location.href='./carrinho.php'" aria-label="Carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge-carrinho" id="badge-carrinho">0</span>
+      </button>
+      <button class="icon-btn" onclick="location.href='./login.html'" aria-label="Login">
+        <i class="fa-regular fa-circle-user"></i>
+      </button>
+    </div>
+  </header>
+
+  <section class="secao" style="padding-top:60px;">
+    <div class="checkout-wrap">
+
+      <div class="checkout-left">
+        <div class="checkout-card">
+          <div class="checkout-header">
+
+              <i class="fa-solid fa-circle-check"></i>
+            <h2>PEDIDO APROVADO</h2>
+          </div>
+
+          <p class="checkout-hint" id="aprovado-hint" style="margin-top:28px;">Recebemos seu pedido. Estamos preparando o envio! 🎉</p>
+
+          <div style="margin-top:18px; display:flex; flex-direction:column; gap:10px;">
+            <div class="oficina-success-anim" aria-hidden="true" style="width:92px;height:92px;border-radius:999px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);display:flex;align-items:center;justify-content:center;">
+              <i class="fa-solid fa-circle-check" style="font-size:46px;color:#22c55e;filter:drop-shadow(0 10px 20px rgba(34,197,94,.25));"></i>
+            </div>
+            <div style="font-weight:950;letter-spacing:-.4px;color:#0f172a;font-size:20px;">Pagamento aprovado com sucesso</div>
+            <div class="checkout-msg" id="checkout-msg" aria-live="polite" style="margin-top:2px; color:#64748b; font-weight:700;"></div>
+            <div style="margin-top:6px; padding:12px 14px; border-radius:16px; border:1px solid rgba(34,197,94,.22); background:rgba(34,197,94,.06); display:flex; gap:12px; align-items:center;">
+              <div style="width:36px;height:36px;border-radius:12px;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.25);display:flex;align-items:center;justify-content:center;color:#16a34a; font-weight:900;">
+                <i class="fa-solid fa-hashtag"></i>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2px;">
+                <div style="font-size:12px;color:#64748b;font-weight:800;">Número do pedido</div>
+                <div id="pedido-id" style="font-size:18px;color:#0f172a;font-weight:950;letter-spacing:-.3px;">—</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-continue oficina-success-actions" style="margin-top:14px; display:flex; flex-direction:column; gap:12px">
+          <a class="btn-comprar" href="./meus-pedidos.php" style="text-decoration:none; text-align:center;">Acompanhar pedido</a>
+          <a class="btn-comprar" href="./index.php" style="text-decoration:none; text-align:center;">Voltar para loja</a>
+        </div>
+      </div>
+
+
+      <aside class="checkout-right">
+
+        <div class="checkout-card summary-card">
+          <div class="checkout-header">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h2>RESUMO</h2>
+          </div>
+
+          <div class="summary-row">
+            <span>Status</span>
+            <b>Concluído</b>
+          </div>
+
+          <div class="summary-row">
+            <span>Pagamento</span>
+            <b id="payment-method">—</b>
+          </div>
+
+          <div class="summary-row" id="installments-row" style="display:none;">
+            <span>Parcelamento</span>
+            <b id="installments-text">—</b>
+          </div>
+
+          <div class="summary-row" id="card-row" style="display:none;">
+            <span>Cartão</span>
+            <b id="card-text">—</b>
+          </div>
+
+
+          <div class="summary-row total">
+            <span>Total</span>
+            <b id="payment-amount">R$ 0,00</b>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>QUEM SOMOS</h3>
+        <p>Somos a 1ª Loja brasileira de Informática a possuir um novo olhar para os produtos eletrônicos.</p>
+      </div>
+      <div class="footer-box">
+        <h3>CONTATO</h3>
+        <p>5511988586272</p>
+        <p>11988586272</p>
+        <p>sohdbrasil@gmail.com</p>
+        <p>Rua Cruzeiro, 959</p>
+      </div>
+      <div class="footer-box">
+        <h3>FORMAS DE PAGAMENTO</h3>
+        <div class="pagamentos">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-pix"></i>
+        </div>
+      </div>
+      <div class="footer-box">
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="(11) 99999-9999" />
+        <button>Enviar</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright OFICINA DO HD - 2026.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const params = new URLSearchParams(location.search);
+      const pedidoParam = params.get('pedido');
+      const payment = params.get('payment') || params.get('metodo') || '—';
+      const amount = params.get('amount') || params.get('total') || null;
+
+      const pmEl = document.getElementById('payment-method');
+      const amtEl = document.getElementById('payment-amount');
+      const pedidoEl = document.getElementById('pedido-id');
+      const msgEl = document.getElementById('checkout-msg');
+
+      const installmentsRow = document.getElementById('installments-row');
+      const installmentsText = document.getElementById('installments-text');
+      const cardRow = document.getElementById('card-row');
+      const cardText = document.getElementById('card-text');
+
+      if (pmEl) pmEl.textContent = payment;
+
+
+      if (amtEl) {
+        const n = amount == null ? 0 : Number(String(amount).replace(',', '.'));
+        amtEl.textContent = Number.isFinite(n)
+          ? n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+          : 'R$ 0,00';
+      }
+
+      // Pedido: tenta query string primeiro; se não existir, fallback para “último pedido” do localStorage
+      let pedidoId = pedidoParam;
+      if (!pedidoId) {
+        try {
+          const STORAGE_PEDIDOS_KEY = 'oficina_hd_pedidos_v1';
+          const raw = localStorage.getItem(STORAGE_PEDIDOS_KEY);
+          const pedidos = JSON.parse(raw || '[]');
+          if (Array.isArray(pedidos) && pedidos.length) {
+            pedidoId = pedidos[pedidos.length - 1]?.id;
+          }
+        } catch {}
+      }
+
+      if (pedidoEl) pedidoEl.textContent = pedidoId || '—';
+
+      if (msgEl) {
+        msgEl.textContent = 'Seu pagamento foi processado com sucesso.';
+      }
+
+      // Busca pedido no localStorage e renderiza parcelamento + cartão usado
+      try {
+        const STORAGE_PEDIDOS_KEY = 'oficina_hd_pedidos_v1';
+        const raw = localStorage.getItem(STORAGE_PEDIDOS_KEY);
+        const pedidos = JSON.parse(raw || '[]');
+        if (Array.isArray(pedidos) && pedidos.length) {
+          const pedido = pedidos.find(p => p && p.id === pedidoId) || pedidos[pedidos.length - 1];
+
+          if (pedido?.installments?.text && installmentsRow && installmentsText) {
+            installmentsText.textContent = pedido.installments.text;
+            installmentsRow.style.display = '';
+          }
+
+          if (pedido?.card_used?.display && cardRow && cardText) {
+            cardText.textContent = pedido.card_used.display;
+            cardRow.style.display = '';
+          }
+        }
+      } catch {}
+
+
+      // animação sutil de entrada
+      try {
+        const el = document.querySelector('.oficina-success-anim');
+        if (el) {
+          el.style.animation = 'oficinaPop .55s cubic-bezier(.22,.61,.36,1) both';
+        }
+      } catch {}
+
+      // keyframes (caso CSS não tenha)
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes oficinaPop {
+          0% { transform: translateY(8px) scale(.92); opacity: .0; }
+          100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+    })();
+  </script>
+
+
+</body>
+</html>
+

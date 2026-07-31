@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagamento via PIX - Oficina do HD</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/checkout.css" />
+  <link rel="stylesheet" href="./css/nav-return.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    .pix-wrap{max-width:860px;margin:0 auto;padding:28px 16px;}
+    .pix-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;}
+    @media (max-width: 800px){.pix-grid{grid-template-columns:1fr;}}
+
+    .pix-card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(0,0,0,.06);}
+    .pix-title{display:flex;gap:10px;align-items:center;margin-bottom:10px;}
+    .pix-title i{font-size:22px;color:#00a651;}
+
+    .pix-amount{font-size:20px;font-weight:700;margin-top:10px;}
+    .pix-sub{color:#666;margin-top:6px;}
+
+    .pix-qr-area{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
+
+    .pix-qr-placeholder{
+      width:100%;
+      max-width:360px;
+      aspect-ratio:1/1;
+      border:1px dashed #ddd;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#999;
+      border-radius:12px;
+      padding:14px;
+      background:linear-gradient(180deg,#fafafa,#fff);
+    }
+
+    .copy-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+    .copy-row input{flex:1;min-width:260px;padding:10px 12px;border-radius:10px;border:1px solid #e5e5e5;}
+    .copy-row button{padding:10px 14px;border-radius:10px;border:0;background:#0ea85a;color:#fff;cursor:pointer;}
+
+    .pix-msg{margin-top:12px;color:#d97706;}
+
+    .btn-back{margin-top:14px;display:inline-block;color:#fff;background:#111;padding:10px 14px;border-radius:10px;text-decoration:none;}
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <a class="logo-area" href="./index.php" aria-label="Ir para a página inicial" style="text-decoration:none; display:flex; align-items:center; gap:16px;">
+      <div class="logo">
+        <img src="./img/Gemini_Generated_Image_1nkg661nkg661nkg__3_-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logo-texto">
+        <h1>OFICINA</h1>
+        <span>DO</span>
+        <h2>HD</h2>
+      </div>
+    </a>
+
+    <div class="icons">
+      <button class="icon-btn" onclick="location.href='./index.php'" aria-label="Voltar para a home">
+        <i class="fa-solid fa-house"></i>
+      </button>
+    </div>
+  </header>
+
+  <section class="secao" style="padding-top:60px;">
+    <div class="pix-wrap">
+      <a class="nav-return-btn" href="./checkout.php" aria-label="Voltar" style="margin-bottom:16px;display:inline-flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-arrow-left"></i> Voltar
+      </a>
+
+      <div class="pix-grid">
+      <div class="pix-card">
+          <div class="pix-title">
+            <i class="fa-brands fa-pix"></i>
+            <h2>Pagamento via PIX</h2>
+          </div>
+
+          <div class="pix-amount" id="pix-amount">R$ 0,00</div>
+          <div class="pix-sub" id="pix-sub">Aguardando confirmação do pagamento.</div>
+          <div style="margin-top:10px; background:#f3f4f6; border-radius:12px; padding:12px 14px; border:1px solid #e5e7eb;">
+            <div style="font-weight:900; color:#111; font-size:14px;">Tempo para pagar</div>
+            <div style="display:flex; align-items:baseline; gap:10px;">
+              <div style="font-size:26px; font-weight:900; color:#111;" id="pix-timer">00:10:00</div>
+              <div style="color:#666; font-weight:600;">min restantes</div>
+            </div>
+          </div>
+
+          <div id="pix-itens-box" style="display:none; margin-top:14px; background:#fff; border-radius:14px; padding:12px 14px; border:1px solid #e5e7eb;">
+            <div style="font-weight:900; color:#111; font-size:14px; margin-bottom:8px;">O que você comprou</div>
+            <div id="pix-itens"></div>
+          </div>
+
+
+          <div class="pix-msg" id="pix-status" style="display:none"></div>
+
+
+        </div>
+
+          <div class="pix-card pix-qr-area">
+          <div class="pix-title" style="margin-bottom:0">
+            <i class="fa-solid fa-qrcode"></i>
+            <h3 style="margin:0;">Escaneie o QR Code</h3>
+          </div>
+
+        <div class="pix-qr-placeholder" id="pix-qr">
+            <img
+              src="./img/qr-fake.png"
+              alt="QR Code (simulação)"
+              style="width:450px;max-width:100%;height:auto;display:block;"
+            />
+          </div>
+
+          <div class="copy-row" style="margin-top:6px; gap:10px;">
+            <button type="button" id="btn-cancelar-pagamento" style="background:#dc2626;color:#fff; border-radius:10px; border:1px solid #dc2626; padding:10px 14px; cursor:pointer;">
+              Cancelar pagamento
+            </button>
+            <button type="button" id="btn-confirmar-pagamento" style="background:#111;color:#fff; border-radius:10px; border:0; padding:10px 14px; cursor:pointer;">
+              Confirmar pagamento via PIX
+            </button>
+          </div>
+
+          <div class="copy-row">
+            <input id="pix-code" type="text" readonly value="" />
+            <button type="button" id="btn-copy">Copiar código</button>
+          </div>
+
+          <div style="color:#666;line-height:1.4">
+            Se preferir, copie o código PIX acima e cole no app do seu banco.
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      const params = new URLSearchParams(location.search);
+      const amount = params.get('amount') || '0';
+      const pixCode = params.get('pixCode') || '';
+
+      const amountEl = document.getElementById('pix-amount');
+      const codeEl = document.getElementById('pix-code');
+      const qrEl = document.getElementById('pix-qr');
+      const statusEl = document.getElementById('pix-status');
+
+      const fmt = (n) => Number(n || 0).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
+      if(amountEl) amountEl.textContent = fmt(amount);
+      if(codeEl) codeEl.value = pixCode;
+
+      // Cronômetro fictício para o cliente fazer o PIX
+      const timerEl = document.getElementById('pix-timer');
+      const DEFAULT_MINUTOS = 10;
+      let segundosRestantes = (Number(DEFAULT_MINUTOS) || 10) * 60;
+
+      function formatarTempoSegundos(totalSeg){
+        const seg = Math.max(0, Number(totalSeg) || 0);
+        const h = Math.floor(seg / 3600);
+        const m = Math.floor((seg % 3600) / 60);
+        const s = seg % 60;
+        const pad = (n) => String(n).padStart(2, '0');
+        return `${pad(h)}:${pad(m)}:${pad(s)}`;
+      }
+
+      if(timerEl){
+        timerEl.textContent = formatarTempoSegundos(segundosRestantes);
+      }
+
+      const timerInterval = setInterval(() => {
+        segundosRestantes -= 1;
+        if(timerEl){
+          timerEl.textContent = formatarTempoSegundos(segundosRestantes);
+        }
+        if(segundosRestantes <= 0){
+          clearInterval(timerInterval);
+          if(statusEl){
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Tempo para pagar expirou (simulação).';
+          }
+          const btn = document.getElementById('btn-confirmar-pagamento');
+          if(btn) btn.disabled = true;
+          if(btn) btn.style.opacity = '0.6';
+          if(btn) btn.style.cursor = 'not-allowed';
+        }
+      }, 1000);
+
+      const pixItensEl = document.getElementById('pix-itens');
+      const pixItensBoxEl = document.getElementById('pix-itens-box');
+
+      function ensurePixItensBox(){
+        if(!pixItensBoxEl) return;
+        pixItensBoxEl.style.display = 'block';
+      }
+
+
+      // carrega itens do carrinho salvo no localStorage
+
+      // o checkout limpa o carrinho ao confirmar, então aqui vamos tentar ler antes via URL
+      // (se não tiver, mostramos nada)
+      // tenta buscar itens do carrinho via URL (checkout empacota em items=...)
+      const pixItemsParam = params.get('items') || '';
+      if (pixItensEl) {
+        if (pixItemsParam) {
+          try{
+            const items = JSON.parse(decodeURIComponent(pixItemsParam));
+            if (Array.isArray(items) && items.length) {
+              pixItensEl.innerHTML = items.map(it => {
+                const nome = it.nome ?? it.name ?? '';
+                const qtd = it.qtd ?? it.qty ?? 0;
+                const preco = it.preco ?? it.price ?? 0;
+                const totalItem = Number(preco) * Number(qtd);
+                return `<div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid rgba(0,0,0,.04)">
+                  <div style="display:flex; align-items:center; gap:12px; min-width:0;">
+                    <img src="${it.image || it.img || it.foto || ''}" alt="${nome}" style="width:56px; height:56px; object-fit:cover; border-radius:10px; background:#f3f4f6; flex:0 0 auto;">
+                    <div style="min-width:0;">
+                      <div style="font-weight:800; color:#111; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:240px;">${nome}</div>
+                      <div style="color:#666; font-weight:700; font-size:13px;">x${qtd}</div>
+                    </div>
+                  </div>
+                  <b style="white-space:nowrap;">${Number(totalItem).toLocaleString('pt-BR', {style:'currency', currency:'BRL'})}</b>
+                </div>`;
+              }).join('');
+              ensurePixItensBox();
+            } else {
+              pixItensEl.textContent = '';
+            }
+          }catch{
+            pixItensEl.textContent = '';
+          }
+        } else {
+          pixItensEl.textContent = '';
+        }
+      }
+
+      // mantém a imagem do QR fake no carregamento (nenhum texto extra).
+
+      document.getElementById('btn-copy')?.addEventListener('click', async () => {
+        try{
+          await navigator.clipboard.writeText(pixCode || '');
+          if(statusEl){
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Código PIX copiado!';
+          }
+        }catch{
+          if(statusEl){
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Não foi possível copiar automaticamente. Selecione o código manualmente.';
+          }
+        }
+      });
+
+      // Botão cancelar: vai para tela Pedido Cancelado e depois volta ao carrinho
+      document.getElementById('btn-cancelar-pagamento')?.addEventListener('click', () => {
+        location.href = './pedido-cancelado.html';
+      });
+
+      // Botão de simulação: após "confirmar", troca o QR pelo QR fictício e segue o fluxo
+      document.getElementById('btn-confirmar-pagamento')?.addEventListener('click', async () => {
+        if(statusEl){
+          statusEl.style.display = 'block';
+          statusEl.textContent = 'Pagamento confirmado!';
+        }
+
+        if(qrEl){
+          qrEl.innerHTML = `
+            <div style="text-align:center;width:100%">
+              <img src="./img/qr-fake.png" alt="QR Code"
+                style="width:240px;max-width:100%;height:auto;display:block;margin:0 auto;" />
+            </div>`;
+        }
+
+        // Monta itens a partir do parâmetro da URL
+        let itensPix = [];
+        try {
+          if (pixItemsParam) itensPix = JSON.parse(decodeURIComponent(pixItemsParam));
+        } catch {}
+
+        // Salva pedido no banco
+        const payload = {
+          forma_pagamento: 'pix',
+          valor_total:     Number(amount) || 0,
+          status:          'Pago',
+          items: itensPix.map(i => ({
+            id:    i.id    || i.produto_id || '',
+            nome:  i.nome  || i.name       || '',
+            preco: i.preco || i.price      || 0,
+            qtd:   i.qtd   || i.qty        || 1,
+          }))
+        };
+
+        let pedidoId = null;
+        try {
+          const resp = await fetch('./php/criar_pedido.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const data = await resp.json();
+          if (data.success) pedidoId = data.pedido_id;
+        } catch (err) {
+          console.error('Erro ao salvar pedido:', err);
+        }
+
+        // Salva também no localStorage para meus-pedidos
+        try {
+          const STORAGE_PEDIDOS_KEY = 'oficina_hd_pedidos_v1';
+          const pedidos = JSON.parse(localStorage.getItem(STORAGE_PEDIDOS_KEY) || '[]');
+          pedidos.push({
+            id:             pedidoId || Math.random().toString(36).slice(2,10).toUpperCase(),
+            created_at:     new Date().toISOString(),
+            status:         'Pago',
+            payment_method: 'pix',
+            total:          Number(amount) || 0,
+            items:          itensPix,
+          });
+          localStorage.setItem(STORAGE_PEDIDOS_KEY, JSON.stringify(pedidos));
+          localStorage.removeItem('oficina_hd_cart_v1');
+          localStorage.removeItem('oficina_hd_carrinho_v1');
+        } catch {}
+
+        setTimeout(() => {
+          location.href = `./pedido-aprovado.html?payment=PIX&amount=${encodeURIComponent(String(amount))}&pedido=${encodeURIComponent(pedidoId || '')}`;
+        }, 800);
+      });
+    })();
+  </script>
+</body>
+</html>
+

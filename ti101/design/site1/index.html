@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espaço Essência - Design de Interiores</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- CSS custom -->
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-leaf"></i> Espaço Essência
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME / HERO -->
+  <section id="home" class="hero">
+    <div class="container text-center" data-aos="fade-up">
+      <h1>Design que transforma ambientes</h1>
+      <p class="lead">Harmonia, sofisticação e identidade para cada espaço</p>
+      <a href="#contato" class="btn btn-custom mt-3">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600" alt="Sala decorada" class="img-fluid rounded-4 shadow">
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <h2>Quem somos</h2>
+          <p>Com mais de 10 anos no mercado, a Espaço Essência nasceu para criar ambientes que contam histórias. Unimos funcionalidade, estética e bem-estar em cada projeto.</p>
+          <p><i class="fas fa-check-circle text-success"></i> +300 projetos entregues</p>
+          <p><i class="fas fa-check-circle text-success"></i> Atendimento personalizado</p>
+          <p><i class="fas fa-check-circle text-success"></i> Projetos sustentáveis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS (DETALHADOS) -->
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Nossos Serviços</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4" data-aos="zoom-in">
+          <div class="service-card">
+            <i class="fas fa-home"></i>
+            <h4>Residencial</h4>
+            <p>Apartamentos, casas e coberturas com identidade única.</p>
+            <ul class="list-unstyled mt-3">
+              <li>✔ Planta humanizada</li>
+              <li>✔ Mobiliário sob medida</li>
+              <li>✔ 3D realista</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="service-card">
+            <i class="fas fa-building"></i>
+            <h4>Comercial</h4>
+            <p>Lojas, escritórios e clínicas que vendem experiência.</p>
+            <ul class="list-unstyled mt-3">
+              <li>✔ Identidade visual</li>
+              <li>✔ Layout estratégico</li>
+              <li>✔ Conforto e produtividade</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="service-card">
+            <i class="fas fa-palette"></i>
+            <h4>Consultoria & Cores</h4>
+            <p>Orientação completa sem obra, apenas com decoração.</p>
+            <ul class="list-unstyled mt-3">
+              <li>✔ Visita técnica</li>
+              <li>✔ Moodboard personalizado</li>
+              <li>✔ Lista de compras</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS EM DESTAQUE (GALERIA EXPANSIVA) -->
+  <section id="projetos" class="projetos">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Projetos reais</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400" class="project-img" alt="Sala moderna">
+            <div class="p-3">
+              <h5>Sala Integrada</h5>
+              <p>Estilo contemporâneo com tons verdes e bege.</p>
+              <span class="badge bg-success">Projeto 2024</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=400" class="project-img" alt="Cozinha">
+            <div class="p-3">
+              <h5>Cozinha Planejada</h5>
+              <p>Mármore, madeira e iluminação pontual.</p>
+              <span class="badge bg-success">Destaque</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400" class="project-img" alt="Home office">
+            <div class="p-3">
+              <h5>Home Office</h5>
+              <p>Ergonomia e estilo minimalista.</p>
+              <span class="badge bg-success">Sustentável</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <button class="btn btn-outline-custom" id="verMaisBtn">Ver mais projetos <i class="fas fa-arrow-down"></i></button>
+      </div>
+      <div id="projetosExtras" class="row g-4 mt-3 d-none">
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400" class="project-img" alt="Quarto">
+            <div class="p-3"><h5>Quarto Casal</h5><p>Aconchego e iluminação indireta.</p></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400" class="project-img" alt="Banheiro">
+            <div class="p-3"><h5>Banheiro Spa</h5><p>Pedras naturais e tons terrosos.</p></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1616132354016-9a157f7b6f3f?w=400" class="project-img" alt="Varanda">
+            <div class="p-3"><h5>Varanda Gourmet</h5><p>Integração com jardim.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="depoimentos">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">O que nossos clientes dizem</h2>
+      <div class="row">
+        <div class="col-md-4" data-aos="fade-right">
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left"></i>
+            <p>“Transformaram minha casa em um refúgio. Atendimento impecável!”</p>
+            <h6>- Ana M.</h6>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left"></i>
+            <p>“Projeto comercial superou expectativas. Recomendo de olhos fechados.”</p>
+            <h6>- Rafael C.</h6>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-left">
+          <div class="testimonial-card">
+            <i class="fas fa-quote-left"></i>
+            <p>“Consultoria de cores mudou tudo! Simples e eficiente.”</p>
+            <h6>- Fernanda L.</h6>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ - PERGUNTAS FREQUENTES -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Dúvidas comuns</h2>
+      <div class="accordion" id="accordionFaq">
+        <div class="accordion-item" data-aos="fade-up">
+          <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Qual o valor médio de um projeto?</button></h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq"><div class="accordion-body">O valor varia de R$ 2.500 a R$ 15.000 dependendo da metragem e complexidade. Consultoria a partir de R$ 800.</div></div>
+        </div>
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Atendem todo o Brasil?</button></h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq"><div class="accordion-body">Atendemos presencialmente em SP, RJ e MG. Para outros estados, consultoria online.</div></div>
+        </div>
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Quanto tempo dura um projeto?</button></h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq"><div class="accordion-body">Entre 20 e 60 dias, incluindo briefing, criação 3D, aprovação e execução.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container text-center" data-aos="fade-up">
+      <h3>Receba novidades e dicas de decoração</h3>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input type="email" id="newsEmail" class="form-control" placeholder="Seu melhor e-mail">
+            <button class="btn btn-custom" id="newsBtn">Assinar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contato">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2>Vamos transformar seu espaço?</h2>
+          <p>Entre em contato e agende uma conversa sem compromisso.</p>
+          <ul class="contact-list">
+            <li><i class="fab fa-whatsapp"></i> (11) 99999-9999</li>
+            <li><i class="fas fa-envelope"></i> contato@espacoessencia.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo</li>
+            <li><i class="fab fa-instagram"></i> @espacoessencia</li>
+          </ul>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <form id="formContato">
+            <input type="text" class="form-control mb-3" placeholder="Seu nome" id="nome" required>
+            <input type="email" class="form-control mb-3" placeholder="Seu e-mail" id="email" required>
+            <select class="form-control mb-3">
+              <option>Residencial</option><option>Comercial</option><option>Consultoria</option>
+            </select>
+            <textarea class="form-control mb-3" rows="4" placeholder="Mensagem" id="msg" required></textarea>
+            <button type="submit" class="btn btn-custom w-100">Enviar mensagem <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container text-center">
+      <p>&copy; 2025 Espaço Essência - Design de Interiores. Sustentabilidade e estilo.</p>
+      <div>
+        <a href="#"><i class="fab fa-instagram mx-2"></i></a>
+        <a href="#"><i class="fab fa-pinterest mx-2"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in mx-2"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- IA CHAT FLUTUANTE -->
+  <div id="chat-ia">
+    <div id="chat-header"><i class="fas fa-robot"></i> IA Essência<button id="close-chat">×</button></div>
+    <div id="chat-messages"><div class="bot-msg">Olá! Sou a IA da Espaço Essência. Posso ajudar com serviços, orçamento ou projetos?</div></div>
+    <div id="chat-input-area"><input type="text" id="chat-input" placeholder="Digite sua pergunta..."><button id="send-chat"><i class="fas fa-paper-plane"></i></button></div>
+  </div>
+  <div id="chat-toggle"><i class="fas fa-comment-dots"></i></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

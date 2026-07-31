@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Acalme+ - Plataforma de saúde mental com profissionais, chat humanizado e registro emocional">
+    <title>Acalme+ | Saúde Mental em Equilíbrio</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <!-- ================= MENU DE NAVEGAÇÃO ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i> Acalme<span>+</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Saúde Mental</a></li>
+                <li><a href="#recursos" class="nav-link">Recursos</a></li>
+                <li><a href="#profissionais-page" class="nav-link" id="nav-profissionais">Profissionais</a></li>
+                <li><a href="#chat-page" class="nav-link" id="nav-chat">Atendimento</a></li>
+                <li><a href="#contato" class="nav-link">SAC</a></li>
+                <li><a href="#" id="user-icon-nav" class="user-icon-link"><i class="fas fa-user-circle"></i> <span id="user-name-display">Perfil</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="app-content">
+        <!-- ================= SESSÃO HERO (HOME) ================= -->
+        <section id="home" class="section hero-section">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>Cuidar da mente é um ato de <span class="highlight">coragem</span></h1>
+                    <p>Bem-vindo ao Acalme+, seu espaço seguro para registrar emoções, conversar com profissionais e encontrar apoio emocional.</p>
+                    <button class="btn-primary" id="cta-cadastro">Começar agora <i class="fas fa-arrow-right"></i></button>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">5000+</div>
+                            <div class="stat-label">Pessoas ajudadas</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Profissionais</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Atendimento</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SESSÃO SOBRE SAÚDE MENTAL ================= -->
+        <section id="sobre" class="section sobre-section">
+            <div class="container">
+                <h2>O que é saúde mental?</h2>
+                <div class="sobre-grid">
+                    <div class="sobre-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Equilíbrio emocional</h3>
+                        <p>É a base para lidar com desafios, manter relacionamentos saudáveis e tomar decisões conscientes.</p>
+                    </div>
+                    <div class="sobre-card">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Autocuidado</h3>
+                        <p>Pequenas práticas diárias que fortalecem sua resiliência e bem-estar.</p>
+                    </div>
+                    <div class="sobre-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>Sem tabu</h3>
+                        <p>Conversar sobre sentimentos é essencial. No Acalme+, você encontra acolhimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SESSÃO DE RECURSOS ================= -->
+        <section id="recursos" class="section recursos-section">
+            <div class="container">
+                <h2>Ferramentas para o seu dia a dia</h2>
+                <div class="recursos-grid">
+                    <div class="recurso-item" data-recurso="emocional">
+                        <i class="fas fa-smile"></i>
+                        <h3>Registro emocional</h3>
+                        <p>Registre como você se sente e acompanhe seu histórico.</p>
+                    </div>
+                    <div class="recurso-item" data-recurso="profissionais">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Catálogo de profissionais</h3>
+                        <p>Psicólogos parceiros, prontos para ajudar.</p>
+                    </div>
+                    <div class="recurso-item" data-recurso="chat">
+                        <i class="fas fa-comment-dots"></i>
+                        <h3>Chat humanizado</h3>
+                        <p>Converse com estagiários fictícios treinados para escuta ativa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SESSÃO DINÂMICA ================= -->
+        <div id="dynamic-areas">
+            <div id="profissionais-page" class="page-content hidden">
+                <div class="container">
+                    <h2><i class="fas fa-users"></i> Catálogo de Profissionais</h2>
+                    <div class="profissionais-grid" id="profissionais-list"></div>
+                </div>
+            </div>
+
+            <div id="chat-page" class="page-content hidden">
+                <div class="container chat-container-modern">
+                    <h2><i class="fas fa-comments"></i> Chat Acalme+ (atendimento humanizado)</h2>
+                    <div class="chat-box" id="chat-box">
+                        <div class="chat-message bot">
+                            <span class="chat-name">Atendente (Estagiário Lucas):</span>
+                            <p>Olá! Sou estagiário de psicologia. Como você está se sentindo hoje? 💙</p>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+                        <button id="send-chat"><i class="fas fa-paper-plane"></i> Enviar</button>
+                    </div>
+                    <p class="chat-note">*Atendimento por estagiários voluntários. Respostas automáticas simuladas.</p>
+                </div>
+            </div>
+
+            <!-- ================= REGISTRO EMOCIONAL MELHORADO ================= -->
+            <div id="emocional-section" class="section emocional-wrapper">
+                <div class="container">
+                    <div class="emocional-header">
+                        <h2><i class="far fa-heart"></i> Registro Emocional</h2>
+                        <p class="emocional-subtitle">Registre suas emoções diariamente e acompanhe sua jornada de autoconhecimento</p>
+                    </div>
+                    
+                    <div class="emocional-card-modern">
+                        <div class="mood-selector">
+                            <label class="mood-label">Como você está se sentindo hoje?</label>
+                            <div class="mood-grid">
+                                <div class="mood-option" data-humor="Excelente" data-icon="fa-grin-stars">
+                                    <i class="fas fa-grin-stars"></i>
+                                    <span>Excelente</span>
+                                </div>
+                                <div class="mood-option" data-humor="Feliz" data-icon="fa-smile-wink">
+                                    <i class="fas fa-smile-wink"></i>
+                                    <span>Feliz</span>
+                                </div>
+                                <div class="mood-option" data-humor="Calmo" data-icon="fa-peace">
+                                    <i class="fas fa-peace"></i>
+                                    <span>Calmo</span>
+                                </div>
+                                <div class="mood-option" data-humor="Neutro" data-icon="fa-meh">
+                                    <i class="fas fa-meh"></i>
+                                    <span>Neutro</span>
+                                </div>
+                                <div class="mood-option" data-humor="Triste" data-icon="fa-frown">
+                                    <i class="fas fa-frown"></i>
+                                    <span>Triste</span>
+                                </div>
+                                <div class="mood-option" data-humor="Ansioso" data-icon="fa-tired">
+                                    <i class="fas fa-tired"></i>
+                                    <span>Ansioso</span>
+                                </div>
+                                <div class="mood-option" data-humor="Estressado" data-icon="fa-angry">
+                                    <i class="fas fa-angry"></i>
+                                    <span>Estressado</span>
+                                </div>
+                                <div class="mood-option" data-humor="Cansado" data-icon="fa-dizzy">
+                                    <i class="fas fa-dizzy"></i>
+                                    <span>Cansado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sentimento-container">
+                            <label class="sentimento-label">
+                                <i class="fas fa-pen-alt"></i> 
+                                Descreva o que você está sentindo
+                            </label>
+                            <div class="textarea-wrapper">
+                                <textarea id="sentimento-texto" rows="4" placeholder="Ex: Hoje me sinto mais leve, consegui concluir minhas tarefas e me sentir produtivo..."></textarea>
+                                <div class="textarea-char-count">
+                                    <span id="char-count">0</span> caracteres
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="emocional-actions">
+                            <button id="salvar-emocao" class="btn-save-emocao">
+                                <i class="fas fa-save"></i>
+                                <span>Salvar Registro</span>
+                            </button>
+                            <button id="limpar-form" class="btn-clear-emocao">
+                                <i class="fas fa-eraser"></i>
+                                <span>Limpar</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="historico-modern">
+                        <div class="historico-header">
+                            <h3><i class="fas fa-chart-line"></i> Seu Histórico de Emoções</h3>
+                            <button id="exportar-historico" class="btn-export">
+                                <i class="fas fa-download"></i> Exportar
+                            </button>
+                        </div>
+                        <div class="historico-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-calendar-week"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="total-registros">0</span>
+                                    <span class="stat-label">Total de registros</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-chart-bar"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="media-semanal">0</span>
+                                    <span class="stat-label">Média semanal</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-smile"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="humor-dominante">-</span>
+                                    <span class="stat-label">Humor dominante</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="historico-lista-container">
+                            <ul id="historico-lista" class="historico-lista-modern"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= FOOTER MELHORADO ================= -->
+            <footer id="contato" class="footer-modern">
+                <div class="footer-wave">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#5B3A8C" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg>
+                </div>
+                <div class="footer-content-modern">
+                    <div class="footer-container-modern">
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <i class="fas fa-brain"></i> Acalme<span>+</span>
+                            </div>
+                            <p class="footer-description">Cuidar da mente é um ato de coragem. Estamos aqui para apoiar você em cada passo dessa jornada.</p>
+                            <div class="social-links-modern">
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="footer-section">
+                            <h4><i class="fas fa-link"></i> Links Rápidos</h4>
+                            <ul class="footer-links">
+                                <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
+                                <li><a href="#sobre"><i class="fas fa-chevron-right"></i> Saúde Mental</a></li>
+                                <li><a href="#recursos"><i class="fas fa-chevron-right"></i> Recursos</a></li>
+                                <li><a href="#" id="footer-profissionais"><i class="fas fa-chevron-right"></i> Profissionais</a></li>
+                                <li><a href="#" id="footer-chat"><i class="fas fa-chevron-right"></i> Chat</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h4><i class="fas fa-headset"></i> SAC - Atendimento</h4>
+                            <form id="sac-form-modern" class="sac-form-modern">
+                                <div class="form-group-modern">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="sac-nome-modern" placeholder="Seu nome" required>
+                                </div>
+                                <div class="form-group-modern">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="sac-email-modern" placeholder="Seu e-mail" required>
+                                </div>
+                                <div class="form-group-modern">
+                                    <i class="fas fa-comment"></i>
+                                    <textarea id="sac-mensagem-modern" rows="3" placeholder="Sua mensagem..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn-submit-modern">
+                                    <i class="fas fa-paper-plane"></i> Enviar mensagem
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="footer-section">
+                            <h4><i class="fas fa-phone-alt"></i> Contato Direto</h4>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <div>
+                                        <strong>Telefone</strong>
+                                        <span>0800 123 4567</span>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <strong>E-mail</strong>
+                                        <span>acalme@ajuda.com</span>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <strong>Horário</strong>
+                                        <span>Seg-Sex: 8h às 20h</span>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <strong>Endereço</strong>
+                                        <span>São Paulo, SP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="newsletter-section">
+                        <div class="newsletter-container">
+                            <div class="newsletter-text">
+                                <i class="fas fa-envelope-open-text"></i>
+                                <div>
+                                    <h4>Receba dicas de saúde mental</h4>
+                                    <p>Inscreva-se para receber conteúdos exclusivos e dicas de bem-estar</p>
+                                </div>
+                            </div>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Seu melhor e-mail" id="newsletter-email">
+                                <button id="btn-newsletter"><i class="fas fa-paper-plane"></i> Inscrever</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom-modern">
+                        <div class="footer-bottom-container">
+                            <p>&copy; 2025 Acalme+ - Todos os direitos reservados.</p>
+                            <div class="footer-bottom-links">
+                                <a href="#">Política de Privacidade</a>
+                                <a href="#">Termos de Uso</a>
+                                <a href="#">Segurança</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- ================= MODAL DE PERFIL ================= -->
+    <div id="modal-perfil" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div class="perfil-tabs">
+                <button class="tab-btn active" data-tab="login-tab">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button class="tab-btn" data-tab="cadastro-tab">
+                    <i class="fas fa-user-plus"></i> Cadastro
+                </button>
+                <button class="tab-btn" data-tab="perfil-tab" id="perfil-tab-btn">
+                    <i class="fas fa-user-circle"></i> Meu Perfil
+                </button>
+            </div>
+            
+            <div id="login-tab" class="tab-content active">
+                <h2><i class="fas fa-sign-in-alt"></i> Acesse sua conta</h2>
+                <form id="form-login">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="login-email" placeholder="E-mail" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-senha" placeholder="Senha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                </form>
+                <div id="mensagem-erro-login" class="error-message"></div>
+            </div>
+            
+            <div id="cadastro-tab" class="tab-content">
+                <h2><i class="fas fa-user-plus"></i> Criar nova conta</h2>
+                <form id="form-cadastro">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="cad-nome" placeholder="Nome completo *" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="cad-email" placeholder="E-mail *" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="cad-telefone" placeholder="Telefone (opcional)">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="cad-senha" placeholder="Senha (mínimo 6 caracteres) *" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="cad-confirm-senha" placeholder="Confirmar senha *" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Criar conta</button>
+                </form>
+                <div id="mensagem-erro-cadastro" class="error-message"></div>
+            </div>
+            
+            <div id="perfil-tab" class="tab-content">
+                <h2><i class="fas fa-user-circle"></i> Minhas Informações</h2>
+                <div class="perfil-info-container">
+                    <div class="perfil-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="perfil-dados-completos">
+                        <div class="info-row">
+                            <span class="info-label"><i class="fas fa-user"></i> Nome completo:</span>
+                            <span class="info-value" id="perfil-nome">---</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label"><i class="fas fa-envelope"></i> E-mail:</span>
+                            <span class="info-value" id="perfil-email">---</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label"><i class="fas fa-phone"></i> Telefone:</span>
+                            <span class="info-value" id="perfil-telefone">---</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label"><i class="fas fa-calendar-alt"></i> Membro desde:</span>
+                            <span class="info-value" id="perfil-data-cadastro">---</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label"><i class="fas fa-chart-line"></i> Total de registros:</span>
+                            <span class="info-value" id="perfil-total-registros">0</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="btn-logout" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Sair da conta
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

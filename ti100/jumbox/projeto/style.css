@@ -1,0 +1,274 @@
+/* =========================
+   VARIÁVEIS
+========================= */
+:root {
+    --orange: #f87d26;
+    --orange-dark: #d66a1f;
+    --blue: #1a4a8e;
+    --sobre-border: #f36410;
+    --gray-bg: #e5e5e5;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--blue) !important;
+}
+
+.section-title {
+    color: var(--blue) !important;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--orange);
+    margin: 15px auto 0;
+}
+
+/* =========================
+   TEXTOS COLORIDOS
+========================= */
+.text-blue {
+    color: var(--blue) !important;
+}
+
+.text-orange {
+    color: var(--orange) !important;
+}
+
+/* =========================
+   HEADER E FOOTER
+========================= */
+.header-main,
+.footer-main {
+    background-color: var(--gray-bg) !important;
+}
+
+.header-main {
+    z-index: 1030 !important;
+}
+
+/* =========================
+   LINKS NAVBAR
+========================= */
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn-orange {
+    background-color: var(--orange) !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+.btn-orange:hover {
+    background-color: var(--orange-dark) !important;
+    color: #fff !important;
+}
+
+.btn-outline-orange {
+    border: 2px solid var(--orange) !important;
+    color: var(--orange) !important;
+    background: transparent !important;
+}
+
+.btn-outline-orange:hover {
+    background: var(--orange) !important;
+    color: #fff !important;
+}
+
+/* BOTÃO ENTRAR — azul com fonte branca */
+.btn-outline-dark {
+    background-color: var(--blue) !important;
+    border-color: var(--blue) !important;
+    color: #fff !important;
+}
+
+.btn-outline-dark:hover {
+    background-color: #163d78 !important;
+    border-color: #163d78 !important;
+    color: #fff !important;
+}
+
+/* =========================
+   SOBRE NÓS
+========================= */
+.hero-about-box {
+    border-left: 8px solid var(--orange);
+    border-radius: 15px;
+    background: #fff;
+}
+
+.hero-about-box p {
+    text-align: justify;
+}
+
+/* =========================
+   COMO FUNCIONA
+========================= */
+.icon-circle {
+    width: 85px;
+    height: 85px;
+    border: 2px solid var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.icon-circle img {
+    width: 60%;
+}
+
+/* =========================
+   CARROSSEL — SETAS
+========================= */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    opacity: 1 !important;
+    z-index: 10;
+}
+
+.control-btn-icon {
+    color: var(--orange) !important;
+    font-size: 2.8rem;
+    font-weight: bold;
+    display: block;
+    line-height: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none;
+}
+
+/* =========================
+   AVALIAÇÕES
+========================= */
+.stars {
+    color: #FFD700;
+}
+
+/* =========================
+   ACESSIBILIDADE
+========================= */
+.pular-conteudo {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--orange);
+    color: white;
+    padding: 10px;
+    z-index: 2000;
+    text-decoration: none;
+}
+
+.pular-conteudo:focus {
+    top: 0;
+}
+
+/* =========================
+   CARRINHO FLUTUANTE
+========================= */
+.carrinho-flutuante {
+    position: fixed !important;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background: #ff7a00;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    z-index: 999999;
+    transition: 0.3s;
+    overflow: visible;
+}
+
+.carrinho-flutuante:hover {
+    transform: scale(1.08);
+    background: #e66d00;
+    color: white;
+}
+
+/* BADGE DO CARRINHO */
+.badge-carrinho-fixo {
+    position: fixed;
+    bottom: 88px;
+    right: 22px;
+    width: 28px;
+    height: 28px;
+    background: var(--blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid white;
+    z-index: 9999999;
+}
+
+/* =========================
+   JUMBO PERSONALIZADO
+========================= */
+.btn-qtd {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--orange);
+    background: transparent;
+    color: var(--orange);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.btn-qtd:hover {
+    background: var(--orange);
+    color: #fff;
+}
+
+.item-personalizado {
+    transition: 0.2s;
+}
+
+.item-personalizado:hover {
+    border-color: var(--orange) !important;
+    background: #fff8f3;
+}

@@ -1,0 +1,46 @@
+[08-Jun-2026 20:23:47 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home2/dennys07/public_html/oficinahd/php/config.php:7
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/config.php(7): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'oficina_hd')
+#1 /home2/dennys07/public_html/oficinahd/php/login.php(3): require('/home2/dennys07...')
+#2 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/config.php on line 7
+[08-Jun-2026 20:38:44 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'valor_total' in 'field list' in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php:14
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php(14): mysqli->prepare('\n    SELECT id,...')
+#1 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php on line 14
+[08-Jun-2026 20:38:49 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'valor_total' in 'field list' in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php:14
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php(14): mysqli->prepare('\n    SELECT id,...')
+#1 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php on line 14
+[08-Jun-2026 20:41:14 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'valor_total' in 'field list' in /home2/dennys07/public_html/oficinahd/php/criar_pedido.php:34
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/criar_pedido.php(34): mysqli->prepare('\n    INSERT INT...')
+#1 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/criar_pedido.php on line 34
+[08-Jun-2026 20:41:19 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'valor_total' in 'field list' in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php:14
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php(14): mysqli->prepare('\n    SELECT id,...')
+#1 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php on line 14
+[08-Jun-2026 20:55:43 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'valor_total' in 'field list' in /home2/dennys07/public_html/oficinahd/php/criar_pedido.php:34
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/criar_pedido.php(34): mysqli->prepare('\n    INSERT INT...')
+#1 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/criar_pedido.php on line 34
+[08-Jun-2026 20:55:58 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'valor_total' in 'field list' in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php:14
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php(14): mysqli->prepare('\n    SELECT id,...')
+#1 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php on line 14
+[08-Jun-2026 22:25:16 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'valor_total' in 'field list' in /home2/dennys07/public_html/oficinahd/php/criar_pedido.php:34
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/criar_pedido.php(34): mysqli->prepare('\n    INSERT INT...')
+#1 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/criar_pedido.php on line 34
+[08-Jun-2026 22:25:23 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'valor_total' in 'field list' in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php:14
+Stack trace:
+#0 /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php(14): mysqli->prepare('\n    SELECT id,...')
+#1 {main}
+  thrown in /home2/dennys07/public_html/oficinahd/php/listar_pedidos.php on line 14
