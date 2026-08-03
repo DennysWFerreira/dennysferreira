@@ -1,6 +1,6 @@
 {
-  "name": "DF - Calculadora de Horas",
-  "short_name": "Calc. de Horas",
+  "name": "NeoTime - Calculadora de Horas",
+  "short_name": "NeoTime",
   "start_url": "/",
   "display": "standalone",
   "icons": [
