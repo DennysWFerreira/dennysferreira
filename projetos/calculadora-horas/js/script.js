@@ -10,6 +10,7 @@ const fields = {
 
 const output = {
   total: document.querySelector('#totalHours'),
+  totalInterval: document.querySelector('#totalHoursInterval'),
   balance: document.querySelector('#balance'),
   balanceLabel: document.querySelector('#balanceLabel'),
   balanceCard: document.querySelector('#balanceCard'),
@@ -73,11 +74,13 @@ function calculate() {
   //   return;
   // }
 
-  const worked = elapsed - breakMinutes;
+  const worked = elapsed;
+  const workedInterval = elapsed - breakMinutes;
   const balance = worked - shiftMinutes;
   const recommendation = getBreakRecommendation(worked);
 
   output.total.textContent = formatDuration(worked);
+  output.totalInterval.textContent = formatDuration(workedInterval);
   output.balance.textContent = formatDuration(balance, true);
   output.balanceLabel.textContent = balance === 0 ? 'Jornada cumprida' : balance > 0 ? 'Crédito de horas' : 'Débito de horas';
   output.suggestedBreak.textContent = recommendation.warning ? 'ALERTA' : formatDuration(recommendation.duration);
@@ -94,6 +97,7 @@ function resetResults() {
   fields.breakTime.value = '00:00';
   fields.shift.value = '00:00';
   output.total.textContent = '--:--';
+  output.totalInterval.textContent = '--:--';
   output.balance.textContent = '--:--';
   output.balanceLabel.textContent = 'Aguardando cálculo';
   output.suggestedBreak.textContent = '--:--';

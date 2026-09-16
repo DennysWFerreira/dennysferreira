@@ -375,7 +375,7 @@ body:before {
 }
 
 .metric-card span {
-  color: #8395ad;
+  color: #ffffff;
   font-size: .68rem
 }
 
@@ -404,7 +404,8 @@ body:before {
   border: 1px solid rgba(32, 217, 255, .23);
   border-radius: 20px;
   background: linear-gradient(130deg, rgba(15, 74, 92, .34), rgba(9, 22, 40, .9));
-  box-shadow: inset 0 0 40px rgba(32, 217, 255, .035), var(--shadow)
+  box-shadow: inset 0 0 40px rgba(32, 217, 255, .035), var(--shadow);
+
 }
 
 .recommendation-top {
@@ -430,7 +431,7 @@ body:before {
 
 .recommendation-top span {
   display: block;
-  color: #7e91aa;
+  color: #ffffff;
   font-size: .65rem;
   font-weight: 800;
   letter-spacing: .13em
