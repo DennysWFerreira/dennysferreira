@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="img/logo_icone1.png">
   <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/logo_icone1.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/logo_icone1.png">
 </head>
 
 <body>
@@ -27,7 +27,6 @@
 
       </div>
       <div>
-
         <h1>Neo<span>Time</span></h1>
         <p>Calculadora de jornada, saldo e intervalo recomendado.</p>
       </div>
@@ -113,26 +112,39 @@
               <div class="metric-icon"><svg viewBox="0 0 24 24">
                   <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-5V11h3V6h2Z" />
                 </svg></div>
-              <div><span>Total de horas</span><strong id="totalHours">--:--</strong><small>Jornada líquida</small></div>
+              <div><span>Total de horas sem Intervalo</span><strong id="totalHours">--:--</strong><small>Jornada
+                  bruta</small></div>
             </article>
-            <article class="metric-card" id="balanceCard">
+            <article class="metric-card accent">
               <div class="metric-icon"><svg viewBox="0 0 24 24">
-                  <path d="M19 13H5v-2h14Z" />
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-5V11h3V6h2Z" />
                 </svg></div>
-              <div><span>Saldo do dia</span><strong id="balance">--:--</strong><small id="balanceLabel">Aguardando
-                  cálculo</small></div>
+              <div><span>Total de horas com Intervalo</span><strong id="totalHoursInterval">--:--</strong><small>Jornada
+                  líquida</small></div>
             </article>
+
           </div>
         </div>
 
-        <section>
         <div class="recommendation" id="recommendationCard">
-          <div class="recommendation-top">
-            <div class="recommendation-icon"><svg viewBox="0 0 24 24">
-                <path
-                  d="M9 21h6v-1H9Zm3-19a7 7 0 0 0-4 12.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26A7 7 0 0 0 12 2Zm2.85 11.1-.85.51V17h-4v-3.29l-.85-.51a5 5 0 1 1 5.7-.1Z" />
-              </svg></div>
-            <div><span>SUGESTÃO DE INTERVALO</span><strong id="suggestedBreak">--:--</strong></div>
+          <div class="metrics">
+            <article class="metric-card" id="intervalCard">
+              <div class="recommendation-top">
+                <div class="recommendation-icon"><svg viewBox="0 0 24 24">
+                    <path
+                      d="M9 21h6v-1H9Zm3-19a7 7 0 0 0-4 12.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26A7 7 0 0 0 12 2Zm2.85 11.1-.85.51V17h-4v-3.29l-.85-.51a5 5 0 1 1 5.7-.1Z" />
+                  </svg></div>
+                <div><span>Sugestão de Intervalo</span><strong id="suggestedBreak">--:--</strong></div>
+              </div>
+            </article>
+            <article class="metric-card" id="balanceCard">
+              <div class="recommendation-top">
+                <div class="metric-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13H5v-2h14Z" />
+                  </svg></div>
+                <div><span>Saldo do dia</span><strong id="balance">--:--</strong></div>
+              </div>
+            </article>
           </div>
           <p id="recommendationText">Preencha os horários para receber uma recomendação com base na tabela de regras.
           </p>

@@ -10,7 +10,6 @@ const fields = {
 
 const output = {
   total: document.querySelector('#totalHours'),
-  totalInterval: document.querySelector('#totalHoursInterval'),
   balance: document.querySelector('#balance'),
   balanceLabel: document.querySelector('#balanceLabel'),
   balanceCard: document.querySelector('#balanceCard'),
@@ -53,91 +52,41 @@ function calculate() {
 
   const entry = timeToMinutes(fields.entry.value);
   let exit = timeToMinutes(fields.exit.value);
-
-  const breakMinutes =
-    timeToMinutes(fields.breakTime.value) ?? 0;
-
+  const breakMinutes = timeToMinutes(fields.breakTime.value);
   const shiftMinutes = timeToMinutes(fields.shift.value);
 
   if ([entry, exit, shiftMinutes].some(value => value === null)) {
-    output.error.textContent =
-      'Preencha todos os campos com horários válidos.';
+    output.error.textContent = 'Preencha todos os campos com horários válidos.';
     return;
   }
 
-  // Se a saída for anterior à entrada,
-  // considera que o turno terminou no dia seguinte.
-  if (exit < entry) {
-    exit += 24 * 60;
-  }
+  // Se a saída for anterior à entrada, considera-se que o turno terminou no dia seguinte.
+  if (exit < entry) exit += 24 * 60;
 
-  // Tempo entre entrada e saída
   const elapsed = exit - entry;
-
-  // Validação do intervalo
   if (breakMinutes > elapsed) {
-    output.error.textContent =
-      'O intervalo não pode ser maior que o período entre entrada e saída.';
+    output.error.textContent = 'O intervalo não pode ser maior que o período entre entrada e saída.';
     return;
   }
+  // if (shiftMinutes === 0) {
+  //   output.error.textContent = 'A escala do dia deve ser maior que zero.';
+  //   return;
+  // }
 
-  // Tempo bruto
-  const worked = elapsed;
+  const worked = elapsed - breakMinutes;
+  const balance = worked - shiftMinutes;
+  const recommendation = getBreakRecommendation(worked);
 
-  // Tempo efetivamente trabalhado
-  const workedInterval = worked - breakMinutes;
+  output.total.textContent = formatDuration(worked);
+  output.balance.textContent = formatDuration(balance, true);
+  output.balanceLabel.textContent = balance === 0 ? 'Jornada cumprida' : balance > 0 ? 'Crédito de horas' : 'Débito de horas';
+  output.suggestedBreak.textContent = recommendation.warning ? 'ALERTA' : formatDuration(recommendation.duration);
+  output.recommendationText.textContent = recommendation.message;
 
-  // Saldo considerando o tempo líquido
-  const balance = workedInterval - shiftMinutes;
-
-  // Recomendação baseada no tempo líquido
-  const recommendation =
-    getBreakRecommendation(worked);
-
-  // Resultados
-  output.total.textContent =
-    formatDuration(worked);
-
-  output.totalInterval.textContent =
-    formatDuration(workedInterval);
-
-  output.balance.textContent =
-    formatDuration(balance, true);
-
-  output.balanceLabel.textContent =
-    balance === 0
-      ? 'Jornada cumprida'
-      : balance > 0
-        ? 'Crédito de horas'
-        : 'Débito de horas';
-
-  output.suggestedBreak.textContent =
-    recommendation.warning
-      ? 'ALERTA'
-      : formatDuration(recommendation.duration);
-
-  output.recommendationText.textContent =
-    recommendation.message;
-
-  // Estilo do saldo
-  output.balanceCard.classList.remove(
-    'positive',
-    'negative'
-  );
-
-  if (balance > 0) {
-    output.balanceCard.classList.add('positive');
-  }
-
-  if (balance < 0) {
-    output.balanceCard.classList.add('negative');
-  }
-
-  // Estilo da recomendação
-  output.recommendationCard.classList.toggle(
-    'warning',
-    recommendation.warning
-  );
+  output.balanceCard.classList.remove('positive', 'negative');
+  if (balance > 0) output.balanceCard.classList.add('positive');
+  if (balance < 0) output.balanceCard.classList.add('negative');
+  output.recommendationCard.classList.toggle('warning', recommendation.warning);
 }
 
 function resetResults() {
@@ -145,7 +94,6 @@ function resetResults() {
   fields.breakTime.value = '00:00';
   fields.shift.value = '00:00';
   output.total.textContent = '--:--';
-  output.totalInterval.textContent = '--:--';
   output.balance.textContent = '--:--';
   output.balanceLabel.textContent = 'Aguardando cálculo';
   output.suggestedBreak.textContent = '--:--';
