@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="img/logo_icone1.png">
   <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/logo_icone1.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/logo_icone1.png">
 </head>
 
 <body>
@@ -126,34 +126,43 @@
         </div>
 
         <section>
-        <div class="recommendation" id="recommendationCard">
-          <div class="recommendation-top">
-            <div class="recommendation-icon"><svg viewBox="0 0 24 24">
-                <path
-                  d="M9 21h6v-1H9Zm3-19a7 7 0 0 0-4 12.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26A7 7 0 0 0 12 2Zm2.85 11.1-.85.51V17h-4v-3.29l-.85-.51a5 5 0 1 1 5.7-.1Z" />
-              </svg></div>
-            <div><span>SUGESTÃO DE INTERVALO</span><strong id="suggestedBreak">--:--</strong></div>
+          <div class="recommendation" id="recommendationCard">
+            <article class="metric-card" id="balanceCard">
+              <div class="recommendation-top">
+                <div class="recommendation-icon"><svg viewBox="0 0 24 24">
+                    <path
+                      d="M9 21h6v-1H9Zm3-19a7 7 0 0 0-4 12.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26A7 7 0 0 0 12 2Zm2.85 11.1-.85.51V17h-4v-3.29l-.85-.51a5 5 0 1 1 5.7-.1Z" />
+                  </svg></div>
+                <div><span>SUGESTÃO DE INTERVALO</span><strong id="suggestedBreak">--:--</strong></div>
+              </div>
+            </article>
+            <article class="metric-card" id="balanceCard">
+              <div class="metric-icon"><svg viewBox="0 0 24 24">
+                  <path d="M19 13H5v-2h14Z" />
+                </svg></div>
+              <div><span>Saldo do dia</span><strong id="balance">--:--</strong><small id="balanceLabel">Aguardando
+                  cálculo</small></div>
+            </article>
+            <p id="recommendationText">Preencha os horários para receber uma recomendação com base na tabela de regras.
+            </p>
           </div>
-          <p id="recommendationText">Preencha os horários para receber uma recomendação com base na tabela de regras.
-          </p>
-        </div>
 
-        <div class="rules-card">
-          <div class="rules-title">
-            <h3>Regras</h3><span>Intervalo</span>
+          <div class="rules-card">
+            <div class="rules-title">
+              <h3>Regras</h3><span>Intervalo</span>
+            </div>
+            <div class="rule-row"><span>Até 4 horas</span><strong>Sem intervalo</strong></div>
+            <div class="rule-row"><span>Acima de 4h até 6h</span><strong>15 minutos</strong></div>
+            <div class="rule-row"><span>Acima de 6h até 11h</span><strong>1 hora</strong></div>
+            <div class="rule-row danger"><span>Acima de 11 horas</span><strong>Revisar jornada/intervalo</strong></div>
           </div>
-          <div class="rule-row"><span>Até 4 horas</span><strong>Sem intervalo</strong></div>
-          <div class="rule-row"><span>Acima de 4h até 6h</span><strong>15 minutos</strong></div>
-          <div class="rule-row"><span>Acima de 6h até 11h</span><strong>1 hora</strong></div>
-          <div class="rule-row danger"><span>Acima de 11 horas</span><strong>Revisar jornada/intervalo</strong></div>
-        </div>
+        </section>
       </section>
-    </section>
 
-    <div><span class="long-line"></span></div>
-    <footer>
-      <p>© 2026 · Desenvolvido por <strong>Dennys Ferreira</strong></p>
-    </footer>
+      <div><span class="long-line"></span></div>
+      <footer>
+        <p>© 2026 · Desenvolvido por <strong>Dennys Ferreira</strong></p>
+      </footer>
   </main>
   <script src="js/script.js"></script>
 </body>
