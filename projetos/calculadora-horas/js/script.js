@@ -9,6 +9,7 @@ const fields = {
 };
 
 const output = {
+  totalGross: document.querySelector('#totalHoursgross'),
   total: document.querySelector('#totalHours'),
   balance: document.querySelector('#balance'),
   balanceLabel: document.querySelector('#balanceLabel'),
@@ -77,6 +78,7 @@ function calculate() {
   const balance = worked - shiftMinutes;
   const recommendation = getBreakRecommendation(worked);
 
+  output.totalGross.textContent = formatDuration(elapsed);
   output.total.textContent = formatDuration(worked);
   output.balance.textContent = formatDuration(balance, true);
   output.balanceLabel.textContent = balance === 0 ? 'Jornada cumprida' : balance > 0 ? 'Crédito de horas' : 'Débito de horas';
@@ -93,6 +95,7 @@ function resetResults() {
   form.reset();
   fields.breakTime.value = '00:00';
   fields.shift.value = '00:00';
+  output.totalGross.textContent = '--:--';
   output.total.textContent = '--:--';
   output.balance.textContent = '--:--';
   output.balanceLabel.textContent = 'Aguardando cálculo';
