@@ -1,10 +1,10 @@
 :root {
-  --bg: #030712;
+  --bg: #1b2e64;
   --panel: rgba(10, 18, 35, .78);
   --panel-strong: rgba(12, 23, 43, .95);
   --line: rgba(125, 211, 252, .16);
   --text: #f3f8ff;
-  --muted: #8ea0b9;
+  --muted: #ffffff;
   --cyan: #20d9ff;
   --blue: #4d7cff;
   --green: #31e6a1;
@@ -187,7 +187,7 @@ body:before {
   height: 31px;
   border: 1px solid rgba(32, 217, 255, .25);
   border-radius: 9px;
-  background: rgba(32, 217, 255, .08);
+  background: rgba(243, 247, 248, 0.08);
   color: var(--cyan);
   font: 700 .72rem Orbitron
 }
@@ -222,7 +222,7 @@ body:before {
 .field>span {
   display: block;
   margin-bottom: 9px;
-  color: #b9c7da;
+  color: #ffffff;
   font-size: .79rem;
   font-weight: 600
 }
@@ -230,7 +230,7 @@ body:before {
 .field small {
   display: block;
   margin-top: 7px;
-  color: #71829b;
+  color: #ffffff;
   font-size: .68rem
 }
 
@@ -257,7 +257,7 @@ body:before {
   border-radius: 13px;
   outline: none;
   background: rgba(3, 9, 19, .6);
-  color: #eaf5ff;
+  color: #ffffff;
   font: 700 1rem Inter;
   transition: .2s
 }
@@ -296,7 +296,7 @@ body:before {
   justify-content: center;
   gap: 10px;
   border: 0;
-  background: linear-gradient(100deg, #19c9ed, #4678f3);
+  background: linear-gradient(100deg, #04afd1, #2864fc);
   color: #03101c;
   box-shadow: 0 14px 35px rgba(30, 195, 238, .18)
 }
@@ -315,7 +315,7 @@ body:before {
   padding: 0 23px;
   border: 1px solid rgba(130, 164, 205, .2);
   background: rgba(255, 255, 255, .025);
-  color: #9fb0c6
+  color: #ffffff
 }
 
 .secondary-button:hover {
@@ -399,6 +399,10 @@ body:before {
   color: var(--red)
 }
 
+#suggestedBreakLabel.warning{
+  color: var(--red)
+}
+
 .recommendation {
   padding: 22px;
   border: 1px solid rgba(32, 217, 255, .23);
@@ -449,7 +453,7 @@ body:before {
   margin: 17px 0 0;
   padding-top: 15px;
   border-top: 1px solid rgba(128, 188, 220, .12);
-  color: #9fb1c6;
+  color: #ffffff;
   font-size: .75rem;
   line-height: 1.55
 }
@@ -492,7 +496,7 @@ body:before {
 }
 
 .rules-title span {
-  color: #657890;
+  color: #ffffff;
   font-size: .62rem
 }
 
@@ -506,11 +510,11 @@ body:before {
 }
 
 .rule-row span {
-  color: #8193aa
+  color: #ffffff
 }
 
 .rule-row strong {
-  color: #b9c7d9;
+  color: #ffffff;
   text-align: right
 }
 
@@ -518,16 +522,7 @@ body:before {
   color: #ff8095
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 24px;
-  padding: 0 4px;
-  color: #43526a;
-  font-size: .58rem;
-  letter-spacing: .08em
-}
+
 
 @media(max-width:900px) {
   .workspace {
@@ -609,11 +604,10 @@ footer {
   }
 }
 
-.long-line {
-  margin-inline: auto;
-}
+
 
 .long-line {
+  margin-inline: auto;
   display: block;
   width: 100%;
   height: 5px;
@@ -643,8 +637,21 @@ input[type="time"] {
   -webkit-appearance: none;
 }
 
+#recommendationCard{
+  margin-top: 25px;
+  text-align: center;
+}
+
+#recommendationText{
+  font-size: .80rem;
+}
+
 footer {
-  padding: 34px 20px;
+  font-size: .58rem;
+  letter-spacing: .08em;
+  margin-top: 25px;
+  padding: 10px 20px;
+  width: 100%;
   text-align: center;
   color: var(--muted);
   border-top: 1px solid rgba(255, 255, 255, 0.06);

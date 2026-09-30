@@ -15,6 +15,7 @@ const output = {
   balanceLabel: document.querySelector('#balanceLabel'),
   balanceCard: document.querySelector('#balanceCard'),
   suggestedBreak: document.querySelector('#suggestedBreak'),
+  suggestedBreakLabel: document.querySelector('#suggestedBreakLabel'),
   recommendationText: document.querySelector('#recommendationText'),
   recommendationCard: document.querySelector('#recommendationCard'),
   error: document.querySelector('#errorMessage')
@@ -76,7 +77,7 @@ function calculate() {
 
   const worked = elapsed - breakMinutes;
   const balance = worked - shiftMinutes;
-  const recommendation = getBreakRecommendation(worked);
+  const recommendation = getBreakRecommendation(elapsed);
 
   output.totalGross.textContent = formatDuration(elapsed);
   output.total.textContent = formatDuration(worked);
@@ -86,6 +87,9 @@ function calculate() {
   output.recommendationText.textContent = recommendation.message;
 
   output.balanceCard.classList.remove('positive', 'negative');
+  output.suggestedBreakLabel.textContent = breakMinutes != recommendation.duration ? 'O intervalo informado difere desta sugestão.' : '';
+  output.suggestedBreakLabel.classList.toggle('warning', true);
+
   if (balance > 0) output.balanceCard.classList.add('positive');
   if (balance < 0) output.balanceCard.classList.add('negative');
   output.recommendationCard.classList.toggle('warning', recommendation.warning);
@@ -99,11 +103,13 @@ function resetResults() {
   output.total.textContent = '--:--';
   output.balance.textContent = '--:--';
   output.balanceLabel.textContent = 'Aguardando cálculo';
+  output.suggestedBreakLabel.textContent = 'Aguardando cálculo';
   output.suggestedBreak.textContent = '--:--';
   output.recommendationText.textContent = 'Preencha os horários para receber uma recomendação com base na tabela de regras.';
   output.error.textContent = '';
   output.balanceCard.classList.remove('positive', 'negative');
   output.recommendationCard.classList.remove('warning');
+  output.suggestedBreakLabel.classList.remove('warning');
   fields.entry.focus();
 }
 
